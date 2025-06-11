@@ -1,0 +1,151 @@
+@model AutismEducationPlatform.Web.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Eğitmen Paneli";
+}
+
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="welcome-card bg-primary text-white rounded-3 p-4">
+                <h2 class="mb-3">Hoş Geldiniz, @Model.Name @Model.Surname</h2>
+                <p class="lead mb-0">Eğitmen panelinizden tüm eğitim süreçlerini yönetebilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="stats-card bg-white rounded-3 p-4 shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="stats-icon bg-primary text-white rounded-circle p-3 me-3">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Eğitimler</h3>
+                </div>
+                <h4 class="display-6 mb-2">12</h4>
+                <p class="text-muted mb-0">Aktif Eğitim</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="stats-card bg-white rounded-3 p-4 shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="stats-icon bg-success text-white rounded-circle p-3 me-3">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Öğrenciler</h3>
+                </div>
+                <h4 class="display-6 mb-2">48</h4>
+                <p class="text-muted mb-0">Toplam Öğrenci</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="stats-card bg-white rounded-3 p-4 shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="stats-icon bg-info text-white rounded-circle p-3 me-3">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Saatler</h3>
+                </div>
+                <h4 class="display-6 mb-2">124</h4>
+                <p class="text-muted mb-0">Eğitim Saati</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="stats-card bg-white rounded-3 p-4 shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="stats-icon bg-warning text-white rounded-circle p-3 me-3">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Puanlama</h3>
+                </div>
+                <h4 class="display-6 mb-2">4.8</h4>
+                <p class="text-muted mb-0">Ortalama Puan</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header bg-white">
+                    <h5 class="card-title mb-0">Son Aktiviteler</h5>
+                </div>
+                <div class="card-body">
+                    <div class="activity-item d-flex align-items-center mb-3">
+                        <div class="activity-icon bg-success-light text-success rounded-circle p-2 me-3">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0">Yeni bir öğrenci kaydoldu</p>
+                            <small class="text-muted">2 saat önce</small>
+                        </div>
+                    </div>
+                    <div class="activity-item d-flex align-items-center mb-3">
+                        <div class="activity-icon bg-primary-light text-primary rounded-circle p-2 me-3">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0">Yeni eğitim içeriği eklendi</p>
+                            <small class="text-muted">5 saat önce</small>
+                        </div>
+                    </div>
+                    <div class="activity-item d-flex align-items-center">
+                        <div class="activity-icon bg-warning-light text-warning rounded-circle p-2 me-3">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0">Yeni bir yorum yapıldı</p>
+                            <small class="text-muted">1 gün önce</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header bg-white">
+                    <h5 class="card-title mb-0">Yaklaşan Dersler</h5>
+                </div>
+                <div class="card-body">
+                    <div class="upcoming-class d-flex align-items-center mb-3">
+                        <div class="class-icon bg-primary-light text-primary rounded p-3 me-3">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Temel Matematik</h6>
+                            <p class="mb-0 text-muted">
+                                <i class="fas fa-calendar-alt me-2"></i>Pazartesi, 14:00
+                            </p>
+                        </div>
+                    </div>
+                    <div class="upcoming-class d-flex align-items-center mb-3">
+                        <div class="class-icon bg-success-light text-success rounded p-3 me-3">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Sanat Etkinliği</h6>
+                            <p class="mb-0 text-muted">
+                                <i class="fas fa-calendar-alt me-2"></i>Salı, 15:30
+                            </p>
+                        </div>
+                    </div>
+                    <div class="upcoming-class d-flex align-items-center">
+                        <div class="class-icon bg-info-light text-info rounded p-3 me-3">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Müzik Dersi</h6>
+                            <p class="mb-0 text-muted">
+                                <i class="fas fa-calendar-alt me-2"></i>Çarşamba, 13:00
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

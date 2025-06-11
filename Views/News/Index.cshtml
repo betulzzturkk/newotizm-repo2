@@ -1,0 +1,127 @@
+@model IEnumerable<AutismEducationPlatform.Web.Models.News>
+@{
+    ViewData["Title"] = "Haberler";
+    Layout = "_ParentLayout";
+    var featuredNews = Model.FirstOrDefault();
+    var recentNews = Model.Skip(1).Take(3);
+    var categoryNews = Model.Skip(4);
+}
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="card shadow-sm" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">
+                <div class="card-body text-white">
+                    <h2 class="card-title text-white">Otizm Haberleri</h2>
+                    <p class="card-text opacity-75">Otizm dünyasından en güncel haberler ve gelişmeler</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (featuredNews != null)
+    {
+        <div class="row">
+            <!-- Ana Haber -->
+            <div class="col-md-8 mb-4">
+                <div class="card shadow-sm">
+                    @if (!string.IsNullOrEmpty(featuredNews.ImageUrl))
+                    {
+                        <img src="@featuredNews.ImageUrl" class="card-img-top" alt="@featuredNews.Title">
+                    }
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">@featuredNews.Category</span>
+                        <h3 class="card-title">@featuredNews.Title</h3>
+                        <p class="text-muted small mb-2">@featuredNews.PublishDate.ToString("dd MMMM yyyy")</p>
+                        <p class="card-text">@featuredNews.Summary</p>
+                        <a href="#" class="btn btn-primary">Devamını Oku</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yan Haberler -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Son Haberler</h4>
+                        <div class="list-group">
+                            @foreach (var news in recentNews)
+                            {
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">@news.Title</h6>
+                                        <small class="text-muted">@((DateTime.Now - news.PublishDate).Days) gün önce</small>
+                                    </div>
+                                    <p class="mb-1">@news.Summary</p>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- Kategori Bazlı Haberler -->
+    <div class="row">
+        @foreach (var category in Model.Select(n => n.Category).Distinct())
+        {
+            var categoryNewsList = Model.Where(n => n.Category == category).Take(2);
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title @(category == "Eğitim" ? "text-primary" : category == "Sağlık" ? "text-success" : "text-info")">
+                            <i class="bi @(category == "Eğitim" ? "bi-book" : category == "Sağlık" ? "bi-heart-pulse" : "bi-people") me-2"></i>
+                            @category
+                        </h5>
+                        <ul class="list-unstyled">
+                            @foreach (var news in categoryNewsList)
+                            {
+                                <li class="mb-3">
+                                    <a href="#" class="text-decoration-none text-dark">
+                                        <h6>@news.Title</h6>
+                                        <p class="small text-muted mb-0">@news.Summary</p>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Arşiv -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Haber Arşivi</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Tarih</th>
+                                    <th>Başlık</th>
+                                    <th>Kategori</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var news in Model.OrderByDescending(n => n.PublishDate))
+                                {
+                                    <tr>
+                                        <td>@news.PublishDate.ToString("dd MMMM yyyy")</td>
+                                        <td>@news.Title</td>
+                                        <td><span class="badge bg-@(news.Category == "Eğitim" ? "primary" : news.Category == "Sağlık" ? "success" : "info")">@news.Category</span></td>
+                                        <td><a href="#" class="btn btn-sm btn-outline-primary">Oku</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

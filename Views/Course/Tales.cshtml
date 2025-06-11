@@ -1,0 +1,179 @@
+@model List<AutismEducationPlatform.Web.Models.ViewModels.TaleViewModel>
+
+@{
+    ViewData["Title"] = "Masallar";
+}
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col">
+            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Eğitimlere Dön
+            </a>
+        </div>
+    </div>
+
+    <h2 class="text-center mb-4">
+        <i class="fas fa-book-reader me-2"></i>
+        Eğitici Masallar
+    </h2>
+    <p class="text-center mb-5">Birbirinden güzel masalları dinleyelim ve hayal gücümüzü geliştirelim!</p>
+
+    <div class="row g-4">
+        @foreach (var tale in Model)
+        {
+            <div class="col-md-6">
+                <div class="card tale-card h-100">
+                    <img src="@tale.ImageUrl" class="card-img-top tale-image" alt="@tale.Title" onerror="handleImageError(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="@tale.IconClass @tale.IconColor me-2"></i>
+                            @tale.Title
+                        </h5>
+                        <p class="card-text">@tale.Description</p>
+                        <button class="btn btn-primary watch-btn" 
+                                data-video-url="@tale.VideoUrl"
+                                data-tale-title="@tale.Title"
+                                onclick="playVideo(this)">
+                            <i class="fas fa-play-circle me-2"></i>Masalı İzle
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="ratio ratio-16x9">
+                    <iframe id="videoFrame" src="" title="YouTube video" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tale-card {
+        transition: transform 0.3s ease;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .tale-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .tale-image {
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .card-title {
+        color: #333;
+        font-weight: bold;
+        margin-top: 1rem;
+    }
+
+    .card-text {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .watch-btn {
+        border-radius: 50px;
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+    }
+
+    .watch-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .watch-btn:active {
+        transform: scale(0.95);
+    }
+
+    .modal-content {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .modal-header {
+        border-bottom: none;
+        padding: 1rem 1.5rem;
+    }
+
+    .modal-title {
+        font-weight: bold;
+        color: #333;
+    }
+
+    #videoFrame {
+        border: none;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        let videoModal;
+        let currentVideo = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+
+            // Modal kapandığında videoyu durdur
+            document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+                document.getElementById('videoFrame').src = '';
+            });
+        });
+
+        function handleImageError(img) {
+            // maxresdefault.jpg çalışmazsa, hqdefault.jpg'yi dene
+            if (img.src.includes('maxresdefault')) {
+                img.src = img.src.replace('maxresdefault', 'hqdefault');
+            }
+        }
+
+        function playVideo(button) {
+            const videoUrl = button.dataset.videoUrl;
+            const taleTitle = button.dataset.taleTitle;
+            
+            // YouTube video ID'sini al
+            const videoId = getYouTubeVideoId(videoUrl);
+            
+            if (videoId) {
+                // Modal başlığını ayarla
+                document.getElementById('videoModalLabel').textContent = taleTitle;
+                
+                // Video iframe'ini ayarla
+                const iframe = document.getElementById('videoFrame');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                
+                // Modalı göster
+                videoModal.show();
+            } else {
+                console.error('Video ID bulunamadı:', videoUrl);
+            }
+        }
+
+        function getYouTubeVideoId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+    </script>
+} 

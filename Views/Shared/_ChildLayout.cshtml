@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Otizm Eğitim Platformu</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Çocuk modu için özel stiller */
+        body {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #2196F3 0%, #03A9F4 100%);
+            padding: 1rem;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: white !important;
+        }
+
+        .course-card {
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2196F3 0%, #03A9F4 100%);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1976D2 0%, #0288D1 100%);
+            transform: scale(1.05);
+        }
+
+        .display-4 {
+            color: #1565C0;
+            font-weight: bold;
+        }
+
+        .lead {
+            color: #1976D2;
+        }
+
+        .footer {
+            background: white;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Parent" asp-action="Index">
+                    <i class="fas fa-puzzle-piece me-2"></i>
+                    Eğitim Platformu
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center py-3">
+            <p class="mb-0">&copy; 2025 - İGÜ - Otizm Eğitim Platformu</p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html> 

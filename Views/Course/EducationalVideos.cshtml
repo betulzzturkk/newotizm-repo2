@@ -1,0 +1,200 @@
+@model List<AutismEducationPlatform.Web.Models.ViewModels.EducationalVideoViewModel>
+
+@{
+    ViewData["Title"] = "Eğitici Videolar";
+}
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col">
+            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Eğitimlere Dön
+            </a>
+        </div>
+    </div>
+
+    <h2 class="text-center mb-4">
+        <i class="fas fa-graduation-cap me-2"></i>
+        Eğitici Videolar
+    </h2>
+    <p class="text-center mb-5">Eğlenceli ve öğretici videolarla yeni şeyler öğrenelim!</p>
+
+    <div class="row g-4">
+        @foreach (var video in Model)
+        {
+            <div class="col-md-6">
+                <div class="card video-card h-100">
+                    <img src="@video.ImageUrl" class="card-img-top video-image" alt="@video.Title" onerror="handleImageError(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="@video.IconClass @video.IconColor me-2"></i>
+                            @video.Title
+                        </h5>
+                        <p class="card-text">@video.Description</p>
+                        <button class="btn btn-primary watch-btn" 
+                                data-video-url="@video.VideoUrl"
+                                data-video-title="@video.Title"
+                                onclick="playVideo(this)">
+                            <i class="fas fa-play-circle me-2"></i>Videoyu İzle
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="ratio ratio-16x9">
+                    <iframe id="videoFrame" src="" title="YouTube video" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .video-card {
+        transition: transform 0.3s ease;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+    }
+
+    .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .video-image {
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .card-title {
+        color: #333;
+        font-weight: bold;
+        margin-top: 1rem;
+        font-size: 1.25rem;
+    }
+
+    .card-text {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .watch-btn {
+        border-radius: 50px;
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        border: none;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .watch-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        background: linear-gradient(45deg, #0056b3, #004085);
+    }
+
+    .watch-btn:active {
+        transform: scale(0.95);
+    }
+
+    .modal-content {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .modal-header {
+        border-bottom: none;
+        padding: 1rem 1.5rem;
+        background: linear-gradient(to right, #f8f9fa, #ffffff);
+    }
+
+    .modal-title {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.25rem;
+    }
+
+    #videoFrame {
+        border: none;
+    }
+
+    @@media (max-width: 768px) {
+        .video-card {
+            margin-bottom: 1rem;
+        }
+
+        .video-image {
+            height: 180px;
+        }
+    }
+</style>
+
+@section Scripts {
+    <script>
+        let videoModal;
+        let currentVideo = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+
+            // Modal kapandığında videoyu durdur
+            document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+                document.getElementById('videoFrame').src = '';
+            });
+        });
+
+        function handleImageError(img) {
+            // maxresdefault.jpg çalışmazsa, hqdefault.jpg'yi dene
+            if (img.src.includes('maxresdefault')) {
+                img.src = img.src.replace('maxresdefault', 'hqdefault');
+            }
+        }
+
+        function playVideo(button) {
+            const videoUrl = button.dataset.videoUrl;
+            const videoTitle = button.dataset.videoTitle;
+            
+            // YouTube video ID'sini al
+            const videoId = getYouTubeVideoId(videoUrl);
+            
+            if (videoId) {
+                // Modal başlığını ayarla
+                document.getElementById('videoModalLabel').textContent = videoTitle;
+                
+                // Video iframe'ini ayarla
+                const iframe = document.getElementById('videoFrame');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                
+                // Modalı göster
+                videoModal.show();
+            } else {
+                console.error('Video ID bulunamadı:', videoUrl);
+            }
+        }
+
+        function getYouTubeVideoId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+    </script>
+} 

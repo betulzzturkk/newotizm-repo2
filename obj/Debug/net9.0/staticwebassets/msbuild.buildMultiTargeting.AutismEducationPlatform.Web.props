@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AutismEducationPlatform.Web.props" />
+</Project>

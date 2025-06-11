@@ -1,0 +1,158 @@
+@model AutismEducationPlatform.Web.Models.ParentRegistrationViewModel
+
+@{
+    ViewData["Title"] = "Veli Kayıt Formu";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">
+                        <i class="fas fa-user-plus text-primary me-2"></i>
+                        Veli Kayıt Formu
+                    </h2>
+
+                    <form asp-controller="Account" asp-action="ParentRegister" method="post" autocomplete="off">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="FirstName" class="form-label"></label>
+                                <input asp-for="FirstName" class="form-control" autocomplete="off" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="LastName" class="form-label"></label>
+                                <input asp-for="LastName" class="form-control" autocomplete="off" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Email" class="form-label"></label>
+                                <input asp-for="Email" class="form-control" autocomplete="new-email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="PhoneNumber" class="form-label"></label>
+                                <input asp-for="PhoneNumber" class="form-control" autocomplete="off" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Password" class="form-label"></label>
+                                <div class="input-group">
+                                    <input asp-for="Password" class="form-control" autocomplete="new-password" />
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('Password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ConfirmPassword" class="form-label"></label>
+                                <div class="input-group">
+                                    <input asp-for="ConfirmPassword" class="form-control" autocomplete="new-password" />
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('ConfirmPassword')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <h4 class="mb-3">Çocuk Bilgileri</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ChildName" class="form-label"></label>
+                                <input asp-for="ChildName" class="form-control" />
+                                <span asp-validation-for="ChildName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label asp-for="ChildAge" class="form-label"></label>
+                                <input asp-for="ChildAge" class="form-control" type="number" min="2" max="18" />
+                                <span asp-validation-for="ChildAge" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label asp-for="ChildGender" class="form-label"></label>
+                                <select asp-for="ChildGender" class="form-select">
+                                    <option value="">Seçiniz...</option>
+                                    <option value="Kız">Kız</option>
+                                    <option value="Erkek">Erkek</option>
+                                </select>
+                                <span asp-validation-for="ChildGender" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="SpecialNotes" class="form-label"></label>
+                            <textarea asp-for="SpecialNotes" class="form-control" rows="3" 
+                                    placeholder="Çocuğunuz hakkında eklemek istediğiniz özel notlar (isteğe bağlı)"></textarea>
+                            <span asp-validation-for="SpecialNotes" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input asp-for="AcceptTerms" class="form-check-input" />
+                                <label asp-for="AcceptTerms" class="form-check-label">
+                                    <a href="/Home/Privacy" target="_blank">Kullanım koşullarını</a> okudum ve kabul ediyorum
+                                </label>
+                                <span asp-validation-for="AcceptTerms" class="text-danger d-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-user-plus me-2"></i>
+                                Kayıt Ol
+                            </button>
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-secondary">
+                                Zaten hesabınız var mı? Giriş yapın
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Sayfa yüklendiğinde formu temizle
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('form');
+            form.reset();
+            
+            // Chrome'un autocomplete özelliğini devre dışı bırak
+            var inputs = form.querySelectorAll('input');
+            inputs.forEach(function(input) {
+                input.value = '';
+            });
+        });
+
+        // Şifre görünürlüğünü değiştir
+        function togglePassword(fieldId) {
+            var field = document.getElementById(fieldId);
+            var icon = event.currentTarget.querySelector('i');
+            
+            if (field.type === 'password') {
+                field.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                field.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+} 

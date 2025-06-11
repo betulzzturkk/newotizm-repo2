@@ -1,0 +1,157 @@
+@using AutismEducationPlatform.Web.Models.ViewModels
+@model ParentDashboardViewModel
+
+@{
+    ViewData["Title"] = "Ana Sayfa";
+    Layout = "_ParentLayout";
+}
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <div class="card shadow-sm" style="background: linear-gradient(135deg, #6B48FF 0%, #8C6FFF 100%);">
+                <div class="card-body text-white">
+                    <h2 class="card-title text-white">Hoş Geldiniz!</h2>
+                    <p class="card-text opacity-75">Çocuğunuzun eğitim sürecini takip edebilir, ilerleme raporlarını görüntüleyebilir ve eğitmenlerle iletişime geçebilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-book text-primary" style="font-size: 2.5rem;"></i>
+                    </div>
+                    <h5 class="card-title">Eğitimler</h5>
+                    <p class="card-text text-muted">Mevcut eğitimleri görüntüleyin ve yeni eğitimlere kayıt olun.</p>
+                    <a asp-controller="Course" asp-action="Index" class="btn btn-primary mt-auto">
+                        <i class="bi bi-arrow-right-circle me-1"></i>
+                        Eğitimlere Git
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-graph-up text-primary" style="font-size: 2.5rem;"></i>
+                    </div>
+                    <h5 class="card-title">İlerleme Raporu</h5>
+                    <p class="card-text text-muted">Çocuğunuzun eğitim sürecindeki gelişimini takip edin.</p>
+                    <a asp-controller="Progress" asp-action="Index" class="btn btn-primary mt-auto">
+                        <i class="bi bi-arrow-right-circle me-1"></i>
+                        Raporu Görüntüle
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-newspaper text-primary" style="font-size: 2.5rem;"></i>
+                    </div>
+                    <h5 class="card-title">Haberler</h5>
+                    <p class="card-text text-muted">En son haberleri ve duyuruları takip edin.</p>
+                    <a asp-controller="News" asp-action="Index" class="btn btn-primary mt-auto">
+                        <i class="bi bi-arrow-right-circle me-1"></i>
+                        Haberleri Gör
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-person-vcard text-primary" style="font-size: 2.5rem;"></i>
+                    </div>
+                    <h5 class="card-title">Çocuk Bilgileri</h5>
+                    <div class="text-start mt-3">
+                        <p class="mb-2"><strong>Ad:</strong> Ahmet</p>
+                        <p class="mb-2"><strong>Yaş:</strong> 8</p>
+                        <p class="mb-2"><strong>Sınıf:</strong> 2</p>
+                        <p class="mb-0"><strong>Eğitmen:</strong> Ayşe Öğretmen</p>
+                    </div>
+                    <a href="#" class="btn btn-primary mt-3">
+                        <i class="bi bi-pencil-square me-1"></i>
+                        Düzenle
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-calendar3 me-2"></i>
+                        Yaklaşan Eğitimler
+                    </h5>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Tarih</th>
+                                    <th>Eğitim</th>
+                                    <th>Eğitmen</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>15 Nisan</td>
+                                    <td>Sosyal Beceriler</td>
+                                    <td>Ayşe Öğretmen</td>
+                                    <td><span class="badge bg-success">Onaylandı</span></td>
+                                </tr>
+                                <tr>
+                                    <td>18 Nisan</td>
+                                    <td>Dil Gelişimi</td>
+                                    <td>Mehmet Öğretmen</td>
+                                    <td><span class="badge bg-warning">Beklemede</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-bell me-2"></i>
+                        Duyurular
+                    </h5>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Yeni Eğitim Programı</h6>
+                                <small class="text-muted">3 gün önce</small>
+                            </div>
+                            <p class="mb-1">Mayıs ayı eğitim programı yayınlandı.</p>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Veli Toplantısı</h6>
+                                <small class="text-muted">1 hafta önce</small>
+                            </div>
+                            <p class="mb-1">20 Nisan'da veli toplantısı yapılacaktır.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

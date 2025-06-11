@@ -1,0 +1,105 @@
+@{
+    ViewData["Title"] = "Veli Paneli";
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1 class="dashboard-title">
+            <i class="fas fa-home"></i>
+            Veli Paneli
+        </h1>
+        <p class="dashboard-subtitle">Çocuğunuzun eğitim sürecini takip edebileceğiniz alan</p>
+    </div>
+
+    <div class="dashboard-cards">
+        <!-- Çocuk Bilgileri -->
+        <div class="dashboard-card">
+            <div class="card-icon bg-gradient-primary">
+                <i class="fas fa-child"></i>
+            </div>
+            <div class="card-content">
+                <h2>Çocuk Bilgileri</h2>
+                <p>Çocuğunuzun kişisel bilgilerini görüntüleyin ve güncelleyin</p>
+                <a asp-controller="Parent" asp-action="Profile" class="card-button button-primary">
+                    <span>Bilgileri Düzenle</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Çocuğumun Gelişimi -->
+        <div class="dashboard-card">
+            <div class="card-icon bg-gradient-success">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="card-content">
+                <h2>Çocuğumun Gelişimi</h2>
+                <p>Eğitim sürecindeki gelişimi takip edin ve raporları inceleyin</p>
+                <a href="#" class="card-button button-success">
+                    <span>Gelişimi Görüntüle</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Eğitimler -->
+        <div class="dashboard-card">
+            <div class="card-icon bg-gradient-info">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="card-content">
+                <h2>Eğitimler</h2>
+                <p>Özel hazırlanmış eğitim içeriklerine ve aktivitelere erişin</p>
+                <a href="#" class="card-button button-info">
+                    <span>Eğitimleri Görüntüle</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Duyurular ve Mesajlar -->
+        <div class="dashboard-card">
+            <div class="card-icon bg-gradient-warning">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="card-content">
+                <h2>Duyurular ve Mesajlar</h2>
+                <p>Önemli duyuruları takip edin ve mesajlarınızı yönetin</p>
+                <a href="#" class="card-button button-warning">
+                    <span>Mesajları Görüntüle</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Geri Bildirim -->
+        <div class="dashboard-card">
+            <div class="card-icon bg-gradient-purple">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+            <div class="card-content">
+                <h2>Geri Bildirim</h2>
+                <p>Deneyimlerinizi paylaşın ve önerilerinizi iletin</p>
+                <a href="#" class="card-button button-purple">
+                    <span>Geri Bildirim Gönder</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Sık Sorulan Sorular -->
+        <div class="dashboard-card">
+            <div class="card-icon bg-gradient-orange">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <div class="card-content">
+                <h2>Sık Sorulan Sorular</h2>
+                <p>Sıkça sorulan soruları ve cevaplarını inceleyin</p>
+                <a href="#" class="card-button button-orange">
+                    <span>SSS'yi Görüntüle</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,121 @@
+@{
+    ViewData["Title"] = "Daha Fazla Bilgi";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="hero-section text-center">
+                <h1 class="hero-title">Platformumuz Hakkında</h1>
+                <p class="hero-subtitle">Eğitim içeriklerimiz ve özelliklerimiz</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="feature-card">
+                <h3 class="mb-4"><i class="fas fa-graduation-cap text-primary me-2"></i> Eğitim İçeriklerimiz</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5><i class="fas fa-shapes text-warning me-2"></i> Temel Kavramlar</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Renkler ve Şekiller</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Sayılar ve Harfler</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Günlük Yaşam Becerileri</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5><i class="fas fa-film text-danger me-2"></i> Eğitici İçerikler</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Eğitici Masallar</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Eğitici Videolar</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Dans Videoları</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="feature-card">
+                <h3 class="mb-4"><i class="fas fa-chart-line text-primary me-2"></i> İlerleme Takibi</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5><i class="fas fa-user-graduate text-info me-2"></i> Öğrenci İlerlemesi</h5>
+                        <p>Her çocuğun:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Tamamlanan aktiviteler</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Başarı puanları</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Öğrenme hızı</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Favori aktiviteleri</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5><i class="fas fa-chart-bar text-warning me-2"></i> Gelişim Raporları</h5>
+                        <p>Düzenli olarak:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Haftalık özet raporlar</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Gelişim grafikleri</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Başarı istatistikleri</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="feature-card">
+                <h3 class="mb-4"><i class="fas fa-users text-primary me-2"></i> Üyelik Tipleri</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5><i class="fas fa-user-friends text-info me-2"></i> Veli Üyeliği</h5>
+                                <p>Veli olarak kayıt olduğunuzda:</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i> Çocuğunuzun ilerlemesini takip edebilme</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Gelişim raporlarına erişim</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Aktivite önerilerini görüntüleme</li>
+                                </ul>
+                                <a asp-controller="Account" asp-action="ParentRegister" class="btn btn-primary mt-3">
+                                    <i class="fas fa-user-plus me-2"></i> Veli Olarak Kayıt Ol
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5><i class="fas fa-chalkboard-teacher text-warning me-2"></i> Eğitmen Üyeliği</h5>
+                                <p>Eğitmen olarak kayıt olduğunuzda:</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i> Öğrenci ilerlemelerini takip edebilme</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Detaylı analiz raporlarına erişim</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Öğrenci grupları oluşturabilme</li>
+                                </ul>
+                                <a href="/Account/Register?type=Instructor" class="btn btn-primary mt-3">
+                                    <i class="fas fa-user-plus me-2"></i> Eğitmen Olarak Kayıt Ol
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4 mb-5">
+        <div class="col-12 text-center">
+            <p class="mb-4">Hemen üye olun ve eğitim yolculuğuna başlayın!</p>
+            <a href="/Account/Register" class="btn btn-primary btn-lg pulse">
+                <i class="fas fa-rocket me-2"></i>
+                Ücretsiz Kayıt Ol
+            </a>
+        </div>
+    </div>
+</div> 

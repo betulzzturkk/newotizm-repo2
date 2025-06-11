@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="100" cy="100" r="90" fill="url(#gradient)" />
+    
+    <!-- Puzzle Pieces -->
+    <path d="M85,60 C85,53 88,50 95,50 C102,50 105,53 105,60 C105,67 102,70 95,70 C88,70 85,67 85,60 M95,75 C105,75 115,65 115,55 C115,45 105,35 95,35 C85,35 75,45 75,55 C75,65 85,75 95,75" fill="white" />
+    <path d="M125,90 C125,83 128,80 135,80 C142,80 145,83 145,90 C145,97 142,100 135,100 C128,100 125,97 125,90 M135,105 C145,105 155,95 155,85 C155,75 145,65 135,65 C125,65 115,75 115,85 C115,95 125,105 135,105" fill="white" />
+    <path d="M85,120 C85,113 88,110 95,110 C102,110 105,113 105,120 C105,127 102,130 95,130 C88,130 85,127 85,120 M95,135 C105,135 115,125 115,115 C115,105 105,95 95,95 C85,95 75,105 75,115 C75,125 85,135 95,135" fill="white" />
+    
+    <!-- Gradient Definition -->
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2193b0" />
+            <stop offset="100%" style="stop-color:#6dd5ed" />
+        </linearGradient>
+    </defs>
+</svg> 
