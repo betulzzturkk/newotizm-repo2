@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    font-family: 'Nunito', Arial, sans-serif;
+    background: #f6f7fb;
+}
+.parent-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    background: linear-gradient(180deg, #2C3E50 0%, #3498DB 100%);
+    color: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+}
+.sidebar-header {
+    padding: 30px 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.sidebar-header i {
+    font-size: 1.8rem;
+    color: #3498DB;
+}
+.parent-sidebar nav {
+    flex: 1;
+    padding: 20px 0;
+    overflow-y: auto;
+}
+.parent-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.parent-sidebar li {
+    margin: 5px 15px;
+}
+.parent-sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.parent-sidebar a:hover,
+.parent-sidebar a.active {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    transform: translateX(5px);
+}
+.parent-sidebar i {
+    font-size: 1.2rem;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
+.logout-link {
+    margin-top: auto;
+    color: #e74c3c !important;
+}
+.logout-link:hover {
+    background: rgba(231, 76, 60, 0.1) !important;
+}
+.parent-content {
+    margin-left: 280px;
+    min-height: 100vh;
+    background: #f8f9fa;
+    padding: 0;
+}
+@media (max-width: 900px) {
+    .parent-sidebar {
+        width: 80px;
+    }
+    
+    .sidebar-header span,
+    .parent-sidebar a span {
+        display: none;
+    }
+    
+    .parent-sidebar a {
+        justify-content: center;
+        padding: 15px;
+    }
+    
+    .parent-sidebar i {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+    
+    .parent-content {
+        margin-left: 80px;
+    }
+}
+
+/* Veli Paneli Ana Sayfa Stilleri */
+.parent-dashboard {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.welcome-banner {
+    background: linear-gradient(180deg, #2C3E50 0%, #3498DB 100%);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.welcome-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.welcome-banner p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.menu-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.menu-card a {
+    display: block;
+    padding: 35px;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.card-content h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Kart Renkleri */
+.education-card .card-icon { background: linear-gradient(135deg, #6B48FF 0%, #FFB347 100%); }
+.child-info-card .card-icon { background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%); }
+.progress-card .card-icon { background: linear-gradient(135deg, #2196F3 0%, #03A9F4 100%); }
+.messages-card .card-icon { background: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%); }
+.calendar-card .card-icon { background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%); }
+.guidance-card .card-icon { background: linear-gradient(135deg, #E91E63 0%, #F48FB1 100%); }
+.home-tips-card .card-icon { background: linear-gradient(135deg, #00BCD4 0%, #4DD0E1 100%); }
+.settings-card .card-icon { background: linear-gradient(135deg, #607D8B 0%, #90A4AE 100%); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .parent-dashboard {
+        padding: 15px;
+    }
+    
+    .welcome-banner {
+        padding: 30px 20px;
+    }
+    
+    .welcome-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .menu-cards {
+        grid-template-columns: 1fr;
+    }
+} 

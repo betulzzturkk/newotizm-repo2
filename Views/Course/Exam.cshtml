@@ -1,0 +1,112 @@
+@using Newtonsoft.Json
+@model List<AutismEducationPlatform.Web.Models.ViewModels.ExamQuestionViewModel>
+@{
+    ViewData["Title"] = "Sınav";
+    var level = ViewBag.Level;
+}
+<link rel="stylesheet" href="/css/animals-bg.css" />
+<div class="body-animals-bg" style="background-image: url('/images/animals/animal-bg-pattern.png'), linear-gradient(135deg, #FFB347 0%, #6B48FF 50%, #FF6B6B 100%); background-size: 300px, cover; background-repeat: repeat;">
+    <div class="cloud"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;">
+                    <i class="fas fa-star me-2"></i> Seviye @level Sınavı
+                </h2>
+                <p class="lead">10 soruluk temel sınav. Başarılar!</p>
+            </div>
+        </div>
+        <div id="exam-area">
+            <div class="card shadow-lg p-4 mb-4" style="border-radius: 20px;">
+                <div id="question-area">
+                    <h4 id="question-text"></h4>
+                    <div id="options" class="mt-4"></div>
+                </div>
+                <div class="progress my-4" style="height: 20px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                </div>
+            </div>
+        </div>
+        <div id="result-area" style="display:none;">
+            <div class="card shadow-lg p-4 text-center" style="border-radius: 20px;">
+                <h3 class="mb-3">Sınav Sonucu</h3>
+                <p class="mb-2"><b>Doğru Sayısı:</b> <span id="correct-count"></span></p>
+                <p class="mb-2"><b>Yanlış Sayısı:</b> <span id="wrong-count"></span></p>
+                <p class="mb-3"><b>Başarı Yüzdesi:</b> <span id="score"></span>%</p>
+                <a href="/Course/Exams" class="btn btn-primary mt-3">Sınavlara Dön</a>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        const questions = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+        let current = 0;
+        let correct = 0;
+        let wrong = 0;
+        let answers = [];
+        function showQuestion(idx) {
+            const q = questions[idx];
+            document.getElementById('question-text').textContent = (idx+1) + '. ' + q.Question;
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+            q.Options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'btn btn-outline-primary btn-lg d-block w-100 mb-2';
+                btn.textContent = opt;
+                btn.onclick = function() { answer(i); };
+                optionsDiv.appendChild(btn);
+            });
+            // Progress
+            const percent = Math.round((idx) * 100 / questions.length);
+            const bar = document.getElementById('progress-bar');
+            bar.style.width = percent + '%';
+            bar.textContent = percent + '%';
+            bar.setAttribute('aria-valuenow', percent);
+        }
+        function answer(selected) {
+            const q = questions[current];
+            const isCorrect = selected === q.CorrectIndex;
+            answers.push({
+                QuestionText: q.Question,
+                SelectedOption: q.Options[selected],
+                CorrectOption: q.Options[q.CorrectIndex],
+                IsCorrect: isCorrect
+            });
+            if (isCorrect) correct++; else wrong++;
+            current++;
+            if (current < questions.length) {
+                showQuestion(current);
+            } else {
+                showResult();
+            }
+        }
+        function showResult() {
+            document.getElementById('exam-area').style.display = 'none';
+            document.getElementById('result-area').style.display = 'block';
+            document.getElementById('correct-count').textContent = correct;
+            document.getElementById('wrong-count').textContent = wrong;
+            const score = Math.round((correct * 100) / questions.length);
+            document.getElementById('score').textContent = score;
+            // Sonucu veritabanına kaydet
+            fetch('/Course/SaveExamResult', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    examLevel: @level,
+                    correctCount: correct,
+                    wrongCount: wrong,
+                    totalQuestions: questions.length,
+                    score: score,
+                    answers: answers
+                })
+            });
+        }
+        // İlk soruyu göster
+        showQuestion(0);
+    </script>
+} 

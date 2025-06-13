@@ -5,43 +5,223 @@
 }
 
 <div class="container py-5">
-    <h1 class="text-center mb-5">Eğitimlerimiz</h1>
-
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+            <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;" data-aos="fade-up">
+                <i class="fas fa-graduation-cap me-2"></i> Eğitimler
+            </h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                Hadi birlikte öğrenelim! Aşağıdaki eğitimlerden dilediğini seç ve eğlenceli bir şekilde keşfetmeye başla.
+            </p>
+        </div>
+    </div>
     <div class="row g-4">
-        @foreach (var course in Model)
-        {
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="@course.ImageUrl" class="card-img-top" alt="@course.Name">
-                    <div class="card-body">
-                        <h4 class="card-title">@course.Name</h4>
-                        <p class="card-text">@course.Description</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="badge bg-primary">@course.Category</span>
-                            <a asp-action="Details" asp-route-id="@course.Id" class="btn btn-outline-primary">
-                                Detayları Gör
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #8C6CFF 0%, #1E90FF 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-paw"></i></div>
+                <h4>Hayvanlar</h4>
+                <p>Hayvanları tanı, seslerini öğren ve eğlenceli aktivitelerle keşfet!</p>
+                <a href="/Course/Animals" class="btn btn-light btn-lg mt-2">Başla</a>
             </div>
-        }
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #FFB347 0%, #FF6B6B 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-palette"></i></div>
+                <h4>Renkler</h4>
+                <p>Renkleri öğren, boyama etkinlikleriyle yaratıcılığını geliştir!</p>
+                <a href="/Course/Colors" class="btn btn-light btn-lg mt-2">Başla</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #4CAF50 0%, #17A2B8 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-shapes"></i></div>
+                <h4>Şekiller</h4>
+                <p>Farklı şekilleri tanı, oyunlarla pekiştir!</p>
+                <a href="/Course/Shapes" class="btn btn-light btn-lg mt-2">Başla</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFC107 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-sort-numeric-up"></i></div>
+                <h4>Sayılar</h4>
+                <p>Sayıları öğren, sayma oyunlarıyla eğlen!</p>
+                <a href="/Course/Numbers" class="btn btn-light btn-lg mt-2">Başla</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #1E90FF 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-book-open"></i></div>
+                <h4>Masallar</h4>
+                <p>Renkli masallarla hayal gücünü geliştir!</p>
+                <a href="/Course/Tales" class="btn btn-light btn-lg mt-2">Başla</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="700">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #FFC107 0%, #4CAF50 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-traffic-light"></i></div>
+                <h4>Trafik İşaretleri</h4>
+                <p>Trafik işaretlerini öğren, güvenli davranışlar kazan!</p>
+                <a href="/Course/TrafficSigns" class="btn btn-light btn-lg mt-2">Başla</a>
+            </div>
+        </div>
+    </div>
+    <!-- Sabit eklenen yeni eğitim kartları -->
+    <div class="row g-4 mt-2">
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="800">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #FFB347 0%, #FF6B6B 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-puzzle-piece"></i></div>
+                <h4>Eşleştirme Oyunları</h4>
+                <p>Görsel ve kavramsal eşleştirme oyunlarıyla eğlenerek öğren!</p>
+                <button class="btn btn-light btn-lg mt-2" onclick="alert('ÇOK YAKINDA')">Başla</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="900">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #6BCB77 0%, #4D96FF 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-smile"></i></div>
+                <h4>Duygular</h4>
+                <p>Duyguları tanı, yüz ifadelerini ve hisleri keşfet!</p>
+                <button class="btn btn-light btn-lg mt-2" onclick="alert('ÇOK YAKINDA')">Başla</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="1000">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFC107 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-comment-dots"></i></div>
+                <h4>Basit Cümle Kurma</h4>
+                <p>Kısa ve anlamlı cümleler kurmayı öğren!</p>
+                <button class="btn btn-light btn-lg mt-2" onclick="alert('ÇOK YAKINDA')">Başla</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="1100">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #1E90FF 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-bath"></i></div>
+                <h4>Günlük Yaşam Becerileri</h4>
+                <p>Giyinme, temizlik, yemek yeme gibi günlük yaşam becerilerini öğren!</p>
+                <button class="btn btn-light btn-lg mt-2" onclick="alert('ÇOK YAKINDA')">Başla</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="1200">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #FFC107 0%, #4CAF50 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-users"></i></div>
+                <h4>Sosyal Beceriler</h4>
+                <p>Arkadaşlık, paylaşma ve iletişim gibi sosyal becerileri geliştir!</p>
+                <button class="btn btn-light btn-lg mt-2" onclick="alert('ÇOK YAKINDA')">Başla</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="1300">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #17A2B8 0%, #FFB347 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-language"></i></div>
+                <h4>Dil ve İletişim</h4>
+                <p>Kelime hazinesi ve iletişim becerilerini artır!</p>
+                <button class="btn btn-light btn-lg mt-2" onclick="alert('ÇOK YAKINDA')">Başla</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="1400">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #6B48FF 0%, #FF6B6B 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-redo"></i></div>
+                <h4>Tekrar Sistemi</h4>
+                <p>Öğrendiklerini tekrar et, bilgilerini pekiştir!</p>
+                <button class="btn btn-light btn-lg mt-2" onclick="alert('ÇOK YAKINDA')">Başla</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="1500">
+            <div class="card h-100 shadow-lg border-0 text-center p-4 course-card" style="background: linear-gradient(135deg, #FFB347 0%, #4D96FF 100%); color: #fff; border-radius: 25px;">
+                <div class="mb-3" style="font-size:3rem;"><i class="fas fa-clipboard-check"></i></div>
+                <h4>Sınavlar</h4>
+                <p>Bilgini test et, gelişimini gör!</p>
+                <a href="/Course/Exams" class="btn btn-light btn-lg mt-2">Başla</a>
+            </div>
+        </div>
     </div>
 </div>
 
-@section Styles {
-    <style>
-        .card {
-            transition: transform 0.3s ease;
-        }
+@functions {
+    private string GetCourseImage(string courseName)
+    {
+        return courseName.ToLower() switch
+        {
+            var name when name.Contains("hayvan") => "/images/courses/animals.jpg",
+            var name when name.Contains("renk") => "/images/courses/colors.png",
+            var name when name.Contains("sayı") => "/images/courses/numbers.jpg",
+            var name when name.Contains("duygu") => "/images/courses/emotions.jpg",
+            var name when name.Contains("şekil") => "/images/courses/shapes.jpg",
+            var name when name.Contains("trafik") => "/images/courses/traffic.jpg",
+            var name when name.Contains("görgü") => "/images/courses/manners.jpg",
+            var name when name.Contains("masal") => "/images/courses/stories.jpg",
+            var name when name.Contains("video") => "/images/courses/videos.jpg",
+            _ => "/images/courses/default.jpg"
+        };
+    }
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+<style>
+    .card {
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
 
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
-} 
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .difficulty-stars {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover .difficulty-stars {
+        transform: scale(1.1);
+    }
+
+    .difficulty-stars i {
+        margin: 0 2px;
+        font-size: 1.2rem;
+    }
+
+    .star-active {
+        color: #FFD700;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        animation: star-pulse 2s infinite;
+    }
+
+    .star-inactive {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    @@keyframes star-pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .badge {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        border-radius: 15px;
+    }
+
+    .course-card .btn {
+        font-size: 1.2rem;
+        font-weight: 700;
+        border-radius: 30px;
+        padding: 10px 32px;
+        transition: all 0.2s;
+    }
+
+    .course-card .btn:hover {
+        background: #fff;
+        color: #6B48FF;
+        transform: scale(1.08);
+    }
+</style> 

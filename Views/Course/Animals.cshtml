@@ -4,134 +4,158 @@
     ViewData["Title"] = "Hayvanlar";
 }
 
-<div class="container mt-4">
-    <div class="row mb-4">
-        <div class="col">
-            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-primary">
-                <i class="fas fa-arrow-left me-2"></i>Eğitimlere Dön
-            </a>
+<!-- Animasyonlu arka plan için harici CSS -->
+<link rel="stylesheet" href="/css/animals-bg.css" />
+
+<div class="body-animals-bg" style="background-image: url('/images/animals/animal-bg-pattern.png'), linear-gradient(135deg, #FFB347 0%, #6B48FF 50%, #FF6B6B 100%); background-size: 300px, cover; background-repeat: repeat;">
+    <!-- Animasyonlu bulutlar -->
+    <div class="cloud"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-3">
+            <div class="col-lg-10">
+                <div class="alert alert-info text-center mb-4" style="font-size:1.2rem;">
+                    <i class="fas fa-info-circle me-2"></i>
+                    İlerlemenizin kaydedilmesi için <a href="/Account/Login" class="alert-link">giriş yapın</a> veya <a href="/Account/Register" class="alert-link">kaydolun</a>.
+                </div>
+            </div>
         </div>
-    </div>
-
-    <h2 class="text-center mb-4">
-        <i class="fas fa-paw me-2"></i>
-        Hayvanları Tanıyalım
-    </h2>
-    <p class="text-center mb-5">Hayvanların resimlerine tıklayarak seslerini dinleyebilirsiniz!</p>
-
-    <div class="row g-4">
-        @foreach (var animal in Model)
-        {
-            <div class="col-md-6 col-lg-3">
-                <div class="card animal-card h-100">
-                    <img src="@animal.ImagePath" class="card-img-top animal-image" alt="@animal.Name" 
-                         onclick="playAnimalSound('@animal.SoundPath', '@animal.Name')">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">@animal.Name</h5>
-                        <p class="card-text">@animal.Description</p>
-                        <button class="btn btn-primary play-btn" onclick="playAnimalSound('@animal.SoundPath', '@animal.Name')">
-                            <i class="fas fa-volume-up me-2"></i>Sesi Çal
-                        </button>
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;" data-aos="fade-up">
+                    <i class="fas fa-paw me-2"></i> Hayvanlar
+                </h2>
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                    Hayvanları tanı, seslerini dinle ve ilerlemeni takip et!
+                </p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <!-- Kedi -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #FFB347 0%, #FF6B6B 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/animals/cat.jpg" alt="Kedi" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Kedi</h4>
+                    <p>Kediler oyuncu ve meraklıdır.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/kedi.mp3', 'Kedi')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-kedi" role="progressbar" style="width: 0%">0%</div>
                     </div>
                 </div>
             </div>
-        }
+            <!-- Köpek -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #8C6CFF 0%, #1E90FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/animals/dog.jpg" alt="Köpek" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Köpek</h4>
+                    <p>Köpekler sadık ve sevimli hayvanlardır.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/kopek.mp3', 'Köpek')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-kopek" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- İnek -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #4CAF50 0%, #17A2B8 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/animals/cow.jpg" alt="İnek" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>İnek</h4>
+                    <p>İnekler sakin ve süt veren hayvanlardır.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/inek.mp3', 'İnek')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-inek" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Kuş -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #1E90FF 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/animals/bird.jpg" alt="Kuş" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Kuş</h4>
+                    <p>Kuşlar uçar ve güzel sesler çıkarır.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/kus.mp3', 'Kuş')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-kus" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- At -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #FFC107 0%, #4CAF50 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/animals/horse.jpg" alt="At" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>At</h4>
+                    <p>Atlar hızlı koşar ve güçlüdür.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/at.mp3', 'At')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-at" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Aslan -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="700">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #6B48FF 0%, #FF6B6B 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/animals/lion.jpg" alt="Aslan" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Aslan</h4>
+                    <p>Aslan ormanın kralıdır.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/aslan.mp3', 'Aslan')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-aslan" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tavuk -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #FFB347 0%, #4D96FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/animals/chicken.jpg" alt="Tavuk" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Tavuk</h4>
+                    <p>Tavuklar yumurta yapar ve gıdaklar.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/tavuk.mp3', 'Tavuk')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-tavuk" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fil -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="900">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #17A2B8 0%, #FFB347 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/animals/elephant.jpg" alt="Fil" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Fil</h4>
+                    <p>Filler büyük ve güçlüdür.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/fil.mp3', 'Fil')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-fil" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<audio id="animalSound"></audio>
-
-<style>
-    .animal-card {
-        transition: transform 0.3s ease;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
-    }
-
-    .animal-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-
-    .animal-image {
-        height: 200px;
-        object-fit: cover;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .animal-image:hover {
-        transform: scale(1.05);
-    }
-
-    .card-title {
-        color: #333;
-        font-weight: bold;
-        margin-top: 1rem;
-        font-size: 1.25rem;
-    }
-
-    .card-text {
-        color: #666;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 1.5rem;
-    }
-
-    .play-btn {
-        border-radius: 50px;
-        padding: 8px 20px;
-        transition: all 0.3s ease;
-        background: linear-gradient(45deg, #007bff, #0056b3);
-        border: none;
-    }
-
-    .play-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        background: linear-gradient(45deg, #0056b3, #004085);
-    }
-
-    .play-btn:active {
-        transform: scale(0.95);
-    }
-
-    @@media (max-width: 768px) {
-        .animal-card {
-            margin-bottom: 1rem;
-        }
-
-        .animal-image {
-            height: 180px;
-        }
-    }
-</style>
-
 @section Scripts {
     <script>
-        let currentSound = null;
-
-        function playAnimalSound(soundPath, animalName) {
-            const audio = document.getElementById('animalSound');
-            
-            // Eğer başka bir ses çalıyorsa durdur
-            if (currentSound && !currentSound.paused) {
-                currentSound.pause();
-                currentSound.currentTime = 0;
-            }
-            
-            // Yeni sesi çal
-            audio.src = soundPath;
-            audio.play()
-                .then(() => {
-                    currentSound = audio;
-                })
-                .catch(error => {
-                    console.error('Ses çalma hatası:', error);
-                    alert(`${animalName} sesi yüklenirken bir hata oluştu.`);
-                });
+        function playSoundAndProgress(soundPath, animalName) {
+            var audio = new Audio(soundPath);
+            audio.play();
+            var progressBar = document.getElementById('progress-' + animalName.toLowerCase());
+            var currentProgress = parseInt(progressBar.style.width) || 0;
+            // 5 tıklamada %100: her tıklamada +20
+            var newProgress = currentProgress + 20;
+            if (newProgress > 100) newProgress = 100;
+            progressBar.style.width = newProgress + '%';
+            progressBar.textContent = newProgress + '%';
+            progressBar.setAttribute('aria-valuenow', newProgress);
+            // AJAX ile ilerleme bilgisini kaydet
+            fetch('/Course/SaveProgress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ animal: animalName, progress: newProgress })
+            })
+            .then(response => response.json())
+            .then(data => console.log('Success:', data))
+            .catch((error) => console.error('Error:', error));
         }
     </script>
 } 

@@ -1,157 +1,133 @@
 @using AutismEducationPlatform.Web.Models.ViewModels
-@model ParentDashboardViewModel
+@model ParentProfileViewModel
 
 @{
-    ViewData["Title"] = "Ana Sayfa";
-    Layout = "_ParentLayout";
+    ViewData["Title"] = "Veli Paneli - Ana Sayfa";
+    Layout = "~/Views/Shared/_ParentLayout.cshtml";
 }
 
-<div class="container py-4">
-    <div class="row">
-        <div class="col-md-12 mb-4">
-            <div class="card shadow-sm" style="background: linear-gradient(135deg, #6B48FF 0%, #8C6FFF 100%);">
-                <div class="card-body text-white">
-                    <h2 class="card-title text-white">Hoş Geldiniz!</h2>
-                    <p class="card-text opacity-75">Çocuğunuzun eğitim sürecini takip edebilir, ilerleme raporlarını görüntüleyebilir ve eğitmenlerle iletişime geçebilirsiniz.</p>
-                </div>
-            </div>
-        </div>
+@if (TempData["ProfileSuccess"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="max-width:600px;margin:20px auto 0 auto;">
+        @TempData["ProfileSuccess"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+    </div>
+}
+
+<div class="parent-dashboard">
+    <div class="profile-image-container" style="text-align:center; margin-bottom: -30px;">
+        <img src="/images/profiles/profil.jpg" alt="Profil Resmi" class="profile-img" style="width:110px; height:110px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.12); border:4px solid #fff; background:#eee;" />
+    </div>
+    <!-- Üst Banner -->
+    <div class="welcome-banner">
+        <h1>Hoş Geldiniz, @Model.FirstName @Model.LastName!</h1>
+        <p>Çocuğunuzun eğitim yolculuğuna devam etmek için eğitimlere göz atın.</p>
     </div>
 
-    <div class="row">
-        <div class="col-md-3 mb-4">
-            <div class="card shadow-sm h-100">
-                <div class="card-body text-center">
-                    <div class="mb-3">
-                        <i class="bi bi-book text-primary" style="font-size: 2.5rem;"></i>
-                    </div>
-                    <h5 class="card-title">Eğitimler</h5>
-                    <p class="card-text text-muted">Mevcut eğitimleri görüntüleyin ve yeni eğitimlere kayıt olun.</p>
-                    <a asp-controller="Course" asp-action="Index" class="btn btn-primary mt-auto">
-                        <i class="bi bi-arrow-right-circle me-1"></i>
-                        Eğitimlere Git
-                    </a>
+    <!-- Ana Menü Kartları -->
+    <div class="menu-cards">
+        <!-- Eğitimler Kartı -->
+        <div class="menu-card education-card">
+            <a href="/Parent/Educations">
+                <div class="card-icon">
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
-            </div>
+                <div class="card-content">
+                    <h2>Eğitimlere Git</h2>
+                    <p>Çocuğunuzun eğitim yolculuğuna devam edin</p>
+                </div>
+            </a>
         </div>
 
-        <div class="col-md-3 mb-4">
-            <div class="card shadow-sm h-100">
-                <div class="card-body text-center">
-                    <div class="mb-3">
-                        <i class="bi bi-graph-up text-primary" style="font-size: 2.5rem;"></i>
-                    </div>
-                    <h5 class="card-title">İlerleme Raporu</h5>
-                    <p class="card-text text-muted">Çocuğunuzun eğitim sürecindeki gelişimini takip edin.</p>
-                    <a asp-controller="Progress" asp-action="Index" class="btn btn-primary mt-auto">
-                        <i class="bi bi-arrow-right-circle me-1"></i>
-                        Raporu Görüntüle
-                    </a>
+        <!-- Çocuk Bilgileri Kartı -->
+        <div class="menu-card child-info-card">
+            <a href="/Parent/ChildInfo">
+                <div class="card-icon">
+                    <i class="fas fa-baby"></i>
                 </div>
-            </div>
+                <div class="card-content">
+                    <h2>Çocuk Bilgileri</h2>
+                    <p>Ad, yaş, gelişim durumu</p>
+                </div>
+            </a>
         </div>
 
-        <div class="col-md-3 mb-4">
-            <div class="card shadow-sm h-100">
-                <div class="card-body text-center">
-                    <div class="mb-3">
-                        <i class="bi bi-newspaper text-primary" style="font-size: 2.5rem;"></i>
-                    </div>
-                    <h5 class="card-title">Haberler</h5>
-                    <p class="card-text text-muted">En son haberleri ve duyuruları takip edin.</p>
-                    <a asp-controller="News" asp-action="Index" class="btn btn-primary mt-auto">
-                        <i class="bi bi-arrow-right-circle me-1"></i>
-                        Haberleri Gör
-                    </a>
+        <!-- Gelişim Raporu Kartı -->
+        <div class="menu-card progress-card">
+            <a href="/Parent/Progress">
+                <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
                 </div>
-            </div>
+                <div class="card-content">
+                    <h2>Gelişim Raporu</h2>
+                    <p>Çocuk için özet rapor</p>
+                </div>
+            </a>
         </div>
 
-        <div class="col-md-3 mb-4">
-            <div class="card shadow-sm h-100">
-                <div class="card-body text-center">
-                    <div class="mb-3">
-                        <i class="bi bi-person-vcard text-primary" style="font-size: 2.5rem;"></i>
-                    </div>
-                    <h5 class="card-title">Çocuk Bilgileri</h5>
-                    <div class="text-start mt-3">
-                        <p class="mb-2"><strong>Ad:</strong> Ahmet</p>
-                        <p class="mb-2"><strong>Yaş:</strong> 8</p>
-                        <p class="mb-2"><strong>Sınıf:</strong> 2</p>
-                        <p class="mb-0"><strong>Eğitmen:</strong> Ayşe Öğretmen</p>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3">
-                        <i class="bi bi-pencil-square me-1"></i>
-                        Düzenle
-                    </a>
+        <!-- Mesajlar Kartı -->
+        <div class="menu-card messages-card">
+            <a href="/Parent/Messages">
+                <div class="card-icon">
+                    <i class="fas fa-envelope"></i>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-8 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <i class="bi bi-calendar3 me-2"></i>
-                        Yaklaşan Eğitimler
-                    </h5>
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Tarih</th>
-                                    <th>Eğitim</th>
-                                    <th>Eğitmen</th>
-                                    <th>Durum</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>15 Nisan</td>
-                                    <td>Sosyal Beceriler</td>
-                                    <td>Ayşe Öğretmen</td>
-                                    <td><span class="badge bg-success">Onaylandı</span></td>
-                                </tr>
-                                <tr>
-                                    <td>18 Nisan</td>
-                                    <td>Dil Gelişimi</td>
-                                    <td>Mehmet Öğretmen</td>
-                                    <td><span class="badge bg-warning">Beklemede</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="card-content">
+                    <h2>Mesajlar</h2>
+                    <p>Eğitmen-veli iletişimi</p>
                 </div>
-            </div>
+            </a>
         </div>
 
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <i class="bi bi-bell me-2"></i>
-                        Duyurular
-                    </h5>
-                    <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1">Yeni Eğitim Programı</h6>
-                                <small class="text-muted">3 gün önce</small>
-                            </div>
-                            <p class="mb-1">Mayıs ayı eğitim programı yayınlandı.</p>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1">Veli Toplantısı</h6>
-                                <small class="text-muted">1 hafta önce</small>
-                            </div>
-                            <p class="mb-1">20 Nisan'da veli toplantısı yapılacaktır.</p>
-                        </a>
-                    </div>
+        <!-- Takvim Kartı -->
+        <div class="menu-card calendar-card">
+            <a href="/Parent/Calendar">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-alt"></i>
                 </div>
-            </div>
+                <div class="card-content">
+                    <h2>Takvim</h2>
+                    <p>Eğitim günleri ve öneriler</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Rehberlik Kartı -->
+        <div class="menu-card guidance-card">
+            <a href="/Parent/Guidance">
+                <div class="card-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="card-content">
+                    <h2>Rehberlik</h2>
+                    <p>Veli bilgilendirme yazıları</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Evde Öneriler Kartı -->
+        <div class="menu-card home-tips-card">
+            <a href="/Parent/HomeTips">
+                <div class="card-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="card-content">
+                    <h2>Evde Öneriler</h2>
+                    <p>Günlük küçük etkinlik fikirleri</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Ayarlar Kartı -->
+        <div class="menu-card settings-card">
+            <a href="/Parent/Settings">
+                <div class="card-icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="card-content">
+                    <h2>Ayarlar</h2>
+                    <p>Profil bilgileri, parola değişimi</p>
+                </div>
+            </a>
         </div>
     </div>
 </div> 

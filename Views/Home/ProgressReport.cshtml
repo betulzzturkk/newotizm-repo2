@@ -1,0 +1,68 @@
+@{
+    ViewData["Title"] = "İlerleme Raporu";
+}
+<style>
+    .progress-report-bg {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        background-image: url('https://www.transparenttextures.com/patterns/childs-play.png');
+        background-repeat: repeat;
+    }
+</style>
+<div class="progress-report-bg">
+    <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;" data-aos="fade-up">
+                    <i class="fas fa-chart-line me-2"></i> İlerleme Raporu
+                </h2>
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                    Eğitimlerdeki ilerleme kayıtlarınızı burada görebilirsiniz.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-lg border-0 p-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Eğitim İlerleme Kayıtları</h4>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Eğitim</th>
+                                        <th>İlerleme</th>
+                                        <th>Tarih</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null && Model.Any())
+                                    {
+                                        @foreach (var record in Model)
+                                        {
+                                            <tr>
+                                                <td>@record.EducationName</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: @record.Progress%">@record.Progress%</div>
+                                                    </div>
+                                                </td>
+                                                <td>@record.Date.ToString("dd/MM/yyyy")</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="3" class="text-center">Henüz ilerleme kaydı bulunmamaktadır.</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

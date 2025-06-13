@@ -8,5 +8,7 @@ namespace AutismEducationPlatform.Web.Models.ViewModels
         public string Description { get; set; } = string.Empty;
         public string Color { get; set; } = string.Empty;
         public string Example { get; set; } = string.Empty; // Örnek: "2 elma", "3 kuş" gibi
+        public string SoundPath { get; set; } = string.Empty;
+        public int Progress { get; set; } = 0; // 0-100 arası ilerleme
     }
 } 

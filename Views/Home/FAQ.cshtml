@@ -1,70 +1,91 @@
 @{
     ViewData["Title"] = "Sık Sorulan Sorular";
 }
-
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="hero-section text-center">
-                <h1 class="hero-title">Sık Sorulan Sorular</h1>
-                <p class="hero-subtitle">Platformumuz hakkında merak edilenler</p>
-            </div>
+<div class="container py-5">
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+            <h2 class="mb-3" data-aos="fade-up">Sık Sorulan Sorular</h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                Platformumuz hakkında en çok merak edilen soruları ve cevaplarını aşağıda bulabilirsiniz.
+            </p>
         </div>
     </div>
-
-    <div class="row mt-5">
-        <div class="col-12">
-            <div class="feature-card">
-                <h4 class="mb-4"><i class="fas fa-question-circle text-primary me-2"></i> Platform Hakkında</h4>
-                
-                <div class="mb-4">
-                    <h5><i class="fas fa-angle-right text-primary me-2"></i> Otizm Eğitim Platformu nedir?</h5>
-                    <p>Otizmli çocuklar için özel olarak tasarlanmış, eğlenceli ve interaktif eğitim içerikleri sunan bir online platformdur.</p>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header" id="faq1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            <i class="fas fa-user-plus me-2 text-primary"></i> Platforma nasıl kayıt olabilirim?
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Ana sayfadaki "Kayıt Ol" butonuna tıklayarak veli veya eğitmen olarak ücretsiz kayıt olabilirsiniz.
+                        </div>
+                    </div>
                 </div>
-
-                <div class="mb-4">
-                    <h5><i class="fas fa-angle-right text-primary me-2"></i> Platformu kimler kullanabilir?</h5>
-                    <p>Platformumuz otizmli çocukların aileleri ve eğitmenler için tasarlanmıştır.</p>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="accordion-header" id="faq2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            <i class="fas fa-child me-2 text-success"></i> Çocuğum için nasıl profil oluşturabilirim?
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Kayıt olduktan sonra hesabınıza giriş yaparak çocuk profilinizi oluşturabilirsiniz.
+                        </div>
+                    </div>
                 </div>
-
-                <div class="mb-4">
-                    <h5><i class="fas fa-angle-right text-primary me-2"></i> Eğitim içerikleri nelerdir?</h5>
-                    <p>Platformumuzda temel kavramlar, eşleştirme oyunları, hafıza kartları ve interaktif aktiviteler bulunmaktadır.</p>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                    <h2 class="accordion-header" id="faq3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            <i class="fas fa-play me-2 text-warning"></i> Eğitimleri nasıl izleyebilirim?
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Hesabınıza giriş yaptıktan sonra "Eğitime Git" butonuna tıklayarak eğitim videolarını izleyebilirsiniz.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+                    <h2 class="accordion-header" id="faq4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            <i class="fas fa-chart-line me-2 text-info"></i> İlerleme raporuna nasıl ulaşabilirim?
+                        </button>
+                    </h2>
+                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Eğitimleri izledikçe çocuğunuzun gelişimi otomatik olarak raporlanır. Hesabınızdan bu raporlara ulaşabilirsiniz.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="600">
+                    <h2 class="accordion-header" id="faq5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            <i class="fas fa-newspaper me-2 text-danger"></i> Platformda hangi ek hizmetler var?
+                        </button>
+                    </h2>
+                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Haberler, rehberlik, aile desteği ve güncel duyurular gibi birçok ek hizmetten faydalanabilirsiniz.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="700">
+                    <h2 class="accordion-header" id="faq6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            <i class="fas fa-lock me-2 text-secondary"></i> Bilgilerim güvende mi?
+                        </button>
+                    </h2>
+                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Tüm bilgileriniz gizli tutulur ve güvenliğiniz için gerekli önlemler alınır.
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <div class="col-12">
-            <div class="feature-card">
-                <h4 class="mb-4"><i class="fas fa-user-circle text-primary me-2"></i> Üyelik ve Kullanım</h4>
-                
-                <div class="mb-4">
-                    <h5><i class="fas fa-angle-right text-primary me-2"></i> Nasıl üye olabilirim?</h5>
-                    <p>Ana sayfadaki "Ücretsiz Kayıt Ol" butonuna tıklayarak veli veya eğitmen olarak kayıt olabilirsiniz.</p>
-                </div>
-
-                <div class="mb-4">
-                    <h5><i class="fas fa-angle-right text-primary me-2"></i> Platformu nasıl kullanabilirim?</h5>
-                    <p>Üye olduktan sonra size özel bir panel üzerinden tüm eğitim içeriklerine ve raporlara erişebilirsiniz.</p>
-                </div>
-
-                <div class="mb-4">
-                    <h5><i class="fas fa-angle-right text-primary me-2"></i> Çocuğumun gelişimini nasıl takip edebilirim?</h5>
-                    <p>Platform üzerinden çocuğunuzun tamamladığı aktiviteleri, başarı puanlarını ve gelişim grafiklerini görüntüleyebilirsiniz.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-4 mb-5">
-        <div class="col-12 text-center">
-            <p class="mb-4">Hemen üye olun ve eğitim yolculuğuna başlayın!</p>
-            <a href="/Account/Register" class="btn btn-primary btn-lg pulse">
-                <i class="fas fa-rocket me-2"></i>
-                Ücretsiz Kayıt Ol
-            </a>
         </div>
     </div>
 </div> 

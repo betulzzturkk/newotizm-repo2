@@ -1,90 +1,129 @@
 @model AutismEducationPlatform.Web.Models.ViewModels.ParentProfileViewModel
+
 @{
-    ViewData["Title"] = "Profil";
+    ViewData["Title"] = "Profil Düzenle";
+    Layout = "~/Views/Shared/_ParentLayout.cshtml";
 }
 
-<div class="container mt-4">
-    <h2>@ViewData["Title"]</h2>
-
-    @if (TempData["StatusMessage"] != null)
-    {
-        <div class="alert alert-success">
-            @TempData["StatusMessage"]
-        </div>
-    }
-
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger">
-            @TempData["ErrorMessage"]
-        </div>
-    }
-
-    <div class="row">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <form method="post" asp-action="UpdateProfile" asp-controller="Parent">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="FirstName" class="form-label">Ad</label>
-                            <input asp-for="FirstName" class="form-control" />
-                            <span asp-validation-for="FirstName" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="LastName" class="form-label">Soyad</label>
-                            <input asp-for="LastName" class="form-control" />
-                            <span asp-validation-for="LastName" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="Email" class="form-label">E-posta</label>
-                            <input asp-for="Email" class="form-control" readonly />
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="PhoneNumber" class="form-label">Telefon</label>
-                            <input asp-for="PhoneNumber" class="form-control" />
-                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="Address" class="form-label">Adres</label>
-                            <textarea asp-for="Address" class="form-control" rows="3"></textarea>
-                            <span asp-validation-for="Address" class="text-danger"></span>
-                        </div>
-
-                        <hr />
-                        <h4>Çocuk Bilgileri</h4>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="ChildName" class="form-label">Çocuğun Adı</label>
-                            <input asp-for="ChildName" class="form-control" />
-                            <span asp-validation-for="ChildName" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="ChildAge" class="form-label">Çocuğun Yaşı</label>
-                            <input asp-for="ChildAge" class="form-control" type="number" min="1" max="18" />
-                            <span asp-validation-for="ChildAge" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="ChildDiagnosis" class="form-label">Tanı</label>
-                            <textarea asp-for="ChildDiagnosis" class="form-control" rows="3"></textarea>
-                            <span asp-validation-for="ChildDiagnosis" class="text-danger"></span>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Güncelle</button>
-                    </form>
+@if (Model != null)
+{
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">
+                            <i class="fas fa-user-edit text-primary me-2"></i>
+                            Profil Düzenle
+                        </h2>
+                        <form method="post">
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label asp-for="FirstName" class="form-label">Ad</label>
+                                        <input asp-for="FirstName" class="form-control" />
+                                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label asp-for="LastName" class="form-label">Soyad</label>
+                                        <input asp-for="LastName" class="form-control" />
+                                        <span asp-validation-for="LastName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Email" class="form-label">E-posta</label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="PhoneNumber" class="form-label">Telefon</label>
+                                <input asp-for="PhoneNumber" class="form-control" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="ChildName" class="form-label">Çocuğun Adı</label>
+                                <input asp-for="ChildName" class="form-control" />
+                                <span asp-validation-for="ChildName" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="ChildAge" class="form-label">Çocuğun Yaşı</label>
+                                <input asp-for="ChildAge" class="form-control" type="number" min="2" max="18" />
+                                <span asp-validation-for="ChildAge" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Çocuğun İlgi Alanları</label>
+                                <input type="text" id="interestInput" class="form-control mb-2" placeholder="Bir ilgi alanı yazıp Enter'a basın" />
+                                <div id="interestsTags" class="mb-2"></div>
+                                <input type="hidden" asp-for="Interests" id="Interests" />
+                                <small class="text-muted">Birden fazla ilgi alanı ekleyebilirsiniz.</small>
+                                <span asp-validation-for="Interests" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <img src="@Model.ProfileImageUrl" alt="Profil Resmi" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="alert alert-danger mt-4">Profil bilgisi bulunamadı.</div>
+}
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+    // İlgi alanı tag input scripti
+    const input = document.getElementById('interestInput');
+    const tagsDiv = document.getElementById('interestsTags');
+    const hiddenInput = document.getElementById('Interests');
+    let tags = [];
+
+    // Sayfa yüklendiğinde eski değerleri yükle
+    if (hiddenInput.value) {
+        tags = hiddenInput.value.split(',').map(x => x.trim()).filter(x => x);
+        renderTags();
+    }
+
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && input.value.trim() !== '') {
+            e.preventDefault();
+            if (!tags.includes(input.value.trim())) {
+                tags.push(input.value.trim());
+                renderTags();
+            }
+            input.value = '';
+        }
+    });
+
+    function renderTags() {
+        tagsDiv.innerHTML = '';
+        tags.forEach((tag, i) => {
+            const tagEl = document.createElement('span');
+            tagEl.className = 'badge bg-primary me-1 mb-1';
+            tagEl.textContent = tag + ' ';
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.className = 'btn-close btn-close-white btn-sm ms-1';
+            removeBtn.style.fontSize = '0.7em';
+            removeBtn.onclick = () => {
+                tags.splice(i, 1);
+                renderTags();
+            };
+            tagEl.appendChild(removeBtn);
+            tagsDiv.appendChild(tagEl);
+        });
+        hiddenInput.value = tags.join(',');
+    }
+    </script>
 } 

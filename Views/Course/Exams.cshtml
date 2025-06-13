@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Sınavlar";
+    var exams = Enumerable.Range(1, 10).Select(i => new {
+        Level = i,
+        Title = $"Seviye {i}",
+        Description = $"{i}. seviyeye özel temel sorular."
+    }).ToList();
+}
+<link rel="stylesheet" href="/css/animals-bg.css" />
+<div class="body-animals-bg" style="background-image: url('/images/animals/animal-bg-pattern.png'), linear-gradient(135deg, #FFB347 0%, #6B48FF 50%, #FF6B6B 100%); background-size: 300px, cover; background-repeat: repeat;">
+    <div class="cloud"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;">
+                    <i class="fas fa-graduation-cap me-2"></i> Sınavlar
+                </h2>
+                <p class="lead">
+                    Her seviyede temel ve eğlenceli sorular seni bekliyor. Seviyeni seç ve sınavı başlat!
+                </p>
+            </div>
+        </div>
+        <div class="row g-4">
+            @foreach (var exam in exams)
+            {
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <a href="/Course/Exam/@exam.Level" class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #6B48FF 0%, #FFB347 100%); color: #fff; border-radius: 25px; min-height: 220px; text-decoration: none;">
+                        <div style="font-size:3rem;"><i class="fas fa-star"></i></div>
+                        <h4>@exam.Title</h4>
+                        <p>@exam.Description</p>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div> 

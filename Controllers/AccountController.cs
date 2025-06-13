@@ -31,46 +31,55 @@ namespace AutismEducationPlatform.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var user = new ApplicationUser
+                if (ModelState.IsValid)
                 {
-                    UserName = model.Email,
-                    Email = model.Email,
-                    Name = model.Name,
-                    PhoneNumber = model.PhoneNumber
-                };
-
-                if (model.Role == "Parent")
-                {
-                    user.ChildName = model.ChildName;
-                    user.ChildAge = model.ChildAge;
-                }
-                else if (model.Role == "Instructor")
-                {
-                    user.Specialization = model.Specialization;
-                    user.Experience = model.Experience;
-                }
-
-                var result = await _userManager.CreateAsync(user, model.Password);
-
-                if (result.Succeeded)
-                {
-                    await _userManager.AddToRoleAsync(user, model.Role);
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    var user = new ApplicationUser
+                    {
+                        UserName = model.Email,
+                        Email = model.Email,
+                        Name = model.Name,
+                        PhoneNumber = model.PhoneNumber,
+                        FirstName = model.Name,
+                        LastName = model.Name
+                    };
 
                     if (model.Role == "Parent")
-                        return RedirectToAction("Dashboard", "Parent");
+                    {
+                        user.ChildName = model.ChildName;
+                        user.ChildAge = model.ChildAge;
+                    }
                     else if (model.Role == "Instructor")
-                        return RedirectToAction("Index", "Instructor");
-                }
+                    {
+                        user.Specialization = model.Specialization;
+                    }
 
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    var result = await _userManager.CreateAsync(user, model.Password);
+
+                    if (result.Succeeded)
+                    {
+                        await _userManager.AddToRoleAsync(user, model.Role);
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+
+                        if (model.Role == "Parent")
+                            return RedirectToAction("Index", "Parent");
+                        else if (model.Role == "Instructor")
+                            return RedirectToAction("Index", "Instructor");
+                    }
+
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "Kayıt işlemi sırasında bir hata oluştu: " + ex.Message);
             }
 
             return View(model);
@@ -83,6 +92,7 @@ namespace AutismEducationPlatform.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
@@ -94,12 +104,12 @@ namespace AutismEducationPlatform.Web.Controllers
                     var user = await _userManager.FindByEmailAsync(model.Email);
                     var roles = await _userManager.GetRolesAsync(user);
 
-                    if (roles.Contains("Admin"))
-                        return RedirectToAction("Index", "Admin");
-                    else if (roles.Contains("Parent"))
-                        return RedirectToAction("Dashboard", "Parent");
+                    if (roles.Contains("Parent"))
+                        return RedirectToAction("Index", "Parent");
                     else if (roles.Contains("Instructor"))
                         return RedirectToAction("Index", "Instructor");
+                    else if (roles.Contains("Admin"))
+                        return RedirectToAction("Index", "Admin");
                 }
 
                 ModelState.AddModelError(string.Empty, "Geçersiz giriş denemesi.");
@@ -108,6 +118,7 @@ namespace AutismEducationPlatform.Web.Controllers
             return View(model);
         }
 
+        [HttpGet]
         [HttpPost]
         public async Task<IActionResult> Logout()
         {

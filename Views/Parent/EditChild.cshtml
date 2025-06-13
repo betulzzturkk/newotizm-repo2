@@ -1,0 +1,80 @@
+@model AutismEducationPlatform.Web.Models.ViewModels.ChildViewModel
+@{
+    ViewData["Title"] = "Çocuk Düzenle";
+    Layout = "~/Views/Shared/_ParentLayout.cshtml";
+}
+<div class="container py-4">
+    <h2 class="mb-4">Çocuk Düzenle</h2>
+    <form asp-action="EditChild" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Ad Soyad</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Diagnosis" class="form-label">Tanı</label>
+            <input asp-for="Diagnosis" class="form-control" placeholder="Örn: Otizm, Dikkat Eksikliği..." />
+            <span asp-validation-for="Diagnosis" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Age" class="form-label">Yaş</label>
+            <input asp-for="Age" class="form-control" type="number" min="2" max="18" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">İlgi Alanları</label>
+            <input type="text" id="interestInput" class="form-control mb-2" placeholder="Bir ilgi alanı yazıp Enter'a basın" />
+            <div id="interestsTags" class="mb-2"></div>
+            <input type="hidden" asp-for="Interests" id="Interests" />
+            <small class="text-muted">Birden fazla ilgi alanı ekleyebilirsiniz.</small>
+            <span asp-validation-for="Interests" class="text-danger"></span>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+    // İlgi alanı tag input scripti
+    const input = document.getElementById('interestInput');
+    const tagsDiv = document.getElementById('interestsTags');
+    const hiddenInput = document.getElementById('Interests');
+    let tags = [];
+    if (hiddenInput.value) {
+        tags = hiddenInput.value.split(',').map(x => x.trim()).filter(x => x);
+        renderTags();
+    }
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && input.value.trim() !== '') {
+            e.preventDefault();
+            if (!tags.includes(input.value.trim())) {
+                tags.push(input.value.trim());
+                renderTags();
+            }
+            input.value = '';
+        }
+    });
+    function renderTags() {
+        tagsDiv.innerHTML = '';
+        tags.forEach((tag, i) => {
+            const tagEl = document.createElement('span');
+            tagEl.className = 'badge bg-primary me-1 mb-1';
+            tagEl.textContent = tag + ' ';
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.className = 'btn-close btn-close-white btn-sm ms-1';
+            removeBtn.style.fontSize = '0.7em';
+            removeBtn.onclick = () => {
+                tags.splice(i, 1);
+                renderTags();
+            };
+            tagEl.appendChild(removeBtn);
+            tagsDiv.appendChild(tagEl);
+        });
+        hiddenInput.value = tags.join(',');
+    }
+    </script>
+} 

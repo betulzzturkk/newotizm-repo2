@@ -2,45 +2,56 @@
 
 @{
     ViewData["Title"] = "Masallar";
+    var tales = Model;
+    string GetYoutubeId(string url)
+    {
+        var uri = new Uri(url);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        var v = query["v"];
+        if (!string.IsNullOrEmpty(v)) return v;
+        // Eğer v parametresi yoksa, son path segmentini al
+        var segments = uri.Segments;
+        return segments.Length > 0 ? segments[segments.Length - 1] : "";
+    }
 }
-
-<div class="container mt-4">
-    <div class="row mb-4">
-        <div class="col">
-            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-primary">
-                <i class="fas fa-arrow-left me-2"></i>Eğitimlere Dön
-            </a>
+<link rel="stylesheet" href="/css/animals-bg.css" />
+<div class="body-animals-bg" style="background-image: url('/images/animals/animal-bg-pattern.png'), linear-gradient(135deg, #FFB347 0%, #6B48FF 50%, #FF6B6B 100%); background-size: 300px, cover; background-repeat: repeat;">
+    <div class="cloud"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;">
+                    <i class="fas fa-book-open me-2"></i> Masallar
+                </h2>
+                <p class="lead">
+                    Masal videolarını izleyebilir, eğlenceli vakit geçirebilirsin!
+                </p>
+            </div>
         </div>
-    </div>
-
-    <h2 class="text-center mb-4">
-        <i class="fas fa-book-reader me-2"></i>
-        Eğitici Masallar
-    </h2>
-    <p class="text-center mb-5">Birbirinden güzel masalları dinleyelim ve hayal gücümüzü geliştirelim!</p>
-
-    <div class="row g-4">
-        @foreach (var tale in Model)
-        {
-            <div class="col-md-6">
-                <div class="card tale-card h-100">
-                    <img src="@tale.ImageUrl" class="card-img-top tale-image" alt="@tale.Title" onerror="handleImageError(this)">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <i class="@tale.IconClass @tale.IconColor me-2"></i>
-                            @tale.Title
-                        </h5>
-                        <p class="card-text">@tale.Description</p>
-                        <button class="btn btn-primary watch-btn" 
-                                data-video-url="@tale.VideoUrl"
-                                data-tale-title="@tale.Title"
-                                onclick="playVideo(this)">
-                            <i class="fas fa-play-circle me-2"></i>Masalı İzle
-                        </button>
+        <div class="row g-4">
+            @for (int i = 0; i < tales.Count; i++)
+            {
+                var tale = tales[i];
+                var youtubeId = GetYoutubeId(tale.Url);
+                var thumbnail = $"https://img.youtube.com/vi/{youtubeId}/hqdefault.jpg";
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #FFB347 0%, #6B48FF 100%); color: #fff; border-radius: 25px; min-height: 420px;">
+                        <a href="@tale.Url" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+                            <img src="@thumbnail" alt="@tale.Title" class="img-fluid rounded mb-3" style="height:200px; object-fit:cover; background: #fff;">
+                            <h4>@tale.Title</h4>
+                        </a>
+                        <a href="@tale.Url" target="_blank" rel="noopener" class="btn btn-outline-light mt-3" onclick="markTaleCompleted('@tale.Title', this, @i);">
+                            <i class="fab fa-youtube me-2"></i> Videoyu İzle
+                        </a>
+                        <div class="progress my-3" style="height: 20px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-tale-@i" role="progressbar" style="width: @tale.Progress%" aria-valuenow="@tale.Progress" aria-valuemin="0" aria-valuemax="100">@tale.Progress%</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
 </div>
 
@@ -174,6 +185,30 @@
             const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
             const match = url.match(regExp);
             return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        function markTaleCompleted(taleTitle, btn, idx) {
+            // Progress barı %100 yap
+            var progressBar = document.getElementById('progress-tale-' + idx);
+            progressBar.style.width = '100%';
+            progressBar.textContent = '100%';
+            progressBar.setAttribute('aria-valuenow', 100);
+            // Sunucuya ilerlemeyi kaydet
+            fetch('/Course/SaveTaleProgress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    taleTitle: taleTitle,
+                    progress: 100
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Başarılıysa bir şey yapmaya gerek yok
+            })
+            .catch(error => console.error('Error:', error));
         }
     </script>
 } 
