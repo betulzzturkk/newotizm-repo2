@@ -8,5 +8,6 @@ namespace AutismEducationPlatform.Web.Models.ViewModels
         public string Description { get; set; } = string.Empty;
         public string Color { get; set; } = string.Empty;
         public int Sides { get; set; } // Kenar sayısı
+        public int Progress { get; set; } = 0;
     }
 } 

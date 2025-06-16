@@ -6,17 +6,13 @@ namespace AutismEducationPlatform.Web.Models
 {
     public class TrafficSignProgress
     {
-        [Key]
         public int Id { get; set; }
-
-        [Required]
-        public string SignName { get; set; }
-
-        [Required]
         public string UserId { get; set; }
+        public string SignName { get; set; }
+        public int Progress { get; set; }
 
         [Required]
-        public int Progress { get; set; } = 0;
+        public int TrafficSignId { get; set; }
 
         public int InteractionCount { get; set; } = 0;
 

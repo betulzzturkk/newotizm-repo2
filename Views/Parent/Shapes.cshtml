@@ -1,0 +1,97 @@
+@model List<AutismEducationPlatform.Web.Models.ViewModels.ShapeViewModel>
+
+@{
+    ViewData["Title"] = "Şekiller";
+    Layout = "_ParentLayout";
+}
+
+<link rel="stylesheet" href="/css/shapes-bg.css" />
+
+<style>
+.card.h-100 {
+    min-height: 520px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.img-fluid.rounded.mb-3 {
+    height: 320px !important;
+    object-fit: contain !important;
+}
+</style>
+
+@functions {
+    public static string ToAsciiId(string input)
+    {
+        return input.ToLower()
+            .Replace("ı", "i").Replace("ğ", "g").Replace("ü", "u").Replace("ş", "s").Replace("ö", "o").Replace("ç", "c")
+            .Replace("İ", "i").Replace("Ğ", "g").Replace("Ü", "u").Replace("Ş", "s").Replace("Ö", "o").Replace("Ç", "c");
+    }
+}
+
+<div class="body-shapes-bg" style="background: linear-gradient(135deg, #FFB347 0%, #6B48FF 50%, #FF6B6B 100%);">
+    <div class="cloud"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;" data-aos="fade-up">
+                    <i class="fas fa-shapes me-2"></i> Şekiller
+                </h2>
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                    Şekilleri tanı, seslerini dinle ve ilerlemeni takip et!
+                </p>
+            </div>
+        </div>
+        <div class="row g-4">
+            @foreach (var shape in Model)
+            {
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card h-100 shadow-lg border-0 text-center p-4 shape-card" style="background: linear-gradient(135deg, #FFB347 0%, #FF6B6B 100%); color: #fff; border-radius: 25px;">
+                        <img src="@shape.ImagePath" alt="@shape.Name" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                        <h4>@shape.Name</h4>
+                        <p>@shape.Description</p>
+                        <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('@shape.SoundPath', '@shape.Name')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                        <div class="progress my-3" style="height: 20px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-@ToAsciiId(shape.Name)" role="progressbar" style="width: @shape.Progress%" data-progress="@shape.Progress">@shape.Progress%</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function toAsciiId(str) {
+            return str.toLowerCase()
+                .replace(/ı/g, 'i').replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ö/g, 'o').replace(/ç/g, 'c')
+                .replace(/İ/g, 'i').replace(/Ğ/g, 'g').replace(/Ü/g, 'u').replace(/Ş/g, 's').replace(/Ö/g, 'o').replace(/Ç/g, 'c');
+        }
+        function playSoundAndProgress(soundPath, shapeName) {
+            var audio = new Audio(soundPath);
+            audio.play();
+            var normName = toAsciiId(shapeName);
+            var progressBar = document.getElementById('progress-' + normName);
+            var currentProgress = parseInt(progressBar.getAttribute('data-progress')) || 0;
+            var newProgress = currentProgress + 20;
+            if (newProgress > 100) newProgress = 100;
+            progressBar.style.width = newProgress + '%';
+            progressBar.textContent = newProgress + '%';
+            progressBar.setAttribute('aria-valuenow', newProgress);
+            progressBar.setAttribute('data-progress', newProgress);
+            // AJAX ile ilerlemeyi kaydet
+            fetch('/Course/SaveShapeProgress', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ shapeName: normName, progress: newProgress })
+            })
+            .then(response => response.json())
+            .then(data => console.log('Progress saved:', data))
+            .catch((error) => console.error('Error:', error));
+        }
+    </script>
+} 

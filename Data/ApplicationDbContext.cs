@@ -15,11 +15,11 @@ namespace AutismEducationPlatform.Web.Data
         public DbSet<Course> Courses { get; set; }
         public DbSet<Activity> Activities { get; set; }
         public DbSet<ActivityLog> ActivityLogs { get; set; }
-        public DbSet<Progress> Progress { get; set; }
+        public DbSet<Progress> Progresses { get; set; }
         public DbSet<Child> Children { get; set; }
         public DbSet<News> News { get; set; }
         public DbSet<Information> Information { get; set; }
-        public DbSet<AnimalProgress> AnimalProgress { get; set; }
+        public DbSet<AutismEducationPlatform.Web.Models.AnimalProgress> AnimalProgress { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<FAQ> FAQs { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
@@ -27,9 +27,13 @@ namespace AutismEducationPlatform.Web.Data
         public DbSet<ShapeProgress> ShapeProgress { get; set; }
         public DbSet<NumberProgress> NumberProgress { get; set; }
         public DbSet<TrafficSignProgress> TrafficSignProgress { get; set; }
+        public DbSet<Tale> Tales { get; set; }
         public DbSet<TaleProgress> TaleProgress { get; set; }
         public DbSet<ExamResult> ExamResults { get; set; }
         public DbSet<ExamAnswer> ExamAnswers { get; set; }
+        public DbSet<MannerProgress> MannerProgress { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<TrafficSign> TrafficSigns { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -121,6 +125,8 @@ namespace AutismEducationPlatform.Web.Data
                 .WithMany()
                 .HasForeignKey(a => a.UserId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            // TrafficSign modeline SoundPath alanı eklendi (migration için not)
         }
     }
 } 

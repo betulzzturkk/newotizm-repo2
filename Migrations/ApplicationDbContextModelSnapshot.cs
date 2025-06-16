@@ -140,6 +140,13 @@ namespace AutismEducationPlatform.Web.Migrations
                     b.Property<int>("AnimalId")
                         .HasColumnType("int");
 
+                    b.Property<string>("AnimalName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CompletedAnimalCount")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -147,6 +154,9 @@ namespace AutismEducationPlatform.Web.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("LastInteraction")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastUpdate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Progress")
@@ -494,6 +504,9 @@ namespace AutismEducationPlatform.Web.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int>("StudentCount")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -653,6 +666,36 @@ namespace AutismEducationPlatform.Web.Migrations
                     b.ToTable("Information");
                 });
 
+            modelBuilder.Entity("AutismEducationPlatform.Web.Models.MannerProgress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("InteractionCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("LastInteraction")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MannerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Progress")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MannerProgress");
+                });
+
             modelBuilder.Entity("AutismEducationPlatform.Web.Models.Message", b =>
                 {
                     b.Property<int>("Id")
@@ -802,6 +845,9 @@ namespace AutismEducationPlatform.Web.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
+                    b.Property<int?>("StudentId")
+                        .HasColumnType("int");
+
                     b.Property<float>("StudyTimeHours")
                         .HasColumnType("real");
 
@@ -817,7 +863,9 @@ namespace AutismEducationPlatform.Web.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Progress");
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Progresses");
                 });
 
             modelBuilder.Entity("AutismEducationPlatform.Web.Models.ShapeProgress", b =>
@@ -852,6 +900,86 @@ namespace AutismEducationPlatform.Web.Migrations
                     b.ToTable("ShapeProgress");
                 });
 
+            modelBuilder.Entity("AutismEducationPlatform.Web.Models.Student", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Diagnosis")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Hobbies")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("InstructorId")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InstructorId");
+
+                    b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("AutismEducationPlatform.Web.Models.Tale", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tales");
+                });
+
             modelBuilder.Entity("AutismEducationPlatform.Web.Models.TaleProgress", b =>
                 {
                     b.Property<int>("Id")
@@ -866,6 +994,9 @@ namespace AutismEducationPlatform.Web.Migrations
                     b.Property<int>("Progress")
                         .HasColumnType("int");
 
+                    b.Property<int>("TaleId")
+                        .HasColumnType("int");
+
                     b.Property<string>("TaleTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -876,9 +1007,40 @@ namespace AutismEducationPlatform.Web.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TaleId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("TaleProgress");
+                });
+
+            modelBuilder.Entity("AutismEducationPlatform.Web.Models.TrafficSign", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SoundPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TrafficSigns");
                 });
 
             modelBuilder.Entity("AutismEducationPlatform.Web.Models.TrafficSignProgress", b =>
@@ -901,6 +1063,9 @@ namespace AutismEducationPlatform.Web.Migrations
                     b.Property<string>("SignName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TrafficSignId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -1219,6 +1384,10 @@ namespace AutismEducationPlatform.Web.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("AutismEducationPlatform.Web.Models.Student", null)
+                        .WithMany("Progresses")
+                        .HasForeignKey("StudentId");
+
                     b.Navigation("Child");
 
                     b.Navigation("Course");
@@ -1235,13 +1404,30 @@ namespace AutismEducationPlatform.Web.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("AutismEducationPlatform.Web.Models.Student", b =>
+                {
+                    b.HasOne("AutismEducationPlatform.Web.Models.ApplicationUser", "Instructor")
+                        .WithMany()
+                        .HasForeignKey("InstructorId");
+
+                    b.Navigation("Instructor");
+                });
+
             modelBuilder.Entity("AutismEducationPlatform.Web.Models.TaleProgress", b =>
                 {
+                    b.HasOne("AutismEducationPlatform.Web.Models.Tale", "Tale")
+                        .WithMany()
+                        .HasForeignKey("TaleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("AutismEducationPlatform.Web.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Tale");
 
                     b.Navigation("User");
                 });
@@ -1320,6 +1506,11 @@ namespace AutismEducationPlatform.Web.Migrations
             modelBuilder.Entity("AutismEducationPlatform.Web.Models.Course", b =>
                 {
                     b.Navigation("Activities");
+                });
+
+            modelBuilder.Entity("AutismEducationPlatform.Web.Models.Student", b =>
+                {
+                    b.Navigation("Progresses");
                 });
 #pragma warning restore 612, 618
         }

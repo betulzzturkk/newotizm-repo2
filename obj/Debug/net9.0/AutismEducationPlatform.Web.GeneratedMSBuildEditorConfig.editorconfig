@@ -40,10 +40,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQYXJlbnRSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Account/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Admin/AddCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -140,12 +136,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9ncmVzc1JlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Instructor/AddStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxBZGRTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Instructor/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Instructor/Education.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxFZHVjYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Instructor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Instructor/Information.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxJbmZvcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Instructor/Students.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxTdHVkZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/News/Index.cshtml]
@@ -160,8 +172,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XEFkZENoaWxkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Animals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XEFuaW1hbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/ChildInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XENoaWxkSW5mby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Colors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XENvbG9ycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Dashboard.cshtml]
@@ -170,6 +190,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/EditChild.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XEVkaXRDaGlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Education.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XEVkdWNhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Educations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XEVkdWNhdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Guidance.cshtml]
@@ -192,12 +220,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XE5ld3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Numbers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XE51bWJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Progress.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XFByb2dyZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Shapes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XFNoYXBlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/Tales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XFRhbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/TrafficSigns.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XFRyYWZmaWNTaWducy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Parent/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/betulozturk/OneDrive/Desktop/newotizm-repo/Views/Shared/Error.cshtml]

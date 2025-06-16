@@ -1,0 +1,217 @@
+@model List<AutismEducationPlatform.Web.Models.ViewModels.TaleViewModel>
+
+@{
+    ViewData["Title"] = "Masallar";
+    var tales = Model;
+    string GetYoutubeId(string url)
+    {
+        var uri = new Uri(url);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        var v = query["v"];
+        if (!string.IsNullOrEmpty(v)) return v;
+        // Eğer v parametresi yoksa, son path segmentini al
+        var segments = uri.Segments;
+        return segments.Length > 0 ? segments[segments.Length - 1] : "";
+    }
+}
+<link rel="stylesheet" href="/css/animals-bg.css" />
+<div class="body-animals-bg" style="background-image: url('/images/animals/animal-bg-pattern.png'), linear-gradient(135deg, #FFB347 0%, #6B48FF 50%, #FF6B6B 100%); background-size: 300px, cover; background-repeat: repeat;">
+    <div class="cloud"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;">
+                    <i class="fas fa-book-open me-2"></i> Masallar
+                </h2>
+                <p class="lead">
+                    Masal videolarını izleyebilir, eğlenceli vakit geçirebilirsin!
+                </p>
+            </div>
+        </div>
+        <div class="row g-4">
+            @for (int i = 0; i < tales.Count; i++)
+            {
+                var tale = tales[i];
+                var youtubeId = GetYoutubeId(tale.Url);
+                var thumbnail = $"https://img.youtube.com/vi/{youtubeId}/hqdefault.jpg";
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #FFB347 0%, #6B48FF 100%); color: #fff; border-radius: 25px; min-height: 420px;">
+                        <a href="@tale.Url" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+                            <img src="@thumbnail" alt="@tale.Title" class="img-fluid rounded mb-3" style="height:200px; object-fit:cover; background: #fff;">
+                            <h4>@tale.Title</h4>
+                        </a>
+                        <a href="@tale.Url" target="_blank" rel="noopener" class="btn btn-outline-light mt-3" onclick="markTaleCompleted('@tale.Title', this, @i);">
+                            <i class="fab fa-youtube me-2"></i> Videoyu İzle
+                        </a>
+                        <div class="progress my-3" style="height: 20px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-tale-@i" role="progressbar" style="width: @tale.Progress%" aria-valuenow="@tale.Progress" aria-valuemin="0" aria-valuemax="100">@tale.Progress%</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="ratio ratio-16x9">
+                    <iframe id="videoFrame" src="" title="YouTube video" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tale-card {
+        transition: transform 0.3s ease;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .tale-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .tale-image {
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .card-title {
+        color: #333;
+        font-weight: bold;
+        margin-top: 1rem;
+    }
+
+    .card-text {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .watch-btn {
+        border-radius: 50px;
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+    }
+
+    .watch-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .watch-btn:active {
+        transform: scale(0.95);
+    }
+
+    .modal-content {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .modal-header {
+        border-bottom: none;
+        padding: 1rem 1.5rem;
+    }
+
+    .modal-title {
+        font-weight: bold;
+        color: #333;
+    }
+
+    #videoFrame {
+        border: none;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        let videoModal;
+        let currentVideo = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+
+            // Modal kapandığında videoyu durdur
+            document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+                document.getElementById('videoFrame').src = '';
+            });
+        });
+
+        function handleImageError(img) {
+            // maxresdefault.jpg çalışmazsa, hqdefault.jpg'yi dene
+            if (img.src.includes('maxresdefault')) {
+                img.src = img.src.replace('maxresdefault', 'hqdefault');
+            }
+        }
+
+        function playVideo(button) {
+            const videoUrl = button.dataset.videoUrl;
+            const taleTitle = button.dataset.taleTitle;
+            
+            // YouTube video ID'sini al
+            const videoId = getYouTubeVideoId(videoUrl);
+            
+            if (videoId) {
+                // Modal başlığını ayarla
+                document.getElementById('videoModalLabel').textContent = taleTitle;
+                
+                // Video iframe'ini ayarla
+                const iframe = document.getElementById('videoFrame');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                
+                // Modalı göster
+                videoModal.show();
+            } else {
+                console.error('Video ID bulunamadı:', videoUrl);
+            }
+        }
+
+        function getYouTubeVideoId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        function markTaleCompleted(taleTitle, btn, idx) {
+            // Progress barı %100 yap
+            var progressBar = document.getElementById('progress-tale-' + idx);
+            progressBar.style.width = '100%';
+            progressBar.textContent = '100%';
+            progressBar.setAttribute('aria-valuenow', 100);
+            // Sunucuya ilerlemeyi kaydet
+            fetch('/Parent/SaveTaleProgress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ taleTitle: taleTitle, progress: 100 })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('İlerleme kaydedildi:', taleTitle);
+                } else {
+                    console.error('İlerleme kaydedilemedi:', data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+            });
+        }
+    </script>
+} 

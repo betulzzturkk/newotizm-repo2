@@ -34,6 +34,57 @@
         </div>
     </form>
 </div>
+@if (ViewBag.Children != null && ((List<AutismEducationPlatform.Web.Models.ViewModels.ChildViewModel>)ViewBag.Children).Count > 0)
+{
+    <div class="container mt-5">
+        <h4 class="mb-3" style="color:#2193b0; font-weight:600;">Mevcut Çocuklar</h4>
+        @foreach (var child in (List<AutismEducationPlatform.Web.Models.ViewModels.ChildViewModel>)ViewBag.Children)
+        {
+            <div class="child-info-box mb-4">
+                <div class="child-info-title">@child.Name (@child.Age) yaşında</div>
+                <div class="child-info-detail">
+                    <span class="child-info-label">Tanı:</span> @(string.IsNullOrWhiteSpace(child.Diagnosis) ? "Belirtilmemiş" : child.Diagnosis)
+                </div>
+                <div class="child-info-detail">
+                    <span class="child-info-label">Özel Gereksinimler:</span> @(string.IsNullOrWhiteSpace(child.SpecialNeeds) ? "Belirtilmemiş" : child.SpecialNeeds)
+                </div>
+                <div class="child-info-detail">
+                    <span class="child-info-label">Eklenme Tarihi:</span> @child.CreatedAt.ToShortDateString()
+                </div>
+                <div class="child-info-tags mt-3">
+                    <span class="child-info-label">İlgi Alanları:</span>
+                    @if (!string.IsNullOrWhiteSpace(child.Interests))
+                    {
+                        var tags = child.Interests.Split(',');
+                        foreach (var tag in tags)
+                        {
+                            var t = tag.Trim().ToLower();
+                            string icon = t switch {
+                                var s when s.Contains("müzik") => "<i class='fas fa-music me-1'></i>",
+                                var s when s.Contains("resim") => "<i class='fas fa-paint-brush me-1'></i>",
+                                var s when s.Contains("dans") => "<i class='fas fa-person-dots-from-line me-1'></i>",
+                                var s when s.Contains("renk") => "<i class='fas fa-palette me-1'></i>",
+                                var s when s.Contains("hayvan") => "<i class='fas fa-dog me-1'></i>",
+                                var s when s.Contains("spor") => "<i class='fas fa-futbol me-1'></i>",
+                                _ => "<i class='fas fa-star me-1'></i>"
+                            };
+                            <span class="child-info-tag" style="font-size:1.15rem; padding:8px 20px; margin-bottom:10px;">
+                                @Html.Raw(icon) @tag.Trim()
+                            </span>
+                        }
+                    }
+                    else
+                    {
+                        <span class="child-info-tag" style="background:#eee; color:#888;">Belirtilmemiş</span>
+                    }
+                </div>
+                <div class="d-flex gap-2 mt-3">
+                    <a href="/Parent/EditChild/@child.Id" class="btn btn-sm btn-outline-primary">Düzenle</a>
+                </div>
+            </div>
+        }
+    </div>
+}
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>

@@ -1,146 +1,135 @@
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Veli Paneli</title>
-    
-    <!-- CSS Dosyaları -->
+    <title>@ViewData["Title"] - Otizm Eğitim Platformu</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="/css/site.css" />
-    <link rel="stylesheet" href="/css/parent-panel.css" />
-    
-    @RenderSection("Head", false)
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        :root {
+            --primary-color: #6B48FF;
+            --secondary-color: #FF6B6B;
+            --accent-color: #4CAF50;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background: #fff !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .icon-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .icon-circle {
+            transform: scale(1.1);
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .welcome-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .welcome-card .card-body {
+            padding: 3rem;
+        }
+
+        .welcome-card h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .welcome-card p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .profile-image {
+            border: 5px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            border-color: rgba(255,255,255,0.4);
+        }
+    </style>
+    @RenderSection("Styles", required: false)
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="parent-sidebar">
-        <div class="sidebar-profile" style="text-align:center; margin-bottom:10px;">
-            <img src="/images/profiles/profil.jpg" alt="Profil Resmi" style="width:90px; height:90px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.12); border:3px solid #fff; background:#eee; margin-bottom:8px;" />
-        </div>
-        <div class="sidebar-header">
-            <i class="fas fa-child"></i>
-            <span>Veli Paneli</span>
-        </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/Parent" class="@(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")">
-                        <i class="fas fa-home"></i>
-                        <span>Ana Sayfa</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Parent/ChildInfo">
-                        <i class="fas fa-baby"></i>
-                        <span>Çocuk Bilgileri</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Parent/Educations">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Eğitimler</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Parent/Progress">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Gelişim Raporu</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Parent/Messages">
-                        <i class="fas fa-envelope"></i>
-                        <span>Mesajlar</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Parent/Calendar">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Takvim</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Parent/Guidance">
-                        <i class="fas fa-book"></i>
-                        <span>Rehberlik</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Parent/HomeTips">
-                        <i class="fas fa-lightbulb"></i>
-                        <span>Evde Öneriler</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Parent/Settings">
-                        <i class="fas fa-cog"></i>
-                        <span>Ayarlar</span>
-                    </a>
-                </li>
-                <li class="mt-auto">
-                    <a href="/Parent/Profile" class="profile-edit-link">
-                        <i class="fas fa-user-edit"></i>
-                        <span>Profili Düzenle</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Parent/AddChild" class="add-child-link">
-                        <i class="fas fa-user-plus"></i>
-                        <span>Çocuk Ekle</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Account/Logout?returnUrl=/Home/Index" class="logout-link">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span>Çıkış Yap</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="d-flex flex-column min-vh-100">
+        <main class="flex-grow-1">
+            @RenderBody()
+        </main>
     </div>
 
-    <!-- Ana İçerik -->
-    <div class="parent-content">
-        @RenderBody()
-    </div>
-
-    <!-- Çıkış Onay Modalı -->
-    <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Çıkış Yap</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Çıkış yapmak istediğinizden emin misiniz?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-                    <a href="/Account/Logout?returnUrl=/Home/Index" class="btn btn-danger">Çıkış Yap</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript Dosyaları -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const logoutLink = document.querySelector('.logout-link');
-            const logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'));
-            
-            logoutLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                logoutModal.show();
-            });
-        });
-    </script>
-    @RenderSection("Scripts", false)
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html> 

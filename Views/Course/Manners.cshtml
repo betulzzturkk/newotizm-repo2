@@ -4,293 +4,155 @@
     ViewData["Title"] = "Görgü Kuralları";
 }
 
-<div class="container mt-4">
-    <div class="row mb-4">
-        <div class="col">
-            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-primary">
-                <i class="fas fa-arrow-left me-2"></i>Eğitimlere Dön
-            </a>
+<link rel="stylesheet" href="/css/animals-bg.css" />
+
+<div class="body-animals-bg" style="background-image: url('/images/animals/animal-bg-pattern.png'), linear-gradient(135deg, #FFB347 0%, #6B48FF 50%, #FF6B6B 100%); background-size: 300px, cover; background-repeat: repeat;">
+    <div class="cloud"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-3">
+            <div class="col-lg-10">
+                <div class="alert alert-info text-center mb-4" style="font-size:1.2rem;">
+                    <i class="fas fa-info-circle me-2"></i>
+                    İlerlemenizin kaydedilmesi için <a href="/Account/Login" class="alert-link">giriş yapın</a> veya <a href="/Account/Register" class="alert-link">kaydolun</a>.
+                </div>
+            </div>
         </div>
-    </div>
-
-    <h2 class="text-center mb-4">Görgü Kuralları</h2>
-    <p class="text-center mb-5">Toplum içinde nasıl davranmamız gerektiğini öğrenelim!</p>
-
-    <div class="row g-4">
-        @foreach (var manner in Model)
-        {
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-scale">
-                    <div class="position-relative">
-                        <img src="@manner.ImagePath" class="card-img-top" alt="@manner.Title" 
-                             style="height: 200px; object-fit: cover; padding: 1rem; transition: transform 0.3s;">
-                        <div class="position-absolute top-0 end-0 m-2">
-                            <span class="badge @manner.Color rounded-pill">@manner.Category</span>
-                        </div>
-                    </div>
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center mb-3 fw-bold">@manner.Title</h5>
-                        <p class="card-text flex-grow-1">@manner.Description</p>
-                        <div class="mt-3 border-top pt-3">
-                            <div class="mb-2">
-                                <small class="text-muted d-block">
-                                    <i class="fas fa-lightbulb me-2"></i>
-                                    <strong>Örnek Durum:</strong> @manner.Example
-                                </small>
-                            </div>
-                            <div>
-                                <small class="text-success d-block">
-                                    <i class="fas fa-check-circle me-2"></i>
-                                    <strong>Doğru Davranış:</strong> @manner.CorrectBehavior
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 text-center pb-3">
-                        <button class="btn btn-primary rounded-pill px-4 play-button" 
-                                onclick="playAudio(this)">
-                            <i class="fas fa-volume-up me-2"></i>
-                            <span>Dinle</span>
-                        </button>
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;" data-aos="fade-up">
+                    <i class="fas fa-hands-helping me-2"></i> Görgü Kuralları
+                </h2>
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                    Görgü kurallarını öğren, seslerini dinle ve ilerlemeni takip et!
+                </p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <!-- Teşekkür Etmek -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #FFB347 0%, #FF6B6B 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/tesekkur.jpg" alt="Teşekkür Etmek" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Teşekkür Etmek</h4>
+                    <p>Başkalarına karşı saygı göstermenin bir yoludur.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/manners/tesekkuretmek.mp3', 'tesekkur')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-tesekkur" role="progressbar" style="width: 0%">0%</div>
                     </div>
                 </div>
             </div>
-        }
-    </div>
-</div>
-
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div class="toast-body">
-                <i class="fas fa-exclamation-circle me-2"></i>
-                <span id="toastMessage">Ses dosyası yüklenirken bir hata oluştu.</span>
+            <!-- Özür Dilemek -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #8C6CFF 0%, #1E90FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/ozur.jpg" alt="Özür Dilemek" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Özür Dilemek</h4>
+                    <p>Yanlış bir davranış sonrası özür dilemek önemlidir.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/manners/ozurdilemek.mp3', 'ozur')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-ozur" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
             </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            <!-- Selamlaşmak -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #4CAF50 0%, #17A2B8 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/selam.jpg" alt="Selamlaşmak" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Selamlaşmak</h4>
+                    <p>İnsanlarla karşılaşınca selam vermek güzel bir davranıştır.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/manners/selamlasmak.mp3', 'selam')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-selam" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dinlemek -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #FFB347 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/dinle.jpg" alt="Dinlemek" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Dinlemek</h4>
+                    <p>Karşımızdakini dikkatlice dinlemek önemlidir.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/manners/dinlemek.mp3', 'dinle')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-dinle" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Kapıyı Çalmak -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #8C6CFF 0%, #FFB347 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/kapi.jpg" alt="Kapıyı Çalmak" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Kapıyı Çalmak</h4>
+                    <p>Bir odaya girmeden önce kapıyı çalmak gerekir.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/manners/kapiyicalmak.mp3', 'kapi')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-kapi" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Paylaşmak -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="700">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #4CAF50 0%, #FF6B6B 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/paylasma.png" alt="Paylaşmak" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Paylaşmak</h4>
+                    <p>Arkadaşlarımızla eşyalarımızı paylaşmak güzel bir davranıştır.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/manners/paylasmak.mp3', 'paylasma')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-paylasma" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sıra Beklemek -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #1E90FF 0%, #FFB347 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/sira.jpg" alt="Sıra Beklemek" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Sıra Beklemek</h4>
+                    <p>Bir iş yaparken sıramızı beklemeliyiz.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/manners/sirabeklemek.mp3', 'sira')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-sira" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sofra Adabı -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="900">
+                <div class="card h-100 shadow-lg border-0 text-center p-4 animal-card" style="background: linear-gradient(135deg, #FF6B6B 0%, #8C6CFF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/sofra.png" alt="Sofra Adabı" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Sofra Adabı</h4>
+                    <p>Yemek yerken sofra kurallarına uymalıyız.</p>
+                    <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/manners/sofraadabi.mp3', 'sofra')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                    <div class="progress my-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-sofra" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<style>
-    .hover-scale {
-        transition: transform 0.3s ease;
-    }
-    
-    .hover-scale:hover {
-        transform: translateY(-5px);
-    }
-    
-    .play-button {
-        transition: all 0.3s ease;
-    }
-    
-    .play-button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .play-button.playing {
-        background-color: #28a745;
-        border-color: #28a745;
-    }
-    
-    .card {
-        border: none;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    
-    .badge {
-        font-size: 0.8rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .toast {
-        opacity: 0.95;
-    }
-
-    .play-button:disabled {
-        cursor: not-allowed;
-        opacity: 0.7;
-    }
-
-    .card-text {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    .text-success {
-        color: #28a745 !important;
-    }
-
-    .loading-spinner {
-        width: 1rem;
-        height: 1rem;
-        border: 2px solid #fff;
-        border-bottom-color: transparent;
-        border-radius: 50%;
-        display: inline-block;
-        animation: rotation 1s linear infinite;
-        margin-right: 0.5rem;
-    }
-
-    @@keyframes rotation {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-</style>
-
 @section Scripts {
     <script>
-        let currentAudio = null;
-        let currentButton = null;
-        let toast = null;
-
-        // Türkçe karakterleri dönüştürme fonksiyonu
-        function convertToAscii(text) {
-            const specialCases = {
-                'Teşekkür Etmek': 'tesekkuretmek',
-                'Kapıyı Çalmak': 'kapiyicalmak',
-                'Sofra Adabı': 'sofraadabi',
-                'Sıra Beklemek': 'sirabeklemek',
-                'Özür Dilemek': 'ozurdilemek',
-                'Paylaşmak': 'paylasmak',
-                'Selamlaşmak': 'selamlasmak',
-                'Dinlemek': 'dinlemek'
-            };
-
-            // Önce özel durumları kontrol et
-            if (specialCases[text]) {
-                return specialCases[text];
-            }
-
-            // Eğer özel durum yoksa, genel dönüşümü uygula
-            const turkishChars = {
-                'ı': 'i', 'İ': 'i',
-                'ğ': 'g', 'Ğ': 'g',
-                'ü': 'u', 'Ü': 'u',
-                'ş': 's', 'Ş': 's',
-                'ö': 'o', 'Ö': 'o',
-                'ç': 'c', 'Ç': 'c',
-                ' ': ''
-            };
-            
-            return text.toLowerCase().replace(/[ıİğĞüÜşŞöÖçÇ ]/g, letter => turkishChars[letter] || letter);
-        }
-
-        // Sayfa yüklendiğinde
-        document.addEventListener('DOMContentLoaded', function() {
-            // Toast'u başlat
-            toast = new bootstrap.Toast(document.querySelector('.toast'));
-            
-            // Tüm ses düğmelerinin data-audio-path özelliğini güncelle
-            document.querySelectorAll('.play-button').forEach(button => {
-                const originalTitle = button.closest('.card').querySelector('.card-title').textContent.trim();
-                const audioFileName = convertToAscii(originalTitle);
-                button.dataset.audioPath = `/sounds/manners/${audioFileName}.mp3`;
-                console.log('Ses dosyası yolu güncellendi:', button.dataset.audioPath, 'Orijinal başlık:', originalTitle);
-            });
-        });
-
-        function resetButton(button) {
-            button.disabled = false;
-            button.classList.remove('playing');
-            button.innerHTML = '<i class="fas fa-volume-up me-2"></i><span>Dinle</span>';
-        }
-
-        function setPlayingState(button) {
-            button.disabled = false;
-            button.classList.add('playing');
-            button.innerHTML = '<i class="fas fa-pause me-2"></i><span>Durdur</span>';
-        }
-
-        function setLoadingState(button) {
-            button.disabled = true;
-            button.innerHTML = '<span class="loading-spinner"></span><span>Yükleniyor...</span>';
-        }
-
-        async function playAudio(button) {
-            const audioPath = button.dataset.audioPath;
-            console.log('Çalınacak ses dosyası:', audioPath);
-
-            // Eğer aynı ses çalınıyorsa durdur
-            if (currentButton === button && currentAudio) {
-                currentAudio.pause();
-                currentAudio.currentTime = 0;
-                resetButton(button);
-                currentAudio = null;
-                currentButton = null;
-                return;
-            }
-
-            // Eğer başka bir ses çalınıyorsa onu durdur
-            if (currentAudio) {
-                currentAudio.pause();
-                currentAudio.currentTime = 0;
-                resetButton(currentButton);
-            }
-
-            try {
-                // Yükleniyor durumunu göster
-                setLoadingState(button);
-
-                // Ses dosyasının varlığını kontrol et
-                const response = await fetch(audioPath);
-                if (!response.ok) {
-                    console.error('Ses dosyası bulunamadı:', audioPath, 'HTTP Status:', response.status);
-                    throw new Error(`Ses dosyası bulunamadı: ${audioPath} (HTTP ${response.status})`);
-                }
-
-                // Yeni sesi çal
-                currentAudio = new Audio(audioPath);
-                currentButton = button;
-
-                // Ses yüklendiğinde
-                currentAudio.oncanplaythrough = function() {
-                    console.log('Ses dosyası başarıyla yüklendi:', audioPath);
-                    setPlayingState(button);
-                };
-
-                // Ses bittiğinde
-                currentAudio.onended = function() {
-                    console.log('Ses dosyası çalma tamamlandı:', audioPath);
-                    resetButton(button);
-                    currentAudio = null;
-                    currentButton = null;
-                };
-
-                // Hata durumunda
-                currentAudio.onerror = function(event) {
-                    const error = event.target.error;
-                    console.error('Ses çalma hatası:', error);
-                    let errorMessage = 'Ses dosyası yüklenirken bir hata oluştu.';
-                    
-                    if (error.code === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED) {
-                        errorMessage = 'Ses dosyası formatı desteklenmiyor.';
-                    } else if (error.code === MediaError.MEDIA_ERR_NETWORK) {
-                        errorMessage = 'Ağ hatası: Ses dosyası yüklenemedi.';
-                    } else if (error.code === MediaError.MEDIA_ERR_DECODE) {
-                        errorMessage = 'Ses dosyası çözümlenemedi.';
-                    }
-                    
-                    document.getElementById('toastMessage').textContent = errorMessage;
-                    toast.show();
-                    resetButton(button);
-                    currentAudio = null;
-                    currentButton = null;
-                };
-
-                // Sesi çal
-                console.log('Ses çalmaya başlanıyor:', audioPath);
-                await currentAudio.play();
-
-            } catch (error) {
-                console.error('Ses yükleme hatası:', error);
-                document.getElementById('toastMessage').textContent = error.message || 'Ses dosyası yüklenirken bir hata oluştu.';
-                toast.show();
-                resetButton(button);
-                currentAudio = null;
-                currentButton = null;
-            }
+        function playSoundAndProgress(soundPath, mannerName) {
+            var audio = new Audio(soundPath);
+            audio.play();
+            var progressBar = document.getElementById('progress-' + mannerName.toLowerCase());
+            var currentProgress = parseInt(progressBar.style.width) || 0;
+            var newProgress = currentProgress + 50; // 2 tıklamada %100
+            if (newProgress > 100) newProgress = 100;
+            progressBar.style.width = newProgress + '%';
+            progressBar.textContent = newProgress + '%';
+            progressBar.setAttribute('aria-valuenow', newProgress);
+            // AJAX ile ilerleme bilgisini kaydet
+            fetch('/Course/SaveMannerProgress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ manner: mannerName, progress: newProgress })
+            })
+            .then(response => response.json())
+            .then(data => console.log('Success:', data))
+            .catch((error) => console.error('Error:', error));
         }
     </script>
 } 

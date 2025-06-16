@@ -1,57 +1,83 @@
 @{
     ViewData["Title"] = "İletişim";
 }
+
 <div class="container py-5">
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center">
-            <h2 class="mb-3" data-aos="fade-up">Bize Ulaşın</h2>
-            <p class="lead" data-aos="fade-up" data-aos-delay="100">Sorularınız, önerileriniz veya iş birliği talepleriniz için bizimle iletişime geçebilirsiniz.</p>
-        </div>
-    </div>
-    <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card h-100 shadow-sm border-0 text-center p-4">
-                <div class="mb-3 text-primary" style="font-size:2.5rem;"><i class="fas fa-envelope"></i></div>
-                <h5>E-posta</h5>
-                <p class="mb-0">info@otizmegitim.com</p>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h1 class="display-4 fw-bold text-primary mb-3">İletişim</h1>
+                <p class="lead text-muted">Bizimle iletişime geçin, size yardımcı olmaktan mutluluk duyarız</p>
             </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card h-100 shadow-sm border-0 text-center p-4">
-                <div class="mb-3 text-success" style="font-size:2.5rem;"><i class="fas fa-phone"></i></div>
-                <h5>Telefon</h5>
-                <p class="mb-0">+90 534 311 3258</p>
+
+            <div class="contact-info mb-5" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="contact-item text-center p-4 bg-light rounded-3 shadow-sm mb-4">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                            <h5>Adres</h5>
+                            <p class="mb-0">İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-item text-center p-4 bg-light rounded-3 shadow-sm mb-4">
+                            <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                            <h5>Telefon</h5>
+                            <p class="mb-0">+90 (212) 123 45 67</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-item text-center p-4 bg-light rounded-3 shadow-sm mb-4">
+                            <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                            <h5>E-posta</h5>
+                            <p class="mb-0">info@newotizm.com</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="card h-100 shadow-sm border-0 text-center p-4">
-                <div class="mb-3 text-warning" style="font-size:2.5rem;"><i class="fas fa-map-marker-alt"></i></div>
-                <h5>Adres</h5>
-                <p class="mb-0">İstanbul Gelişim Üniversitesi, İstanbul</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-lg-7">
-            <div class="card shadow border-0 p-4" data-aos="fade-up" data-aos-delay="500">
-                <h4 class="mb-4">İletişim Formu</h4>
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Adınız</label>
-                        <input type="text" class="form-control" id="name" placeholder="Adınızı girin" required />
+
+            <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Adınız</label>
+                                    <input type="text" class="form-control" placeholder="Adınızı girin">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">E-posta</label>
+                                    <input type="email" class="form-control" placeholder="E-posta adresinizi girin">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Konu</label>
+                                <input type="text" class="form-control" placeholder="Konuyu girin">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mesajınız</label>
+                                <textarea class="form-control" rows="5" placeholder="Mesajınızı girin"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-3">
+                                <i class="fas fa-paper-plane me-2"></i>Gönder
+                            </button>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">E-posta</label>
-                        <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Mesajınız</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Mesajınızı yazın" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary px-4">Gönder</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('.contact-form form').submit(function(e) {
+                e.preventDefault();
+                // Form gönderme işlemi burada yapılacak
+                alert('Mesajınız gönderildi. En kısa sürede size dönüş yapacağız.');
+            });
+        });
+    </script>
+}
  

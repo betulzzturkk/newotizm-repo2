@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oe6S+11YAwEW3bcSD5xNC3im/QzXvX+F4uPFiQXbIQg=",
+  "Hash": "DgRBwaspVWri3gTYk1fmUrLY/3QjWYRBE1pS7CyPlrE=",
   "Source": "AutismEducationPlatform.Web",
   "BasePath": "_content/AutismEducationPlatform.Web",
   "Mode": "Default",
@@ -2348,6 +2348,27 @@
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\lib\\jquery-validation\\dist\\localization\\messages_et.js"
     },
     {
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\8abl54jhwg-1f8wn91cx3.gz",
+      "SourceId": "AutismEducationPlatform.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/AutismEducationPlatform.Web",
+      "RelativePath": "css/child-info#[.{fingerprint=1f8wn91cx3}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\child-info.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "asfen2na61",
+      "Integrity": "avY/kmmcE2RHTPVSQiGQISAI+CeQnNuTA44HhISvakU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\child-info.css"
+    },
+    {
       "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\8axix7wldr-fsbi9cje9m.gz",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
@@ -3020,12 +3041,12 @@
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\lib\\jquery-validation\\dist\\localization\\methods_it.min.js"
     },
     {
-      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-3armgzqi3e.gz",
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-gtyyg951no.gz",
       "SourceId": "AutismEducationPlatform.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/AutismEducationPlatform.Web",
-      "RelativePath": "css/home#[.{fingerprint=3armgzqi3e}]?.css.gz",
+      "RelativePath": "css/home#[.{fingerprint=gtyyg951no}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -3034,8 +3055,8 @@
       "RelatedAsset": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\home.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "5p6ika8mq7",
-      "Integrity": "ae7/2TeIJKoFm1AwG7yDjY9c3NpqUt09E349zl0/Lak=",
+      "Fingerprint": "jq25hrot43",
+      "Integrity": "5aViRj/yGb/bCnel6bKoWEzNLPHyM/PVjOz+XUiC+ew=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\home.css"
@@ -3587,12 +3608,12 @@
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\lib\\jquery-validation\\dist\\localization\\messages_ur.min.js"
     },
     {
-      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-sly71ecswd.gz",
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-ntjmnjvl0g.gz",
       "SourceId": "AutismEducationPlatform.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/AutismEducationPlatform.Web",
-      "RelativePath": "css/site#[.{fingerprint=sly71ecswd}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=ntjmnjvl0g}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -3601,8 +3622,8 @@
       "RelatedAsset": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "or6dxeq36v",
-      "Integrity": "fIOv9Blzcbzat+B7IBWeirGLijfpxJhSpd781dpDoj4=",
+      "Fingerprint": "nk3tfqagu2",
+      "Integrity": "V246hCgxUyFYMEMWPqTofhke2xFj4ZIcpUPQ5jE0au4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\site.css"
@@ -3839,12 +3860,12 @@
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\lib\\jquery-validation\\dist\\localization\\methods_fi.js"
     },
     {
-      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-wf93f7nivs.gz",
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-ldpms9x1r2.gz",
       "SourceId": "AutismEducationPlatform.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/AutismEducationPlatform.Web",
-      "RelativePath": "css/parent-panel#[.{fingerprint=wf93f7nivs}]?.css.gz",
+      "RelativePath": "css/parent-panel#[.{fingerprint=ldpms9x1r2}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -3853,8 +3874,8 @@
       "RelatedAsset": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\parent-panel.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "hi1ywy7paf",
-      "Integrity": "1ysmvkpJkmrsQqapN5uorfHJXSUXD9U0UbCNS37DUrU=",
+      "Fingerprint": "y5q8n7vin8",
+      "Integrity": "imbnbFV3mvX5U2kWzQT7/QRFLw1hKmeDis5CDnzD/Ww=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\parent-panel.css"
@@ -6989,6 +7010,27 @@
       "OriginalItemSpec": "wwwroot\\css\\animals-bg.css"
     },
     {
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\child-info.css",
+      "SourceId": "AutismEducationPlatform.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\",
+      "BasePath": "_content/AutismEducationPlatform.Web",
+      "RelativePath": "css/child-info#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1f8wn91cx3",
+      "Integrity": "Y8Lkb6nq+tOFOs04AzjmtoOYW0j9yA4N8xhBPJr8Pl8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\child-info.css"
+    },
+    {
       "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\colors-bg.css",
       "SourceId": "AutismEducationPlatform.Web",
       "SourceType": "Discovered",
@@ -7024,8 +7066,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3armgzqi3e",
-      "Integrity": "m88B4sRZzuJ3fMOZyUHWeeBfw0gWeD3vK9+gEA6nStA=",
+      "Fingerprint": "gtyyg951no",
+      "Integrity": "PLc8Jxtu1sDw34A0TZaSsOsY5PeztnX8pZBTRQR++KM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\home.css"
@@ -7087,8 +7129,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "wf93f7nivs",
-      "Integrity": "jC3nRO1pveolwAPAFJrRkcul6+fUu/lh8pVCIT2mAkI=",
+      "Fingerprint": "ldpms9x1r2",
+      "Integrity": "BybAjJWOzumm0xARBrmFS/qQzrhqU8S+xp3GJuoPclQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\parent-panel.css"
@@ -7129,8 +7171,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "sly71ecswd",
-      "Integrity": "EPzDXCAIaIyLpGqf/tucH7NndIxMTb+aNQLdI4exEpU=",
+      "Fingerprint": "ntjmnjvl0g",
+      "Integrity": "JR+qPkyTaWbxt5FSFT2ldS2jf8PrtHPXm+Fylvp6CPE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -7344,6 +7386,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\animals\\lion.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\children\\cocuk.jpg",
+      "SourceId": "AutismEducationPlatform.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\",
+      "BasePath": "_content/AutismEducationPlatform.Web",
+      "RelativePath": "images/children/cocuk#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hqr7w5iuhm",
+      "Integrity": "14ONHZP8vSu+dv0DMGydn+1jcBfNVo+xUObrg2XbgTw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\children\\cocuk.jpg"
     },
     {
       "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\colors\\beyaz.jpg",
@@ -8184,6 +8247,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\pattern.png"
+    },
+    {
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\profil.jpg",
+      "SourceId": "AutismEducationPlatform.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\",
+      "BasePath": "_content/AutismEducationPlatform.Web",
+      "RelativePath": "images/profil#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z05i22exlf",
+      "Integrity": "DWxwfZOF/6mkspizdJInnTT5SQqg0paFDRwGARxbaL0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profil.jpg"
     },
     {
       "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\profiles\\profil.jpg",
@@ -15583,7 +15667,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15644,7 +15728,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15689,7 +15773,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15744,7 +15828,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15805,7 +15889,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15850,7 +15934,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15905,7 +15989,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15958,7 +16042,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15995,7 +16079,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16042,7 +16126,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16095,7 +16179,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16132,7 +16216,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 22:30:52 GMT"
+          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16453,6 +16537,304 @@
       ]
     },
     {
+      "Route": "css/child-info.1f8wn91cx3.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\8abl54jhwg-1f8wn91cx3.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001303780965"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "766"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"avY/kmmcE2RHTPVSQiGQISAI+CeQnNuTA44HhISvakU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 21:01:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Y8Lkb6nq+tOFOs04AzjmtoOYW0j9yA4N8xhBPJr8Pl8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1f8wn91cx3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/child-info.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y8Lkb6nq+tOFOs04AzjmtoOYW0j9yA4N8xhBPJr8Pl8="
+        }
+      ]
+    },
+    {
+      "Route": "css/child-info.1f8wn91cx3.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\child-info.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2293"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y8Lkb6nq+tOFOs04AzjmtoOYW0j9yA4N8xhBPJr8Pl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 21:01:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1f8wn91cx3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/child-info.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y8Lkb6nq+tOFOs04AzjmtoOYW0j9yA4N8xhBPJr8Pl8="
+        }
+      ]
+    },
+    {
+      "Route": "css/child-info.1f8wn91cx3.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\8abl54jhwg-1f8wn91cx3.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "766"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"avY/kmmcE2RHTPVSQiGQISAI+CeQnNuTA44HhISvakU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 21:01:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1f8wn91cx3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/child-info.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-avY/kmmcE2RHTPVSQiGQISAI+CeQnNuTA44HhISvakU="
+        }
+      ]
+    },
+    {
+      "Route": "css/child-info.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\8abl54jhwg-1f8wn91cx3.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001303780965"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "766"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"avY/kmmcE2RHTPVSQiGQISAI+CeQnNuTA44HhISvakU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 21:01:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Y8Lkb6nq+tOFOs04AzjmtoOYW0j9yA4N8xhBPJr8Pl8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y8Lkb6nq+tOFOs04AzjmtoOYW0j9yA4N8xhBPJr8Pl8="
+        }
+      ]
+    },
+    {
+      "Route": "css/child-info.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\child-info.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2293"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y8Lkb6nq+tOFOs04AzjmtoOYW0j9yA4N8xhBPJr8Pl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 21:01:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y8Lkb6nq+tOFOs04AzjmtoOYW0j9yA4N8xhBPJr8Pl8="
+        }
+      ]
+    },
+    {
+      "Route": "css/child-info.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\8abl54jhwg-1f8wn91cx3.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "766"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"avY/kmmcE2RHTPVSQiGQISAI+CeQnNuTA44HhISvakU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 21:01:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-avY/kmmcE2RHTPVSQiGQISAI+CeQnNuTA44HhISvakU="
+        }
+      ]
+    },
+    {
       "Route": "css/colors-bg.css",
       "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\24hvjv8wy9-qxuquhzfjm.gz",
       "Selectors": [
@@ -16751,13 +17133,13 @@
       ]
     },
     {
-      "Route": "css/home.3armgzqi3e.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-3armgzqi3e.gz",
+      "Route": "css/home.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-gtyyg951no.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000382116928"
+          "Quality": "0.001709401709"
         }
       ],
       "ResponseHeaders": [
@@ -16767,19 +17149,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2616"
+          "Value": "584"
         },
         {
           "Name": "ETag",
-          "Value": "\"ae7/2TeIJKoFm1AwG7yDjY9c3NpqUt09E349zl0/Lak=\""
+          "Value": "\"5aViRj/yGb/bCnel6bKoWEzNLPHyM/PVjOz+XUiC+ew=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 09:40:15 GMT"
+          "Value": "Sat, 14 Jun 2025 17:10:08 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -16795,26 +17177,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"m88B4sRZzuJ3fMOZyUHWeeBfw0gWeD3vK9+gEA6nStA=\""
+          "Value": "W/\"PLc8Jxtu1sDw34A0TZaSsOsY5PeztnX8pZBTRQR++KM=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "3armgzqi3e"
-        },
-        {
-          "Name": "label",
-          "Value": "css/home.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-m88B4sRZzuJ3fMOZyUHWeeBfw0gWeD3vK9+gEA6nStA="
+          "Value": "sha256-PLc8Jxtu1sDw34A0TZaSsOsY5PeztnX8pZBTRQR++KM="
         }
       ]
     },
     {
-      "Route": "css/home.3armgzqi3e.css",
+      "Route": "css/home.css",
       "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\home.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -16824,7 +17198,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17944"
+          "Value": "1709"
         },
         {
           "Name": "Content-Type",
@@ -16832,11 +17206,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"m88B4sRZzuJ3fMOZyUHWeeBfw0gWeD3vK9+gEA6nStA=\""
+          "Value": "\"PLc8Jxtu1sDw34A0TZaSsOsY5PeztnX8pZBTRQR++KM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 09:40:15 GMT"
+          "Value": "Sat, 14 Jun 2025 17:10:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PLc8Jxtu1sDw34A0TZaSsOsY5PeztnX8pZBTRQR++KM="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-gtyyg951no.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "584"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5aViRj/yGb/bCnel6bKoWEzNLPHyM/PVjOz+XUiC+ew=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 17:10:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5aViRj/yGb/bCnel6bKoWEzNLPHyM/PVjOz+XUiC+ew="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.gtyyg951no.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-gtyyg951no.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001709401709"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "584"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5aViRj/yGb/bCnel6bKoWEzNLPHyM/PVjOz+XUiC+ew=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 17:10:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"PLc8Jxtu1sDw34A0TZaSsOsY5PeztnX8pZBTRQR++KM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gtyyg951no"
+        },
+        {
+          "Name": "label",
+          "Value": "css/home.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PLc8Jxtu1sDw34A0TZaSsOsY5PeztnX8pZBTRQR++KM="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.gtyyg951no.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1709"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PLc8Jxtu1sDw34A0TZaSsOsY5PeztnX8pZBTRQR++KM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 17:10:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16846,7 +17365,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3armgzqi3e"
+          "Value": "gtyyg951no"
         },
         {
           "Name": "label",
@@ -16854,13 +17373,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-m88B4sRZzuJ3fMOZyUHWeeBfw0gWeD3vK9+gEA6nStA="
+          "Value": "sha256-PLc8Jxtu1sDw34A0TZaSsOsY5PeztnX8pZBTRQR++KM="
         }
       ]
     },
     {
-      "Route": "css/home.3armgzqi3e.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-3armgzqi3e.gz",
+      "Route": "css/home.gtyyg951no.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-gtyyg951no.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -16869,7 +17388,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2616"
+          "Value": "584"
         },
         {
           "Name": "Content-Type",
@@ -16877,11 +17396,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ae7/2TeIJKoFm1AwG7yDjY9c3NpqUt09E349zl0/Lak=\""
+          "Value": "\"5aViRj/yGb/bCnel6bKoWEzNLPHyM/PVjOz+XUiC+ew=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 09:40:15 GMT"
+          "Value": "Sat, 14 Jun 2025 17:10:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16899,7 +17418,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3armgzqi3e"
+          "Value": "gtyyg951no"
         },
         {
           "Name": "label",
@@ -16907,144 +17426,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ae7/2TeIJKoFm1AwG7yDjY9c3NpqUt09E349zl0/Lak="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-3armgzqi3e.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000382116928"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2616"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ae7/2TeIJKoFm1AwG7yDjY9c3NpqUt09E349zl0/Lak=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 09:40:15 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"m88B4sRZzuJ3fMOZyUHWeeBfw0gWeD3vK9+gEA6nStA=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-m88B4sRZzuJ3fMOZyUHWeeBfw0gWeD3vK9+gEA6nStA="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\home.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "17944"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"m88B4sRZzuJ3fMOZyUHWeeBfw0gWeD3vK9+gEA6nStA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 09:40:15 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-m88B4sRZzuJ3fMOZyUHWeeBfw0gWeD3vK9+gEA6nStA="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\cuy0vev2c8-3armgzqi3e.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2616"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ae7/2TeIJKoFm1AwG7yDjY9c3NpqUt09E349zl0/Lak=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 09:40:15 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ae7/2TeIJKoFm1AwG7yDjY9c3NpqUt09E349zl0/Lak="
+          "Value": "sha256-5aViRj/yGb/bCnel6bKoWEzNLPHyM/PVjOz+XUiC+ew="
         }
       ]
     },
@@ -17646,12 +18028,12 @@
     },
     {
       "Route": "css/parent-panel.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-wf93f7nivs.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-ldpms9x1r2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000739098300"
+          "Quality": "0.001422475107"
         }
       ],
       "ResponseHeaders": [
@@ -17661,15 +18043,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1352"
+          "Value": "702"
         },
         {
           "Name": "ETag",
-          "Value": "\"1ysmvkpJkmrsQqapN5uorfHJXSUXD9U0UbCNS37DUrU=\""
+          "Value": "\"imbnbFV3mvX5U2kWzQT7/QRFLw1hKmeDis5CDnzD/Ww=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 17:15:05 GMT"
+          "Value": "Sat, 14 Jun 2025 00:12:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17689,13 +18071,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"jC3nRO1pveolwAPAFJrRkcul6+fUu/lh8pVCIT2mAkI=\""
+          "Value": "W/\"BybAjJWOzumm0xARBrmFS/qQzrhqU8S+xp3GJuoPclQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-jC3nRO1pveolwAPAFJrRkcul6+fUu/lh8pVCIT2mAkI="
+          "Value": "sha256-BybAjJWOzumm0xARBrmFS/qQzrhqU8S+xp3GJuoPclQ="
         }
       ]
     },
@@ -17710,7 +18092,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4766"
+          "Value": "1718"
         },
         {
           "Name": "Content-Type",
@@ -17718,11 +18100,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jC3nRO1pveolwAPAFJrRkcul6+fUu/lh8pVCIT2mAkI=\""
+          "Value": "\"BybAjJWOzumm0xARBrmFS/qQzrhqU8S+xp3GJuoPclQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 17:15:05 GMT"
+          "Value": "Sat, 14 Jun 2025 00:12:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17732,13 +18114,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-jC3nRO1pveolwAPAFJrRkcul6+fUu/lh8pVCIT2mAkI="
+          "Value": "sha256-BybAjJWOzumm0xARBrmFS/qQzrhqU8S+xp3GJuoPclQ="
         }
       ]
     },
     {
       "Route": "css/parent-panel.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-wf93f7nivs.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-ldpms9x1r2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -17747,7 +18129,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1352"
+          "Value": "702"
         },
         {
           "Name": "Content-Type",
@@ -17755,11 +18137,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1ysmvkpJkmrsQqapN5uorfHJXSUXD9U0UbCNS37DUrU=\""
+          "Value": "\"imbnbFV3mvX5U2kWzQT7/QRFLw1hKmeDis5CDnzD/Ww=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 17:15:05 GMT"
+          "Value": "Sat, 14 Jun 2025 00:12:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17777,18 +18159,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1ysmvkpJkmrsQqapN5uorfHJXSUXD9U0UbCNS37DUrU="
+          "Value": "sha256-imbnbFV3mvX5U2kWzQT7/QRFLw1hKmeDis5CDnzD/Ww="
         }
       ]
     },
     {
-      "Route": "css/parent-panel.wf93f7nivs.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-wf93f7nivs.gz",
+      "Route": "css/parent-panel.ldpms9x1r2.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-ldpms9x1r2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000739098300"
+          "Quality": "0.001422475107"
         }
       ],
       "ResponseHeaders": [
@@ -17798,15 +18180,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1352"
+          "Value": "702"
         },
         {
           "Name": "ETag",
-          "Value": "\"1ysmvkpJkmrsQqapN5uorfHJXSUXD9U0UbCNS37DUrU=\""
+          "Value": "\"imbnbFV3mvX5U2kWzQT7/QRFLw1hKmeDis5CDnzD/Ww=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 17:15:05 GMT"
+          "Value": "Sat, 14 Jun 2025 00:12:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17826,13 +18208,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"jC3nRO1pveolwAPAFJrRkcul6+fUu/lh8pVCIT2mAkI=\""
+          "Value": "W/\"BybAjJWOzumm0xARBrmFS/qQzrhqU8S+xp3GJuoPclQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wf93f7nivs"
+          "Value": "ldpms9x1r2"
         },
         {
           "Name": "label",
@@ -17840,12 +18222,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-jC3nRO1pveolwAPAFJrRkcul6+fUu/lh8pVCIT2mAkI="
+          "Value": "sha256-BybAjJWOzumm0xARBrmFS/qQzrhqU8S+xp3GJuoPclQ="
         }
       ]
     },
     {
-      "Route": "css/parent-panel.wf93f7nivs.css",
+      "Route": "css/parent-panel.ldpms9x1r2.css",
       "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\parent-panel.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -17855,7 +18237,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4766"
+          "Value": "1718"
         },
         {
           "Name": "Content-Type",
@@ -17863,11 +18245,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jC3nRO1pveolwAPAFJrRkcul6+fUu/lh8pVCIT2mAkI=\""
+          "Value": "\"BybAjJWOzumm0xARBrmFS/qQzrhqU8S+xp3GJuoPclQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 17:15:05 GMT"
+          "Value": "Sat, 14 Jun 2025 00:12:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17877,7 +18259,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wf93f7nivs"
+          "Value": "ldpms9x1r2"
         },
         {
           "Name": "label",
@@ -17885,13 +18267,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-jC3nRO1pveolwAPAFJrRkcul6+fUu/lh8pVCIT2mAkI="
+          "Value": "sha256-BybAjJWOzumm0xARBrmFS/qQzrhqU8S+xp3GJuoPclQ="
         }
       ]
     },
     {
-      "Route": "css/parent-panel.wf93f7nivs.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-wf93f7nivs.gz",
+      "Route": "css/parent-panel.ldpms9x1r2.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\hzxvxpm1cp-ldpms9x1r2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -17900,7 +18282,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1352"
+          "Value": "702"
         },
         {
           "Name": "Content-Type",
@@ -17908,11 +18290,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1ysmvkpJkmrsQqapN5uorfHJXSUXD9U0UbCNS37DUrU=\""
+          "Value": "\"imbnbFV3mvX5U2kWzQT7/QRFLw1hKmeDis5CDnzD/Ww=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 17:15:05 GMT"
+          "Value": "Sat, 14 Jun 2025 00:12:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17930,7 +18312,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wf93f7nivs"
+          "Value": "ldpms9x1r2"
         },
         {
           "Name": "label",
@@ -17938,7 +18320,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-1ysmvkpJkmrsQqapN5uorfHJXSUXD9U0UbCNS37DUrU="
+          "Value": "sha256-imbnbFV3mvX5U2kWzQT7/QRFLw1hKmeDis5CDnzD/Ww="
         }
       ]
     },
@@ -18242,12 +18624,12 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-sly71ecswd.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-ntjmnjvl0g.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000165480721"
+          "Quality": "0.001137656428"
         }
       ],
       "ResponseHeaders": [
@@ -18257,15 +18639,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6042"
+          "Value": "878"
         },
         {
           "Name": "ETag",
-          "Value": "\"fIOv9Blzcbzat+B7IBWeirGLijfpxJhSpd781dpDoj4=\""
+          "Value": "\"V246hCgxUyFYMEMWPqTofhke2xFj4ZIcpUPQ5jE0au4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 19:02:59 GMT"
+          "Value": "Sat, 14 Jun 2025 20:19:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18285,13 +18667,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"EPzDXCAIaIyLpGqf/tucH7NndIxMTb+aNQLdI4exEpU=\""
+          "Value": "W/\"JR+qPkyTaWbxt5FSFT2ldS2jf8PrtHPXm+Fylvp6CPE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-EPzDXCAIaIyLpGqf/tucH7NndIxMTb+aNQLdI4exEpU="
+          "Value": "sha256-JR+qPkyTaWbxt5FSFT2ldS2jf8PrtHPXm+Fylvp6CPE="
         }
       ]
     },
@@ -18306,7 +18688,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "35059"
+          "Value": "2922"
         },
         {
           "Name": "Content-Type",
@@ -18314,11 +18696,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EPzDXCAIaIyLpGqf/tucH7NndIxMTb+aNQLdI4exEpU=\""
+          "Value": "\"JR+qPkyTaWbxt5FSFT2ldS2jf8PrtHPXm+Fylvp6CPE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 19:02:59 GMT"
+          "Value": "Sat, 14 Jun 2025 20:19:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18328,13 +18710,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-EPzDXCAIaIyLpGqf/tucH7NndIxMTb+aNQLdI4exEpU="
+          "Value": "sha256-JR+qPkyTaWbxt5FSFT2ldS2jf8PrtHPXm+Fylvp6CPE="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-sly71ecswd.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-ntjmnjvl0g.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -18343,7 +18725,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6042"
+          "Value": "878"
         },
         {
           "Name": "Content-Type",
@@ -18351,11 +18733,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fIOv9Blzcbzat+B7IBWeirGLijfpxJhSpd781dpDoj4=\""
+          "Value": "\"V246hCgxUyFYMEMWPqTofhke2xFj4ZIcpUPQ5jE0au4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 19:02:59 GMT"
+          "Value": "Sat, 14 Jun 2025 20:19:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18373,18 +18755,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fIOv9Blzcbzat+B7IBWeirGLijfpxJhSpd781dpDoj4="
+          "Value": "sha256-V246hCgxUyFYMEMWPqTofhke2xFj4ZIcpUPQ5jE0au4="
         }
       ]
     },
     {
-      "Route": "css/site.sly71ecswd.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-sly71ecswd.gz",
+      "Route": "css/site.ntjmnjvl0g.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-ntjmnjvl0g.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000165480721"
+          "Quality": "0.001137656428"
         }
       ],
       "ResponseHeaders": [
@@ -18394,15 +18776,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6042"
+          "Value": "878"
         },
         {
           "Name": "ETag",
-          "Value": "\"fIOv9Blzcbzat+B7IBWeirGLijfpxJhSpd781dpDoj4=\""
+          "Value": "\"V246hCgxUyFYMEMWPqTofhke2xFj4ZIcpUPQ5jE0au4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 19:02:59 GMT"
+          "Value": "Sat, 14 Jun 2025 20:19:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18422,13 +18804,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"EPzDXCAIaIyLpGqf/tucH7NndIxMTb+aNQLdI4exEpU=\""
+          "Value": "W/\"JR+qPkyTaWbxt5FSFT2ldS2jf8PrtHPXm+Fylvp6CPE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "sly71ecswd"
+          "Value": "ntjmnjvl0g"
         },
         {
           "Name": "label",
@@ -18436,12 +18818,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-EPzDXCAIaIyLpGqf/tucH7NndIxMTb+aNQLdI4exEpU="
+          "Value": "sha256-JR+qPkyTaWbxt5FSFT2ldS2jf8PrtHPXm+Fylvp6CPE="
         }
       ]
     },
     {
-      "Route": "css/site.sly71ecswd.css",
+      "Route": "css/site.ntjmnjvl0g.css",
       "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -18451,7 +18833,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "35059"
+          "Value": "2922"
         },
         {
           "Name": "Content-Type",
@@ -18459,11 +18841,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EPzDXCAIaIyLpGqf/tucH7NndIxMTb+aNQLdI4exEpU=\""
+          "Value": "\"JR+qPkyTaWbxt5FSFT2ldS2jf8PrtHPXm+Fylvp6CPE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 19:02:59 GMT"
+          "Value": "Sat, 14 Jun 2025 20:19:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18473,7 +18855,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "sly71ecswd"
+          "Value": "ntjmnjvl0g"
         },
         {
           "Name": "label",
@@ -18481,13 +18863,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-EPzDXCAIaIyLpGqf/tucH7NndIxMTb+aNQLdI4exEpU="
+          "Value": "sha256-JR+qPkyTaWbxt5FSFT2ldS2jf8PrtHPXm+Fylvp6CPE="
         }
       ]
     },
     {
-      "Route": "css/site.sly71ecswd.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-sly71ecswd.gz",
+      "Route": "css/site.ntjmnjvl0g.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\g68u72k2f3-ntjmnjvl0g.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -18496,7 +18878,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6042"
+          "Value": "878"
         },
         {
           "Name": "Content-Type",
@@ -18504,11 +18886,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fIOv9Blzcbzat+B7IBWeirGLijfpxJhSpd781dpDoj4=\""
+          "Value": "\"V246hCgxUyFYMEMWPqTofhke2xFj4ZIcpUPQ5jE0au4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 19:02:59 GMT"
+          "Value": "Sat, 14 Jun 2025 20:19:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18526,7 +18908,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "sly71ecswd"
+          "Value": "ntjmnjvl0g"
         },
         {
           "Name": "label",
@@ -18534,7 +18916,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-fIOv9Blzcbzat+B7IBWeirGLijfpxJhSpd781dpDoj4="
+          "Value": "sha256-V246hCgxUyFYMEMWPqTofhke2xFj4ZIcpUPQ5jE0au4="
         }
       ]
     },
@@ -28106,6 +28488,88 @@
       ]
     },
     {
+      "Route": "images/children/cocuk.hqr7w5iuhm.jpg",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\children\\cocuk.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29378"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"14ONHZP8vSu+dv0DMGydn+1jcBfNVo+xUObrg2XbgTw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 17:54:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hqr7w5iuhm"
+        },
+        {
+          "Name": "label",
+          "Value": "images/children/cocuk.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-14ONHZP8vSu+dv0DMGydn+1jcBfNVo+xUObrg2XbgTw="
+        }
+      ]
+    },
+    {
+      "Route": "images/children/cocuk.jpg",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\children\\cocuk.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29378"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"14ONHZP8vSu+dv0DMGydn+1jcBfNVo+xUObrg2XbgTw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 17:54:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-14ONHZP8vSu+dv0DMGydn+1jcBfNVo+xUObrg2XbgTw="
+        }
+      ]
+    },
+    {
       "Route": "images/colors/beyaz.ht5820ucgm.jpg",
       "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\colors\\beyaz.jpg",
       "Selectors": [],
@@ -31814,6 +32278,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-yvh0UoIVz6GdjYZalYE5jLTtyjuXTDntSitNyHICHzI="
+        }
+      ]
+    },
+    {
+      "Route": "images/profil.jpg",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\profil.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18240"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DWxwfZOF/6mkspizdJInnTT5SQqg0paFDRwGARxbaL0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 16:22:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DWxwfZOF/6mkspizdJInnTT5SQqg0paFDRwGARxbaL0="
+        }
+      ]
+    },
+    {
+      "Route": "images/profil.z05i22exlf.jpg",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\profil.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18240"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DWxwfZOF/6mkspizdJInnTT5SQqg0paFDRwGARxbaL0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 16:22:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z05i22exlf"
+        },
+        {
+          "Name": "label",
+          "Value": "images/profil.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DWxwfZOF/6mkspizdJInnTT5SQqg0paFDRwGARxbaL0="
         }
       ]
     },

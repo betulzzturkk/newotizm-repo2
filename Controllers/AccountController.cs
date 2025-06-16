@@ -25,63 +25,93 @@ namespace AutismEducationPlatform.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Register()
+        public IActionResult ParentRegister()
+        {
+            return View(new ParentRegistrationViewModel());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ParentRegister(ParentRegistrationViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Name = $"{model.FirstName} {model.LastName}",
+                    PhoneNumber = model.PhoneNumber,
+                    ChildName = model.ChildName,
+                    ChildAge = model.ChildAge,
+                    Role = "Parent",
+                    IsActive = true
+                };
+
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    var roleResult = await _userManager.AddToRoleAsync(user, "Parent");
+                    if (roleResult.Succeeded)
+                    {
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        return RedirectToAction("Index", "Parent");
+                    }
+                    foreach (var error in roleResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult InstructorRegister()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> InstructorRegister(InstructorRegistrationViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                var user = new ApplicationUser
                 {
-                    var user = new ApplicationUser
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Name = model.Name,
+                    Specialization = model.Specialization,
+                    Experience = model.Experience,
+                    Role = "Instructor"
+                };
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    var roleResult = await _userManager.AddToRoleAsync(user, "Instructor");
+                    if (roleResult.Succeeded)
                     {
-                        UserName = model.Email,
-                        Email = model.Email,
-                        Name = model.Name,
-                        PhoneNumber = model.PhoneNumber,
-                        FirstName = model.Name,
-                        LastName = model.Name
-                    };
-
-                    if (model.Role == "Parent")
-                    {
-                        user.ChildName = model.ChildName;
-                        user.ChildAge = model.ChildAge;
-                    }
-                    else if (model.Role == "Instructor")
-                    {
-                        user.Specialization = model.Specialization;
-                    }
-
-                    var result = await _userManager.CreateAsync(user, model.Password);
-
-                    if (result.Succeeded)
-                    {
-                        await _userManager.AddToRoleAsync(user, model.Role);
                         await _signInManager.SignInAsync(user, isPersistent: false);
-
-                        if (model.Role == "Parent")
-                            return RedirectToAction("Index", "Parent");
-                        else if (model.Role == "Instructor")
-                            return RedirectToAction("Index", "Instructor");
+                        return RedirectToAction("Index", "Instructor");
                     }
-
-                    foreach (var error in result.Errors)
+                    foreach (var error in roleResult.Errors)
                     {
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
                 }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
             }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, "Kayıt işlemi sırasında bir hata oluştu: " + ex.Message);
-            }
-
             return View(model);
         }
 

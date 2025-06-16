@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutismEducationPlatform.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e09cecb1df3c3f15d52d288b076c23cbd90872d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64b6caf501a5ed368fc0d97916a9a10c1a51ee24")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutismEducationPlatform.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutismEducationPlatform.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

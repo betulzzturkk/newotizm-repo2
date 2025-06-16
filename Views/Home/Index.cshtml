@@ -1,61 +1,58 @@
-﻿@{
+@{
     ViewData["Title"] = "Ana Sayfa";
 }
 
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section d-flex align-items-center" style="min-height: 80vh; background: linear-gradient(135deg, #6B48FF 0%, #4cc9f0 100%);">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center hero-content" data-aos="fade-up">
-                <h1>Otizm Eğitim Platformuna Hoş Geldiniz</h1>
-                <p>Otizmli çocukların eğitiminde yenilikçi ve etkili çözümler sunuyoruz. Özel eğitim programlarıyla çocuklarınızın gelişimine destek olun.</p>
-                <div class="hero-btns" data-aos="fade-up" data-aos-delay="200">
-                    <a href="/Account/Login" class="btn btn-outline-light"><i class="fas fa-sign-in-alt me-2"></i>Giriş Yap</a>
-                    <a href="/Account/Register" class="btn btn-outline-light"><i class="fas fa-user-plus me-2"></i>Ücretsiz Kayıt Ol</a>
-                    <a href="/Course" class="btn btn-success"><i class="fas fa-play me-2"></i>Eğitime Git</a>
+                <h1 class="display-3 fw-bold mb-4 text-white">Otizm Eğitim Platformuna Hoş Geldiniz</h1>
+                <p class="lead text-white mb-5">Otizmli çocukların eğitiminde yenilikçi ve etkili çözümler sunuyoruz. Özel eğitim programlarıyla çocuklarınızın gelişimine destek olun.</p>
+                <div class="hero-btns mb-4">
+                    <a href="/Course" class="btn btn-warning btn-lg mx-2 mb-2"><i class="fas fa-play me-2"></i>EĞİTİME GİT</a>
+                    <a href="#about" class="btn btn-info btn-lg mx-2 mb-2"><i class="fas fa-info-circle me-2"></i>DAHA FAZLA BİLGİ AL</a>
+                </div>
+                <div class="register-btns">
+                    <a href="/Account/ParentRegister" class="btn btn-success btn-lg mx-2 mb-2"><i class="fas fa-user-friends me-2"></i>VELİ OLARAK KAYIT OL</a>
+                    <a href="/Account/InstructorRegister" class="btn btn-primary btn-lg mx-2 mb-2"><i class="fas fa-chalkboard-teacher me-2"></i>EĞİTMEN OLARAK KAYIT OL</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Features Section -->
-<section class="features-section">
+<!-- Özellikler -->
+<section class="features-section py-5 bg-white">
     <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-            <h2>Neden Bizi Seçmelisiniz?</h2>
-            <p>Otizmli çocuklar için özel olarak tasarlanmış eğitim programlarımızla benzersiz bir deneyim sunuyoruz</p>
+        <div class="section-title text-center mb-5">
+            <h2 class="fw-bold">Neden Bizi Seçmelisiniz?</h2>
+            <p class="text-muted">Otizmli çocuklar için özel olarak tasarlanmış eğitim programlarımızla benzersiz bir deneyim sunuyoruz.</p>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="feature-card">
-                    <div class="card-body text-center p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>Özelleştirilmiş Eğitim</h3>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <div class="mb-3"><i class="fas fa-graduation-cap fa-3x text-primary"></i></div>
+                        <h5 class="fw-bold mb-2">Özelleştirilmiş Eğitim</h5>
                         <p>Her çocuğun bireysel ihtiyaçlarına uygun eğitim programları sunuyoruz.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-card">
-                    <div class="card-body text-center p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-info-circle"></i>
-                        </div>
-                        <h3>Platform İçeriği</h3>
-                        <p>Platformumuzda otizmli çocuklar için eğitim modülleri, gelişim takibi, aile rehberliği ve etkileşimli materyaller bulunmaktadır.</p>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <div class="mb-3"><i class="fas fa-info-circle fa-3x text-info"></i></div>
+                        <h5 class="fw-bold mb-2">Zengin İçerik</h5>
+                        <p>Platformda eğitim modülleri, gelişim takibi, aile rehberliği ve etkileşimli materyaller var.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-card">
-                    <div class="card-body text-center p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Gelişim Takibi</h3>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <div class="mb-3"><i class="fas fa-chart-line fa-3x text-success"></i></div>
+                        <h5 class="fw-bold mb-2">Gelişim Takibi</h5>
                         <p>Çocuğunuzun gelişimini düzenli olarak takip edip raporluyoruz.</p>
                     </div>
                 </div>
@@ -64,109 +61,22 @@
     </div>
 </section>
 
-<!-- How It Works Section -->
-<section class="how-it-works">
+<!-- Hakkımızda -->
+<section id="about" class="about-section py-5 bg-light">
     <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-            <h2>Platformu Nasıl Kullanabilirsiniz?</h2>
-            <p>4 kolay adımda çocuğunuz için özel eğitim programına başlayın</p>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <i class="fas fa-user-plus"></i>
-                    </div>
-                    <h4>Kayıt Olun</h4>
-                    <p class="text-muted">Hızlı ve kolay kayıt işlemi ile platformumuza üye olun.</p>
-                </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="/images/otizm-egitim.jpg" alt="Otizm Eğitim" class="img-fluid rounded shadow">
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h4>Profil Oluşturun</h4>
-                    <p class="text-muted">Çocuğunuzun bilgilerini girerek kişiselleştirilmiş eğitim planı oluşturun.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h4>Eğitimlere Başlayın</h4>
-                    <p class="text-muted">Size özel hazırlanan eğitim programlarına hemen başlayın.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <div class="step-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h4>Gelişimi Takip Edin</h4>
-                    <p class="text-muted">Çocuğunuzun gelişimini düzenli olarak takip edin ve raporları inceleyin.</p>
-                </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-3">Hakkımızda</h2>
+                <p class="lead text-muted">Otizmli çocuklar için özel eğitim platformumuz hakkında daha fazla bilgi edinin. Uzman eğitmenlerimiz ve zengin içeriklerimizle çocuğunuzun gelişimine katkı sağlıyoruz.</p>
+                <ul class="list-unstyled mt-4">
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Kişiselleştirilmiş eğitim planları</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Aile ve eğitmen desteği</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Modern ve etkileşimli platform</li>
+                </ul>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Stats Section -->
-<section class="stats-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-number">1000+</div>
-                    <div class="stat-text">Mutlu Aile</div>
-                </div>
-            </div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="stat-number">50+</div>
-                    <div class="stat-text">Eğitim Programı</div>
-                </div>
-            </div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <div class="stat-number">30+</div>
-                    <div class="stat-text">Uzman Eğitmen</div>
-                </div>
-            </div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="stat-number">%98</div>
-                    <div class="stat-text">Memnuniyet Oranı</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-    });
-</script>
- 
+</section> 

@@ -8,5 +8,6 @@ namespace AutismEducationPlatform.Web.Models.ViewModels
         public string HexCode { get; set; } = string.Empty; // Rengin hex kodu
         public string Example { get; set; } = string.Empty; // Örnek: "Kırmızı elma", "Mavi gökyüzü" gibi
         public string SoundPath { get; set; } = string.Empty;
+        public int Progress { get; set; } = 0;
     }
 } 

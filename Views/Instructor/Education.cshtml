@@ -1,0 +1,112 @@
+@model IEnumerable<AutismEducationPlatform.Web.Models.Course>
+
+@{
+    Layout = "_InstructorLayout";
+    ViewData["Title"] = "Eğitim Programları";
+}
+
+@section Styles {
+    <style>
+        .course-card {
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-icon {
+            position: relative;
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
+            border-radius: 15px 15px 0 0;
+            color: white;
+        }
+
+        .course-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .course-content {
+            background: white;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .course-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .course-learn {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .course-learn ul li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
+            border: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1c7a94, #5bc0d9);
+            transform: translateY(-2px);
+        }
+    </style>
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5" data-aos="fade-up">
+        <h1 class="display-4 fw-bold text-primary mb-3">Eğitim Programları</h1>
+        <p class="lead text-muted">Otizmli çocuklar için özel tasarlanmış eğitim programlarımız</p>
+    </div>
+
+    <div class="row">
+        @foreach (var course in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="course-card bg-light">
+                    <div class="course-icon text-center p-4">
+                        <i class="@course.IconClass fa-4x text-primary mb-3"></i>
+                        <div class="course-overlay">
+                            <span class="badge bg-@(course.DifficultyLevel <= 2 ? "warning" : course.DifficultyLevel <= 4 ? "info" : "danger")">
+                                @(course.DifficultyLevel <= 2 ? "Başlangıç" : course.DifficultyLevel <= 4 ? "Orta" : "İleri")
+                            </span>
+                        </div>
+                    </div>
+                    <div class="course-content p-4">
+                        <h4 class="mb-3">@course.Name</h4>
+                        <p class="text-muted mb-4">@course.Description</p>
+                        <div class="course-meta d-flex justify-content-between align-items-center mb-3">
+                            <span><i class="fas fa-clock me-2"></i>@course.DurationMinutes dk</span>
+                            <span><i class="fas fa-users me-2"></i>@course.StudentCount Öğrenci</span>
+                        </div>
+                        <div class="course-learn">
+                            <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Temel kavramlar</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Pratik uygulamalar</li>
+                                <li><i class="fas fa-check text-success me-2"></i>İnteraktif aktiviteler</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Değerlendirme testleri</li>
+                            </ul>
+                        </div>
+                        <a href="@Url.Action("Index", "Course", new { id = course.Id })" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div> 

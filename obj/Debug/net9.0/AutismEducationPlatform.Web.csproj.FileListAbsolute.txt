@@ -932,8 +932,8 @@ C:\Users\betulozturk\newotizm-repo\obj\Debug\net9.0\ref\AutismEducationPlatform.
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\appsettings.json
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\libman.json
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\AutismEducationPlatform.Web.staticwebassets.endpoints.json
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\AutismEducationPlatform.Web.staticwebassets.runtime.json
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\AutismEducationPlatform.Web.staticwebassets.endpoints.json
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\AutismEducationPlatform.Web.exe
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\AutismEducationPlatform.Web.deps.json
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\AutismEducationPlatform.Web.runtimeconfig.json
@@ -988,6 +988,7 @@ C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\Microsoft.I
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\Mono.TextTemplating.dll
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\SQLitePCLRaw.core.dll
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -1181,8 +1182,13 @@ C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\nezrqnk58p-muycvpuwrr.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\6lzxtd7tqf-x0zjpjvce5.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\8abl54jhwg-1f8wn91cx3.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\24hvjv8wy9-qxuquhzfjm.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\e6s87avq9q-wxs8b765ux.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\qpcqwvpx33-as9th68wwu.gz
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\g68u72k2f3-sly71ecswd.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\hzxvxpm1cp-ldpms9x1r2.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\upu291oz52-d7fd4p0914.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\br843116sa-61n19gt1b8.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\ibugimkj75-77o9bsmj8b.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\swstyabei2-5vhlem5b8p.gz
@@ -1394,10 +1400,5 @@ C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\refint\Auti
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\AutismEducationPlatform.Web.pdb
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\AutismEducationPlatform.Web.genruntimeconfig.cache
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\ref\AutismEducationPlatform.Web.dll
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\cuy0vev2c8-3armgzqi3e.gz
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\24hvjv8wy9-qxuquhzfjm.gz
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\upu291oz52-d7fd4p0914.gz
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\e6s87avq9q-wxs8b765ux.gz
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\bin\Debug\net9.0\Newtonsoft.Json.dll
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\6lzxtd7tqf-x0zjpjvce5.gz
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\hzxvxpm1cp-wf93f7nivs.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\cuy0vev2c8-gtyyg951no.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\g68u72k2f3-ntjmnjvl0g.gz

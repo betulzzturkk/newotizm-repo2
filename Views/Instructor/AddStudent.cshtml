@@ -1,0 +1,110 @@
+@{
+    Layout = "_InstructorLayout";
+    ViewData["Title"] = "Öğrenci Ekle";
+}
+
+@model AutismEducationPlatform.Web.Models.ViewModels.StudentViewModel
+
+<div class="container py-4">
+    <h2 class="mb-4">Öğrenci Ekle</h2>
+    <form asp-controller="Instructor" asp-action="AddStudent" method="post" id="addStudentForm">
+        @Html.AntiForgeryToken()
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Ad</label>
+            <input asp-for="Name" class="form-control" required />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Surname" class="form-label">Soyad</label>
+            <input asp-for="Surname" class="form-control" required />
+            <span asp-validation-for="Surname" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Age" class="form-label">Yaş</label>
+            <input asp-for="Age" class="form-control" type="number" min="2" max="18" required />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Gender" class="form-label">Cinsiyet</label>
+            <select asp-for="Gender" class="form-select" required>
+                <option value="">Seçiniz</option>
+                <option value="Erkek">Erkek</option>
+                <option value="Kız">Kız</option>
+            </select>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Diagnosis" class="form-label">Tanı</label>
+            <input asp-for="Diagnosis" class="form-control" placeholder="Örn: Otizm, Dikkat Eksikliği..." required />
+            <span asp-validation-for="Diagnosis" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Hobbies" class="form-label">Hobiler</label>
+            <input asp-for="Hobbies" class="form-control" placeholder="Örn: Müzik, Spor, Resim..." />
+            <span asp-validation-for="Hobbies" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Notes" class="form-label">Notlar</label>
+            <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="Notes" class="text-danger"></span>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a href="/Instructor/Students" class="btn btn-secondary">Geri Dön</a>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+    </form>
+</div>
+
+@if (ViewBag.Students != null && ((List<AutismEducationPlatform.Web.Models.Student>)ViewBag.Students).Count > 0)
+{
+    <div class="container mt-5">
+        <h4 class="mb-3" style="color:#2193b0; font-weight:600;">Mevcut Öğrenciler</h4>
+        @foreach (var student in (List<AutismEducationPlatform.Web.Models.Student>)ViewBag.Students)
+        {
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">@student.Name @student.Surname (@student.Age yaşında)</h5>
+                    <p class="card-text">
+                        <strong>Tanı:</strong> @(string.IsNullOrWhiteSpace(student.Diagnosis) ? "Belirtilmemiş" : student.Diagnosis)<br>
+                        <strong>Hobiler:</strong> @(string.IsNullOrWhiteSpace(student.Hobbies) ? "Belirtilmemiş" : student.Hobbies)<br>
+                        <strong>Eklenme Tarihi:</strong> @student.CreatedAt.ToShortDateString()
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function() {
+            $('#addStudentForm').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+                if (form.valid()) {
+                    $.ajax({
+                        url: form.attr('action'),
+                        type: 'POST',
+                        data: form.serialize(),
+                        success: function(response) {
+                            if (response.success) {
+                                alert(response.message);
+                                window.location.href = response.redirectUrl;
+                            } else {
+                                if (response.errors && response.errors.length > 0) {
+                                    alert(response.errors.join('\n'));
+                                } else {
+                                    alert(response.message);
+                                }
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+} 

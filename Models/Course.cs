@@ -47,5 +47,7 @@ namespace AutismEducationPlatform.Web.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
+
+        public int StudentCount { get; set; }
     }
 } 

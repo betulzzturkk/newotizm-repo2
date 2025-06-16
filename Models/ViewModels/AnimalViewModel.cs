@@ -11,5 +11,8 @@ namespace AutismEducationPlatform.Web.Models.ViewModels
         public string Description { get; set; } = string.Empty;
         public int Progress { get; set; } = 0; // 0-100 arası ilerleme
         public DateTime? LastInteraction { get; set; }
+        public string ImageUrl { get; set; } = string.Empty;
+        public string SoundUrl { get; set; } = string.Empty;
+        public int CompletedAnimalCount { get; set; } = 0;
     }
 } 

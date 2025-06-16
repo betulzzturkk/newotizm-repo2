@@ -308,7 +308,26 @@ namespace AutismEducationPlatform.Web.Controllers
             return View(signs);
         }
 
-        public IActionResult Manners() => View();
+        public IActionResult Manners()
+        {
+            var manners = new List<MannersViewModel>
+            {
+                new MannersViewModel
+                {
+                    Title = "Teşekkür Etmek",
+                    Description = "Teşekkür etmek, başkalarına karşı saygı göstermenin bir yoludur.",
+                    ImagePath = "/images/tesekkur.jpg",
+                    Category = "Sosyal",
+                    Color = "bg-success",
+                    Example = "Birisi size bir şey verdiğinde",
+                    CorrectBehavior = "Teşekkür ederim demek"
+                },
+                // Diğer görgü kuralları...
+            };
+
+            return View(manners);
+        }
+
         public IActionResult EducationalVideos() => View();
 
         public IActionResult Details(int id)
@@ -512,6 +531,48 @@ namespace AutismEducationPlatform.Web.Controllers
             return Json(new { success = true, progress = progress.Progress });
         }
 
+        [HttpPost]
+        public async Task<IActionResult> SaveMannerProgress([FromBody] MannerProgressInputModel model)
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Json(new { success = false, message = "Lütfen giriş yapın.", requireLogin = true });
+            }
+
+            try
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var progress = await _context.MannerProgress
+                    .FirstOrDefaultAsync(p => p.MannerName == model.MannerName && p.UserId == userId);
+
+                if (progress == null)
+                {
+                    progress = new MannerProgress
+                    {
+                        MannerName = model.MannerName,
+                        UserId = userId,
+                        Progress = model.Progress,
+                        InteractionCount = 1,
+                        LastInteraction = DateTime.UtcNow
+                    };
+                    _context.MannerProgress.Add(progress);
+                }
+                else
+                {
+                    progress.Progress = model.Progress;
+                    progress.InteractionCount++;
+                    progress.LastInteraction = DateTime.UtcNow;
+                }
+
+                await _context.SaveChangesAsync();
+                return Json(new { success = true, progress = progress.Progress });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
         public class ColorProgressInputModel
         {
             public string ColorName { get; set; }
@@ -533,6 +594,12 @@ namespace AutismEducationPlatform.Web.Controllers
         public class TrafficSignProgressInputModel
         {
             public string SignName { get; set; }
+            public int Progress { get; set; }
+        }
+
+        public class MannerProgressInputModel
+        {
+            public string MannerName { get; set; }
             public int Progress { get; set; }
         }
 

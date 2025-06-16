@@ -1,91 +1,75 @@
 @{
-    ViewData["Title"] = "Sık Sorulan Sorular";
+    ViewData["Title"] = "Sıkça Sorulan Sorular";
 }
+
 <div class="container py-5">
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center">
-            <h2 class="mb-3" data-aos="fade-up">Sık Sorulan Sorular</h2>
-            <p class="lead" data-aos="fade-up" data-aos-delay="100">
-                Platformumuz hakkında en çok merak edilen soruları ve cevaplarını aşağıda bulabilirsiniz.
-            </p>
-        </div>
-    </div>
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
-                    <h2 class="accordion-header" id="faq1">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                            <i class="fas fa-user-plus me-2 text-primary"></i> Platforma nasıl kayıt olabilirim?
-                        </button>
-                    </h2>
-                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Ana sayfadaki "Kayıt Ol" butonuna tıklayarak veli veya eğitmen olarak ücretsiz kayıt olabilirsiniz.
-                        </div>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h1 class="display-4 fw-bold text-primary mb-3">Sıkça Sorulan Sorular</h1>
+                <p class="lead text-muted">Otizmli çocuklar için eğitim platformumuz hakkında merak ettiğiniz her şey</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question p-4 bg-light rounded-3 shadow-sm">
+                        <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                            <span>Platformunuz nasıl çalışır?</span>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </h5>
+                    </div>
+                    <div class="faq-answer p-4 bg-white rounded-3 shadow-sm mt-2">
+                        <p class="mb-0">Platformumuz, otizmli çocuklar için özel olarak tasarlanmış eğitim programları sunar. Veliler ve eğitmenler, çocukların gelişimini takip edebilir ve özelleştirilmiş eğitim planları oluşturabilir.</p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
-                    <h2 class="accordion-header" id="faq2">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                            <i class="fas fa-child me-2 text-success"></i> Çocuğum için nasıl profil oluşturabilirim?
-                        </button>
-                    </h2>
-                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Kayıt olduktan sonra hesabınıza giriş yaparak çocuk profilinizi oluşturabilirsiniz.
-                        </div>
+
+                <div class="faq-item mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question p-4 bg-light rounded-3 shadow-sm">
+                        <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                            <span>Eğitim programları nelerdir?</span>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </h5>
+                    </div>
+                    <div class="faq-answer p-4 bg-white rounded-3 shadow-sm mt-2">
+                        <p class="mb-0">Eğitim programlarımız, otizmli çocukların ihtiyaçlarına göre özelleştirilmiştir. Sosyal beceriler, iletişim, öz bakım ve akademik beceriler gibi alanlarda destek sağlar.</p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
-                    <h2 class="accordion-header" id="faq3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                            <i class="fas fa-play me-2 text-warning"></i> Eğitimleri nasıl izleyebilirim?
-                        </button>
-                    </h2>
-                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Hesabınıza giriş yaptıktan sonra "Eğitime Git" butonuna tıklayarak eğitim videolarını izleyebilirsiniz.
-                        </div>
+
+                <div class="faq-item mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question p-4 bg-light rounded-3 shadow-sm">
+                        <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                            <span>Nasıl kayıt olabilirim?</span>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </h5>
+                    </div>
+                    <div class="faq-answer p-4 bg-white rounded-3 shadow-sm mt-2">
+                        <p class="mb-0">Ana sayfadaki "VELİ OLARAK KAYIT OL" veya "EĞİTMEN OLARAK KAYIT OL" butonlarına tıklayarak kayıt işleminizi başlatabilirsiniz.</p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
-                    <h2 class="accordion-header" id="faq4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                            <i class="fas fa-chart-line me-2 text-info"></i> İlerleme raporuna nasıl ulaşabilirim?
-                        </button>
-                    </h2>
-                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Eğitimleri izledikçe çocuğunuzun gelişimi otomatik olarak raporlanır. Hesabınızdan bu raporlara ulaşabilirsiniz.
-                        </div>
+
+                <div class="faq-item mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-question p-4 bg-light rounded-3 shadow-sm">
+                        <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                            <span>Destek alabilir miyim?</span>
+                            <i class="fas fa-chevron-down text-primary"></i>
+                        </h5>
                     </div>
-                </div>
-                <div class="accordion-item" data-aos="fade-up" data-aos-delay="600">
-                    <h2 class="accordion-header" id="faq5">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                            <i class="fas fa-newspaper me-2 text-danger"></i> Platformda hangi ek hizmetler var?
-                        </button>
-                    </h2>
-                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Haberler, rehberlik, aile desteği ve güncel duyurular gibi birçok ek hizmetten faydalanabilirsiniz.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item" data-aos="fade-up" data-aos-delay="700">
-                    <h2 class="accordion-header" id="faq6">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                            <i class="fas fa-lock me-2 text-secondary"></i> Bilgilerim güvende mi?
-                        </button>
-                    </h2>
-                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Tüm bilgileriniz gizli tutulur ve güvenliğiniz için gerekli önlemler alınır.
-                        </div>
+                    <div class="faq-answer p-4 bg-white rounded-3 shadow-sm mt-2">
+                        <p class="mb-0">Evet, 7/24 destek hizmetimiz mevcuttur. Herhangi bir sorunuz veya ihtiyacınız olduğunda bizimle iletişime geçebilirsiniz.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> 
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('.faq-question').click(function() {
+                $(this).next('.faq-answer').slideToggle(300);
+                $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up');
+            });
+        });
+    </script>
+} 

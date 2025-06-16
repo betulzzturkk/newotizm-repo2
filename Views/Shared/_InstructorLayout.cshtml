@@ -1,70 +1,195 @@
+@{
+    Layout = null;
+}
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Eğitmen Paneli</title>
+    <title>@ViewData["Title"] - Otizm Eğitim Platformu</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    @await RenderSectionAsync("Styles", required: false)
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #1cc88a;
+            --dark-color: #5a5c69;
+            --light-color: #f8f9fc;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), #224abe);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: white !important;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-1px);
+        }
+
+        .nav-link.active {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #224abe;
+            border-color: #224abe;
+        }
+
+        .profile-icon-container {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), #224abe);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .profile-icon-container:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .profile-icon {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .badge {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-close {
+            margin-left: 0.5rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .btn-close:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
-<body class="instructor-panel">
+<body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="/Instructor">
-                    <i class="fas fa-chalkboard-teacher me-2"></i>
+                <a class="navbar-brand" href="/Instructor/Dashboard">
+                    <i class="fas fa-graduation-cap me-2"></i>
                     Eğitmen Paneli
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Instructor">
-                                <i class="fas fa-home me-1"></i>Panel
+                            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Dashboard" ? "active" : "")" 
+                               href="/Instructor/Dashboard">
+                                <i class="fas fa-home me-1"></i> Ana Sayfa
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Instructor/Courses">
-                                <i class="fas fa-book me-1"></i>Eğitimlerim
+                            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Education" ? "active" : "")" 
+                               href="/Instructor/Education">
+                                <i class="fas fa-book me-1"></i> Eğitim
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Instructor/Students">
-                                <i class="fas fa-users me-1"></i>Öğrencilerim
+                            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Students" ? "active" : "")" 
+                               href="/Instructor/Students">
+                                <i class="fas fa-users me-1"></i> Öğrenciler
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Instructor/Messages">
-                                <i class="fas fa-envelope me-1"></i>Mesajlar
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Instructor/Profile">
-                                <i class="fas fa-user-cog me-1"></i>Profil
+                            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "ProgressReport" ? "active" : "")" 
+                               href="/Instructor/ProgressReport">
+                                <i class="fas fa-chart-line me-1"></i> İlerleme Raporu
                             </a>
                         </li>
                     </ul>
-                    <div class="navbar-nav">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-user-circle me-1"></i>@User.Identity?.Name
+                    <div class="d-flex align-items-center">
+                        <a href="/Instructor/AddStudent" class="btn btn-light me-3">
+                            <i class="fas fa-user-plus me-1"></i> Öğrenci Ekle
+                        </a>
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <div class="profile-icon-container">
+                                    <i class="fas fa-chalkboard-teacher profile-icon"></i>
+                                </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
                                     <a class="dropdown-item" href="/Instructor/Profile">
-                                        <i class="fas fa-cog me-2"></i>Ayarlar
+                                        <i class="fas fa-user me-2"></i> Profil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/Instructor/Settings">
+                                        <i class="fas fa-cog me-2"></i> Ayarlar
                                     </a>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
-                                    <form class="form-inline" asp-controller="Account" asp-action="Logout" method="post">
-                                        <button type="submit" class="dropdown-item text-danger">
-                                            <i class="fas fa-sign-out-alt me-2"></i>Çıkış Yap
-                                        </button>
-                                    </form>
+                                    <a class="dropdown-item text-danger" href="#" onclick="confirmLogout()">
+                                        <i class="fas fa-sign-out-alt me-2"></i> Çıkış Yap
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -74,21 +199,26 @@
         </nav>
     </header>
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 
     <footer class="border-top footer text-muted">
-        <div class="container text-center">
-            &copy; 2025 - İGÜ - Otizm Eğitim Platformu
+        <div class="container">
+            &copy; @DateTime.Now.Year - Otizm Eğitim Platformu
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        function confirmLogout() {
+            if (confirm('Çıkış yapmak istediğinizden emin misiniz?')) {
+                window.location.href = '@Url.Action("Logout", "Account")';
+            }
+        }
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html> 

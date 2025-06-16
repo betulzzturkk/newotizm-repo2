@@ -1,0 +1,90 @@
+@model List<AutismEducationPlatform.Web.Models.Student>
+
+@{
+    Layout = "_InstructorLayout";
+    ViewData["Title"] = "Öğrenciler";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Öğrenciler</h2>
+        <a href="/Instructor/AddStudent" class="btn btn-primary">
+            <i class="fas fa-user-plus me-2"></i>Yeni Öğrenci Ekle
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="row">
+        @foreach (var student in Model)
+        {
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="card-title mb-0">@student.Name @student.Surname</h5>
+                            <span class="badge bg-primary">@student.Age yaşında</span>
+                        </div>
+                        <p class="card-text text-muted mb-2">
+                            <i class="fas fa-venus-mars me-2"></i>@student.Gender
+                        </p>
+                        <p class="card-text">
+                            <strong>Tanı:</strong><br>
+                            @student.Diagnosis
+                        </p>
+                        @if (!string.IsNullOrEmpty(student.Hobbies))
+                        {
+                            <div class="mb-3">
+                                <strong>Hobiler:</strong><br>
+                                @foreach (var hobby in student.Hobbies.Split(','))
+                                {
+                                    <span class="badge bg-info me-1 mb-1">@hobby.Trim()</span>
+                                }
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(student.Notes))
+                        {
+                            <p class="card-text">
+                                <strong>Notlar:</strong><br>
+                                @student.Notes
+                            </p>
+                        }
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted">
+                                <i class="fas fa-calendar-alt me-1"></i>
+                                @student.CreatedAt.ToString("dd.MM.yyyy")
+                            </small>
+                            <div>
+                                <a href="/Instructor/EditStudent/@student.Id" class="btn btn-sm btn-outline-primary me-2">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-danger" 
+                                        onclick="confirmDelete(@student.Id)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Bu öğrenciyi silmek istediğinizden emin misiniz?')) {
+                window.location.href = `/Instructor/DeleteStudent/${id}`;
+            }
+        }
+    </script>
+} 

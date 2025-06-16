@@ -33,16 +33,12 @@ namespace AutismEducationPlatform.Web.Models
         [Display(Name = "Telefon Numarası")]
         public string PhoneNumber { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Çocuğun adı zorunludur.")]
         [Display(Name = "Çocuğun Adı")]
         public string ChildName { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Çocuğun yaşı zorunludur.")]
-        [Range(2, 18, ErrorMessage = "Çocuğun yaşı 2 ile 18 arasında olmalıdır.")]
         [Display(Name = "Çocuğun Yaşı")]
-        public int ChildAge { get; set; }
+        public int? ChildAge { get; set; }
 
-        [Required(ErrorMessage = "Çocuğun cinsiyeti zorunludur.")]
         [Display(Name = "Çocuğun Cinsiyeti")]
         public string ChildGender { get; set; } = string.Empty;
 

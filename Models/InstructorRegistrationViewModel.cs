@@ -14,7 +14,7 @@ namespace AutismEducationPlatform.Web.Models
         public string Email { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Şifre alanı zorunludur.")]
-        [StringLength(100, ErrorMessage = "Şifre en az {2} karakter uzunluğunda olmalıdır.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} en az {2} karakter uzunluğunda olmalıdır.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Şifre")]
         public string Password { get; set; } = string.Empty;
@@ -24,17 +24,13 @@ namespace AutismEducationPlatform.Web.Models
         [Compare("Password", ErrorMessage = "Şifreler eşleşmiyor.")]
         public string ConfirmPassword { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Çocuğun adı zorunludur.")]
-        [Display(Name = "Çocuğun Adı")]
-        public string ChildName { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Uzmanlık alanı zorunludur.")]
+        [Display(Name = "Uzmanlık Alanı")]
+        public string Specialization { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Çocuğun yaşı zorunludur.")]
-        [Range(2, 18, ErrorMessage = "Çocuğun yaşı 2 ile 18 arasında olmalıdır.")]
-        [Display(Name = "Çocuğun Yaşı")]
-        public int ChildAge { get; set; }
-
-        [Required(ErrorMessage = "Kullanım koşullarını kabul etmelisiniz.")]
-        [Display(Name = "Kullanım Koşulları")]
-        public bool AcceptTerms { get; set; }
+        [Required(ErrorMessage = "Deneyim alanı zorunludur.")]
+        [Range(0, 50, ErrorMessage = "Deneyim 0 ile 50 yıl arasında olmalıdır.")]
+        [Display(Name = "Deneyim (Yıl)")]
+        public int Experience { get; set; }
     }
 } 

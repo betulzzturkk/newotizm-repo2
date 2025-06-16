@@ -1,0 +1,101 @@
+/* Çocuk Bilgileri Sayfası Özel Stilleri */
+.child-info-box {
+    background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+    color: #fff;
+    border-radius: 24px;
+    box-shadow: 0 6px 32px rgba(33,147,176,0.12);
+    padding: 40px 32px 32px 32px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 260px;
+    display: block;
+}
+.child-info-box:hover {
+    box-shadow: 0 12px 40px rgba(33,147,176,0.18);
+}
+.child-info-img {
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.child-info-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.child-info-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+.child-info-details {
+    margin-bottom: 18px;
+}
+.child-info-detail {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    opacity: 0.95;
+}
+.child-info-label {
+    font-weight: 600;
+    margin-right: 8px;
+}
+.child-info-tags {
+    margin-top: 18px;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+}
+.child-info-tag {
+    display: inline-block;
+    background: #fff;
+    color: #2193b0;
+    border-radius: 16px;
+    padding: 8px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 8px 8px 0;
+    box-shadow: 0 2px 8px rgba(33,147,176,0.10);
+    transition: background 0.2s, color 0.2s;
+}
+.child-info-tag:hover {
+    background: #2193b0;
+    color: #fff;
+}
+@media (max-width: 900px) {
+    .child-info-box {
+        padding: 24px 10px 24px 10px;
+        min-height: 0;
+    }
+    .child-info-img {
+        position: static;
+        margin: 0 auto 18px auto;
+        display: block;
+        width: 120px;
+        height: 120px;
+    }
+    .child-info-title {
+        text-align: center;
+    }
+    .child-info-tags {
+        justify-content: center;
+    }
+} 

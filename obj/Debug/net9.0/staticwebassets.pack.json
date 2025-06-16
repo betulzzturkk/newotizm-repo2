@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\animals-bg.css"
     },
     {
+      "Id": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\child-info.css",
+      "PackagePath": "staticwebassets\\css\\child-info.css"
+    },
+    {
       "Id": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\colors-bg.css",
       "PackagePath": "staticwebassets\\css\\colors-bg.css"
     },
@@ -75,6 +79,10 @@
     {
       "Id": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\animals\\lion.jpg",
       "PackagePath": "staticwebassets\\images\\animals\\lion.jpg"
+    },
+    {
+      "Id": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\children\\cocuk.jpg",
+      "PackagePath": "staticwebassets\\images\\children\\cocuk.jpg"
     },
     {
       "Id": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\colors\\beyaz.jpg",
@@ -235,6 +243,10 @@
     {
       "Id": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\pattern.png",
       "PackagePath": "staticwebassets\\images\\pattern.png"
+    },
+    {
+      "Id": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\profil.jpg",
+      "PackagePath": "staticwebassets\\images\\profil.jpg"
     },
     {
       "Id": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\images\\profiles\\profil.jpg",

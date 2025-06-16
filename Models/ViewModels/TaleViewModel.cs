@@ -1,14 +1,12 @@
+using System;
+
 namespace AutismEducationPlatform.Web.Models.ViewModels
 {
     public class TaleViewModel
     {
-        public string Title { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public string VideoUrl { get; set; } = string.Empty;
-        public string IconClass { get; set; } = string.Empty;
-        public string IconColor { get; set; } = string.Empty;
-        public string ImageUrl { get; set; } = string.Empty;
-        public string Url { get; set; } = string.Empty;
-        public int Progress { get; set; } = 0;
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Url { get; set; }
+        public int Progress { get; set; }
     }
 } 
