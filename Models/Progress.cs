@@ -11,7 +11,7 @@ namespace AutismEducationPlatform.Web.Models
         public int Id { get; set; }
 
         [Required]
-        public int ChildId { get; set; }
+        public string UserId { get; set; }
 
         [Required]
         public int CourseId { get; set; }
@@ -33,11 +33,11 @@ namespace AutismEducationPlatform.Web.Models
         public string? Notes { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? UpdatedAt { get; set; }
 
-        [ForeignKey("ChildId")]
-        public Child? Child { get; set; }
+        [ForeignKey("UserId")]
+        public ApplicationUser? User { get; set; }
 
         [ForeignKey("CourseId")]
         public Course? Course { get; set; }

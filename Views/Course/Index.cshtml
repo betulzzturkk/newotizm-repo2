@@ -1,10 +1,15 @@
 @model IEnumerable<AutismEducationPlatform.Web.Models.Course>
 
 @{
-    ViewData["Title"] = "Eğitim Programları";
+    ViewData["Title"] = "Eğitimler";
 }
 
 <div class="container py-5">
+    <div class="row mb-3">
+        <div class="col-12">
+            <a href="/" class="btn btn-outline-secondary" style="position: absolute; left: 20px; top: 20px; z-index: 10;"><i class="fas fa-arrow-left me-2"></i>Geri Dön</a>
+        </div>
+    </div>
     <div class="text-center mb-5" data-aos="fade-up">
         <h1 class="display-4 fw-bold text-primary mb-3">Eğitim Programları</h1>
         <p class="lead text-muted">Otizmli çocuklar için özel tasarlanmış eğitim programlarımız</p>
@@ -39,7 +44,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="course-card bg-light">
                 <div class="course-icon text-center p-4">
@@ -68,7 +72,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
             <div class="course-card bg-light">
                 <div class="course-icon text-center p-4">
@@ -97,7 +100,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
             <div class="course-card bg-light">
                 <div class="course-icon text-center p-4">
@@ -126,7 +128,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
             <div class="course-card bg-light">
                 <div class="course-icon text-center p-4">
@@ -155,7 +156,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
             <div class="course-card bg-light">
                 <div class="course-icon text-center p-4">
@@ -180,11 +180,10 @@
                             <li><i class="fas fa-check text-success me-2"></i>Soru sorma ve cevaplama</li>
                         </ul>
                     </div>
-                    <a href="/Course/Manners" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
+                    <a href="/Course/SelfExpression" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="700">
             <div class="course-card bg-light">
                 <div class="course-icon text-center p-4">
@@ -209,435 +208,83 @@
                             <li><i class="fas fa-check text-success me-2"></i>Duygu yönetimi</li>
                         </ul>
                     </div>
-                    <a href="/Course/Emotions" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
+                    <button class="btn btn-primary w-100 mt-4" style="color: white;" onclick="alert('Çok Yakında!')">EĞİTİME GİT</button>
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="800">
             <div class="course-card bg-light">
                 <div class="course-icon text-center p-4">
-                    <i class="fas fa-users fa-4x text-primary mb-3"></i>
+                    <i class="fas fa-graduation-cap fa-4x text-primary mb-3"></i>
                     <div class="course-overlay">
-                        <span class="badge bg-danger">İleri</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Sosyal Beceriler</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun sosyal etkileşim becerilerini geliştirmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>8 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>10 Öğrenci</span>
-                    </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Göz teması kurma</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Selamlaşma ve vedalaşma</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Oyun oynama becerileri</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Arkadaşlık kurma</li>
-                        </ul>
-                    </div>
-                    <a href="/Course/SocialSkills" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="900">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-home fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-danger">İleri</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Günlük Yaşam</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun günlük yaşam becerilerini geliştirmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>6 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>8 Öğrenci</span>
-                    </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Kişisel hijyen</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Giyinme ve soyunma</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Yemek yeme becerileri</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Tuvalet eğitimi</li>
-                        </ul>
-                    </div>
-                    <a href="/Course/DailyLife" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1000">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-hand-holding-heart fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-info">Orta</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Duyusal Etkinlikler</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun duyusal becerilerini geliştirmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>5 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>10 Öğrenci</span>
-                    </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Dokunsal aktiviteler</li>
-                            <li><i class="fas fa-check text-success me-2"></i>İşitsel aktiviteler</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Görsel aktiviteler</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Denge ve koordinasyon</li>
-                        </ul>
-                    </div>
-                    <a href="/Course/SensoryActivities" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1100">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-brain fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-danger">İleri</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Zeka ve Hafıza Oyunları</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun zeka ve hafıza becerilerini geliştirmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>6 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>8 Öğrenci</span>
-                    </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Hafıza oyunları</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Bulmaca çözme</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Mantık oyunları</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Dikkat geliştirme</li>
-                        </ul>
-                    </div>
-                    <a href="/Course/BrainGames" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1200">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-file-alt fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-danger">İleri</span>
+                        <span class="badge bg-success">İleri</span>
                     </div>
                 </div>
                 <div class="course-content p-4">
                     <h4 class="mb-3">Sınavlar</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun sınav becerilerini geliştirmesi için özel tasarlanmış program.</p>
+                    <p class="text-muted mb-4">Çocuğunuzun öğrendiklerini test etmesi ve gelişimini takip etmesi için özel tasarlanmış sınavlar.</p>
                     <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>4 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>8 Öğrenci</span>
+                        <span><i class="fas fa-clock me-2"></i>Süresiz</span>
+                        <span><i class="fas fa-users me-2"></i>Tüm Öğrenciler</span>
                     </div>
                     <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
+                        <h6 class="mb-3">Bu Sınavlarda:</h6>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Sınav teknikleri</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Zaman yönetimi</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Stres yönetimi</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Başarı stratejileri</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Farklı seviyelerde sorular</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Anlık geri bildirim</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Başarı takibi</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Gelişim raporu</li>
                         </ul>
                     </div>
-                    <a href="/Course/Exams" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1300">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-book fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-warning">Başlangıç</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Masallar</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun hayal gücünü ve dinleme becerilerini geliştirmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>4 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>10 Öğrenci</span>
-                    </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Klasik masallar</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Dinleme becerileri</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Hayal gücü geliştirme</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Hikaye anlatma</li>
-                        </ul>
-                    </div>
-                    <a href="/Course/Tales" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1400">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-heart fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-warning">Başlangıç</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Duygusal Farkındalık</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun duygularını tanıması ve ifade etmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>4 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>10 Öğrenci</span>
-                    </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Duygu tanıma</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Duygu ifade etme</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Empati geliştirme</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Duygusal düzenleme</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="btn btn-primary w-100 mt-4" style="color: white;" onclick="alert('ÇOK YAKINDA'); return false;">EĞİTİME GİT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1500">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-users fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-info">Orta</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Sosyal Beceriler</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun sosyal etkileşim becerilerini geliştirmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>5 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>12 Öğrenci</span>
-                    </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Arkadaşlık kurma</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Grup etkinlikleri</li>
-                            <li><i class="fas fa-check text-success me-2"></i>İletişim becerileri</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Sosyal kurallar</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="btn btn-primary w-100 mt-4" style="color: white;" onclick="alert('ÇOK YAKINDA'); return false;">EĞİTİME GİT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1600">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-home fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-warning">Başlangıç</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Günlük Yaşam Becerileri</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun temel yaşam becerilerini öğrenmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>4 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>10 Öğrenci</span>
-                    </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Kişisel bakım</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Ev işleri</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Zaman yönetimi</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Bağımsız yaşam</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="btn btn-primary w-100 mt-4" style="color: white;" onclick="alert('ÇOK YAKINDA'); return false;">EĞİTİME GİT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1700">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-hand-holding fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-info">Orta</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Duyusal Aktiviteler</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun duyusal işleme becerilerini geliştirmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>3 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>8 Öğrenci</span>
-                        </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Duyusal oyunlar</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Duyusal entegrasyon</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Duyusal düzenleme</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Duyusal farkındalık</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="btn btn-primary w-100 mt-4" style="color: white;" onclick="alert('ÇOK YAKINDA'); return false;">EĞİTİME GİT</a>
-                </div>
-            </div>
-                        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1800">
-            <div class="course-card bg-light">
-                <div class="course-icon text-center p-4">
-                    <i class="fas fa-brain fa-4x text-primary mb-3"></i>
-                    <div class="course-overlay">
-                        <span class="badge bg-danger">İleri</span>
-                    </div>
-                </div>
-                <div class="course-content p-4">
-                    <h4 class="mb-3">Beyin Oyunları</h4>
-                    <p class="text-muted mb-4">Çocuğunuzun bilişsel becerilerini geliştirmesi için özel tasarlanmış program.</p>
-                    <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                        <span><i class="fas fa-clock me-2"></i>5 Hafta</span>
-                        <span><i class="fas fa-users me-2"></i>10 Öğrenci</span>
-                    </div>
-                    <div class="course-learn">
-                        <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Hafıza oyunları</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Dikkat geliştirme</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Problem çözme</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Mantık oyunları</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="btn btn-primary w-100 mt-4" style="color: white;" onclick="alert('ÇOK YAKINDA'); return false;">EĞİTİME GİT</a>
+                    <a href="/Course/Exams" class="btn btn-primary w-100 mt-4" style="color: white;">SINAVLARA GİT</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-@section Scripts {
-    <script>
-        $(document).ready(function() {
-            $('.course-card').hover(
-                function() {
-                    $(this).find('.course-overlay').fadeIn(300);
-                },
-                function() {
-                    $(this).find('.course-overlay').fadeOut(300);
-                }
-            );
-        });
-    </script>
-}
-
-@functions {
-    private string GetCourseImage(string courseName)
-    {
-        return courseName.ToLower() switch
-        {
-            var name when name.Contains("hayvan") => "/images/courses/animals.jpg",
-            var name when name.Contains("renk") => "/images/courses/colors.png",
-            var name when name.Contains("sayı") => "/images/courses/numbers.jpg",
-            var name when name.Contains("duygu") => "/images/courses/emotions.jpg",
-            var name when name.Contains("şekil") => "/images/courses/shapes.jpg",
-            var name when name.Contains("trafik") => "/images/courses/traffic.jpg",
-            var name when name.Contains("görgü") => "/images/courses/manners.jpg",
-            var name when name.Contains("masal") => "/images/courses/stories.jpg",
-            var name when name.Contains("video") => "/images/courses/videos.jpg",
-            _ => "/images/courses/default.jpg"
-        };
-    }
-}
-
 <style>
-    .card {
-        transition: transform 0.3s ease;
-        overflow: hidden;
-    }
+.course-card {
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
 
-    .card:hover {
-        transform: translateY(-5px);
-    }
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
 
-    .card-img-top {
-        height: 200px;
-        object-fit: cover;
-    }
+.course-icon {
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px 15px 0 0;
+}
 
-    .difficulty-stars {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        padding: 8px 12px;
-        background-color: rgba(0, 0, 0, 0.7);
-        border-radius: 20px;
-        backdrop-filter: blur(5px);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        transition: transform 0.3s ease;
-    }
+.course-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 
-    .card:hover .difficulty-stars {
-        transform: scale(1.1);
-    }
+.course-content {
+    background: white;
+    border-radius: 0 0 15px 15px;
+}
 
-    .difficulty-stars i {
-        margin: 0 2px;
-        font-size: 1.2rem;
-    }
+.course-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
 
-    .star-active {
-        color: #FFD700;
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        animation: star-pulse 2s infinite;
-    }
+.course-learn {
+    margin-top: 1rem;
+}
 
-    .star-inactive {
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    @@keyframes star-pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.2); }
-        100% { transform: scale(1); }
-    }
-
-    .badge {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-        border-radius: 15px;
-    }
-
-    .course-card .btn {
-        font-size: 1.2rem;
-        font-weight: 700;
-        border-radius: 30px;
-        padding: 10px 32px;
-        transition: all 0.2s;
-    }
-
-    .course-card .btn:hover {
-        background: #fff;
-        color: #6B48FF;
-        transform: scale(1.08);
-    }
+.course-learn ul li {
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+}
 </style> 

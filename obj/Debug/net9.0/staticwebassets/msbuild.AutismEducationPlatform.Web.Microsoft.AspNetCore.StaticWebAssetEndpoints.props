@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/AutismEducationPlatform.Web/AutismEducationPlatform.Web.5mwp3d5cvr.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AutismEducationPlatform.Web.5mwp3d5cvr.bundle.scp.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5mwp3d5cvr"},{"Name":"integrity","Value":"sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="},{"Name":"label","Value":"_content/AutismEducationPlatform.Web/AutismEducationPlatform.Web.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1145"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 14 Jun 2025 10:08:18 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AutismEducationPlatform.Web/AutismEducationPlatform.Web.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AutismEducationPlatform.Web.5mwp3d5cvr.bundle.scp.css'))</AssetFile>
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AutismEducationPlatform.Web.oltteb8shd.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1145"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 14 Jun 2025 10:08:18 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-HJUdFkn0IQJTIITKZBQnL8Jx\u002BYehmYSnYz1c1m8ZKi4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"953"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HJUdFkn0IQJTIITKZBQnL8Jx\u002BYehmYSnYz1c1m8ZKi4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 16 Jun 2025 18:59:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AutismEducationPlatform.Web/AutismEducationPlatform.Web.oltteb8shd.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AutismEducationPlatform.Web.oltteb8shd.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"oltteb8shd"},{"Name":"integrity","Value":"sha256-HJUdFkn0IQJTIITKZBQnL8Jx\u002BYehmYSnYz1c1m8ZKi4="},{"Name":"label","Value":"_content/AutismEducationPlatform.Web/AutismEducationPlatform.Web.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"953"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HJUdFkn0IQJTIITKZBQnL8Jx\u002BYehmYSnYz1c1m8ZKi4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 16 Jun 2025 18:59:47 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AutismEducationPlatform.Web/css/animals-bg.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\animals-bg.css'))</AssetFile>
@@ -72,17 +72,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wxs8b765ux"},{"Name":"integrity","Value":"sha256-fLRhra6qgv3Mi5G10zhc7Ho2\u002BaSOLI4fqhsD6433Bi8="},{"Name":"label","Value":"_content/AutismEducationPlatform.Web/css/numbers-bg.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3996"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022fLRhra6qgv3Mi5G10zhc7Ho2\u002BaSOLI4fqhsD6433Bi8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 14:54:44 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/AutismEducationPlatform.Web/css/parent-dashboard.as9th68wwu.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\parent-dashboard.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"as9th68wwu"},{"Name":"integrity","Value":"sha256-NiAfAgdppArGe8E3Ba\u002B21ZhhMRuKm2FyMKpmviGzOms="},{"Name":"label","Value":"_content/AutismEducationPlatform.Web/css/parent-dashboard.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4587"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NiAfAgdppArGe8E3Ba\u002B21ZhhMRuKm2FyMKpmviGzOms=\u0022"},{"Name":"Last-Modified","Value":"Wed, 11 Jun 2025 20:58:11 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AutismEducationPlatform.Web/css/parent-dashboard.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\parent-dashboard.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-NiAfAgdppArGe8E3Ba\u002B21ZhhMRuKm2FyMKpmviGzOms="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4587"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NiAfAgdppArGe8E3Ba\u002B21ZhhMRuKm2FyMKpmviGzOms=\u0022"},{"Name":"Last-Modified","Value":"Wed, 11 Jun 2025 20:58:11 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4589"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE=\u0022"},{"Name":"Last-Modified","Value":"Mon, 16 Jun 2025 11:02:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AutismEducationPlatform.Web/css/parent-dashboard.fgmfsj1872.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\parent-dashboard.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fgmfsj1872"},{"Name":"integrity","Value":"sha256-b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE="},{"Name":"label","Value":"_content/AutismEducationPlatform.Web/css/parent-dashboard.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4589"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE=\u0022"},{"Name":"Last-Modified","Value":"Mon, 16 Jun 2025 11:02:28 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AutismEducationPlatform.Web/css/parent-panel.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\parent-panel.css'))</AssetFile>

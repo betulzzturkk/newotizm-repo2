@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DgRBwaspVWri3gTYk1fmUrLY/3QjWYRBE1pS7CyPlrE=",
+  "Hash": "p+M6urtcx8NAcd/9B6AtCQd6RMl8DU2vtqOmq/wGGKw=",
   "Source": "AutismEducationPlatform.Web",
   "BasePath": "_content/AutismEducationPlatform.Web",
   "Mode": "Default",
@@ -2810,12 +2810,12 @@
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\lib\\jquery-validation\\dist\\localization\\messages_zh.min.js"
     },
     {
-      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-5mwp3d5cvr.gz",
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-oltteb8shd.gz",
       "SourceId": "AutismEducationPlatform.Web",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/AutismEducationPlatform.Web",
-      "RelativePath": "AutismEducationPlatform.Web#[.{fingerprint=5mwp3d5cvr}]!.bundle.scp.css.gz",
+      "RelativePath": "AutismEducationPlatform.Web#[.{fingerprint=oltteb8shd}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -2824,8 +2824,8 @@
       "RelatedAsset": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\AutismEducationPlatform.Web.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "iv2ryxuwhe",
-      "Integrity": "slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=",
+      "Fingerprint": "nt56yo7tmh",
+      "Integrity": "BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\AutismEducationPlatform.Web.bundle.scp.css"
@@ -5288,12 +5288,12 @@
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-as9th68wwu.gz",
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-fgmfsj1872.gz",
       "SourceId": "AutismEducationPlatform.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/AutismEducationPlatform.Web",
-      "RelativePath": "css/parent-dashboard#[.{fingerprint=as9th68wwu}]?.css.gz",
+      "RelativePath": "css/parent-dashboard#[.{fingerprint=fgmfsj1872}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -5302,8 +5302,8 @@
       "RelatedAsset": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\parent-dashboard.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "wndj1zlo4s",
-      "Integrity": "FNcd65OLpnn62GGKj8SYHFh8hk/l6phsLXFVyYSWfFk=",
+      "Fingerprint": "e526ajrk0c",
+      "Integrity": "nol9wjkyJZeez/5cogbV+RyNE6Tn675eFCBr3viTiaQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\parent-dashboard.css"
@@ -6317,12 +6317,12 @@
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-5mwp3d5cvr.gz",
+      "Identity": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-oltteb8shd.gz",
       "SourceId": "AutismEducationPlatform.Web",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/AutismEducationPlatform.Web",
-      "RelativePath": "AutismEducationPlatform.Web#[.{fingerprint=5mwp3d5cvr}]?.styles.css.gz",
+      "RelativePath": "AutismEducationPlatform.Web#[.{fingerprint=oltteb8shd}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -6331,8 +6331,8 @@
       "RelatedAsset": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\bundle\\AutismEducationPlatform.Web.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "iv2ryxuwhe",
-      "Integrity": "slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=",
+      "Fingerprint": "nt56yo7tmh",
+      "Integrity": "BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\bundle\\AutismEducationPlatform.Web.styles.css"
@@ -6961,8 +6961,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "5mwp3d5cvr",
-      "Integrity": "owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=",
+      "Fingerprint": "oltteb8shd",
+      "Integrity": "HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\bundle\\AutismEducationPlatform.Web.styles.css"
@@ -6982,8 +6982,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "5mwp3d5cvr",
-      "Integrity": "owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=",
+      "Fingerprint": "oltteb8shd",
+      "Integrity": "HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\AutismEducationPlatform.Web.bundle.scp.css"
@@ -7108,8 +7108,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "as9th68wwu",
-      "Integrity": "NiAfAgdppArGe8E3Ba+21ZhhMRuKm2FyMKpmviGzOms=",
+      "Fingerprint": "fgmfsj1872",
+      "Integrity": "b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\parent-dashboard.css"
@@ -15643,13 +15643,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "AutismEducationPlatform.Web.5mwp3d5cvr.bundle.scp.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-5mwp3d5cvr.gz",
+      "Route": "AutismEducationPlatform.Web.bundle.scp.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-oltteb8shd.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001801801802"
+          "Quality": "0.002262443439"
         }
       ],
       "ResponseHeaders": [
@@ -15659,19 +15659,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "554"
+          "Value": "441"
         },
         {
           "Name": "ETag",
-          "Value": "\"slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=\""
+          "Value": "\"BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -15687,26 +15687,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\""
+          "Value": "W/\"HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "5mwp3d5cvr"
-        },
-        {
-          "Name": "label",
-          "Value": "AutismEducationPlatform.Web.bundle.scp.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="
+          "Value": "sha256-HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4="
         }
       ]
     },
     {
-      "Route": "AutismEducationPlatform.Web.5mwp3d5cvr.bundle.scp.css",
+      "Route": "AutismEducationPlatform.Web.bundle.scp.css",
       "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\AutismEducationPlatform.Web.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -15716,7 +15708,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1145"
+          "Value": "953"
         },
         {
           "Name": "Content-Type",
@@ -15724,11 +15716,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\""
+          "Value": "\"HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4="
+        }
+      ]
+    },
+    {
+      "Route": "AutismEducationPlatform.Web.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-oltteb8shd.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "441"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY="
+        }
+      ]
+    },
+    {
+      "Route": "AutismEducationPlatform.Web.oltteb8shd.bundle.scp.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-oltteb8shd.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002262443439"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "441"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oltteb8shd"
+        },
+        {
+          "Name": "label",
+          "Value": "AutismEducationPlatform.Web.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4="
+        }
+      ]
+    },
+    {
+      "Route": "AutismEducationPlatform.Web.oltteb8shd.bundle.scp.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\AutismEducationPlatform.Web.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "953"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15738,7 +15875,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5mwp3d5cvr"
+          "Value": "oltteb8shd"
         },
         {
           "Name": "label",
@@ -15746,13 +15883,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="
+          "Value": "sha256-HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4="
         }
       ]
     },
     {
-      "Route": "AutismEducationPlatform.Web.5mwp3d5cvr.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-5mwp3d5cvr.gz",
+      "Route": "AutismEducationPlatform.Web.oltteb8shd.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-oltteb8shd.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -15761,7 +15898,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "554"
+          "Value": "441"
         },
         {
           "Name": "Content-Type",
@@ -15769,11 +15906,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=\""
+          "Value": "\"BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15791,7 +15928,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5mwp3d5cvr"
+          "Value": "oltteb8shd"
         },
         {
           "Name": "label",
@@ -15799,18 +15936,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg="
+          "Value": "sha256-BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY="
         }
       ]
     },
     {
-      "Route": "AutismEducationPlatform.Web.5mwp3d5cvr.styles.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-5mwp3d5cvr.gz",
+      "Route": "AutismEducationPlatform.Web.oltteb8shd.styles.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-oltteb8shd.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001801801802"
+          "Quality": "0.002262443439"
         }
       ],
       "ResponseHeaders": [
@@ -15820,15 +15957,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "554"
+          "Value": "441"
         },
         {
           "Name": "ETag",
-          "Value": "\"slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=\""
+          "Value": "\"BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15848,13 +15985,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\""
+          "Value": "W/\"HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5mwp3d5cvr"
+          "Value": "oltteb8shd"
         },
         {
           "Name": "label",
@@ -15862,12 +15999,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="
+          "Value": "sha256-HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4="
         }
       ]
     },
     {
-      "Route": "AutismEducationPlatform.Web.5mwp3d5cvr.styles.css",
+      "Route": "AutismEducationPlatform.Web.oltteb8shd.styles.css",
       "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\bundle\\AutismEducationPlatform.Web.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -15877,7 +16014,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1145"
+          "Value": "953"
         },
         {
           "Name": "Content-Type",
@@ -15885,11 +16022,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\""
+          "Value": "\"HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15899,7 +16036,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5mwp3d5cvr"
+          "Value": "oltteb8shd"
         },
         {
           "Name": "label",
@@ -15907,13 +16044,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="
+          "Value": "sha256-HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4="
         }
       ]
     },
     {
-      "Route": "AutismEducationPlatform.Web.5mwp3d5cvr.styles.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-5mwp3d5cvr.gz",
+      "Route": "AutismEducationPlatform.Web.oltteb8shd.styles.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-oltteb8shd.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -15922,7 +16059,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "554"
+          "Value": "441"
         },
         {
           "Name": "Content-Type",
@@ -15930,11 +16067,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=\""
+          "Value": "\"BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15952,7 +16089,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5mwp3d5cvr"
+          "Value": "oltteb8shd"
         },
         {
           "Name": "label",
@@ -15960,155 +16097,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg="
-        }
-      ]
-    },
-    {
-      "Route": "AutismEducationPlatform.Web.bundle.scp.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-5mwp3d5cvr.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001801801802"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "554"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="
-        }
-      ]
-    },
-    {
-      "Route": "AutismEducationPlatform.Web.bundle.scp.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\AutismEducationPlatform.Web.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1145"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="
-        }
-      ]
-    },
-    {
-      "Route": "AutismEducationPlatform.Web.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\b0cb4zvhqt-5mwp3d5cvr.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "554"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg="
+          "Value": "sha256-BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY="
         }
       ]
     },
     {
       "Route": "AutismEducationPlatform.Web.styles.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-5mwp3d5cvr.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-oltteb8shd.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001801801802"
+          "Quality": "0.002262443439"
         }
       ],
       "ResponseHeaders": [
@@ -16118,15 +16118,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "554"
+          "Value": "441"
         },
         {
           "Name": "ETag",
-          "Value": "\"slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=\""
+          "Value": "\"BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16146,13 +16146,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\""
+          "Value": "W/\"HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="
+          "Value": "sha256-HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4="
         }
       ]
     },
@@ -16167,7 +16167,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1145"
+          "Value": "953"
         },
         {
           "Name": "Content-Type",
@@ -16175,11 +16175,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4=\""
+          "Value": "\"HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16189,13 +16189,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-owd1WTrbtqvug78SiYWO4mMkCM2I2YgDlXV24Yl/fO4="
+          "Value": "sha256-HJUdFkn0IQJTIITKZBQnL8Jx+YehmYSnYz1c1m8ZKi4="
         }
       ]
     },
     {
       "Route": "AutismEducationPlatform.Web.styles.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-5mwp3d5cvr.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\xdwcozvjxf-oltteb8shd.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -16204,7 +16204,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "554"
+          "Value": "441"
         },
         {
           "Name": "Content-Type",
@@ -16212,11 +16212,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg=\""
+          "Value": "\"BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 10:08:18 GMT"
+          "Value": "Mon, 16 Jun 2025 18:59:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16234,7 +16234,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-slLBZSOX7+ubiKwruQSIyJszvB+/8EF8KpqJ00RhPCg="
+          "Value": "sha256-BSuEmrCjdm6vLuy51lwb1J1gK+zaQNJZCykoaXBLyhY="
         }
       ]
     },
@@ -17729,13 +17729,13 @@
       ]
     },
     {
-      "Route": "css/parent-dashboard.as9th68wwu.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-as9th68wwu.gz",
+      "Route": "css/parent-dashboard.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-fgmfsj1872.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000846740051"
+          "Quality": "0.000853242321"
         }
       ],
       "ResponseHeaders": [
@@ -17745,19 +17745,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1180"
+          "Value": "1171"
         },
         {
           "Name": "ETag",
-          "Value": "\"FNcd65OLpnn62GGKj8SYHFh8hk/l6phsLXFVyYSWfFk=\""
+          "Value": "\"nol9wjkyJZeez/5cogbV+RyNE6Tn675eFCBr3viTiaQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 20:58:11 GMT"
+          "Value": "Mon, 16 Jun 2025 11:02:28 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -17773,26 +17773,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"NiAfAgdppArGe8E3Ba+21ZhhMRuKm2FyMKpmviGzOms=\""
+          "Value": "W/\"b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "as9th68wwu"
-        },
-        {
-          "Name": "label",
-          "Value": "css/parent-dashboard.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-NiAfAgdppArGe8E3Ba+21ZhhMRuKm2FyMKpmviGzOms="
+          "Value": "sha256-b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE="
         }
       ]
     },
     {
-      "Route": "css/parent-dashboard.as9th68wwu.css",
+      "Route": "css/parent-dashboard.css",
       "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\parent-dashboard.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -17802,7 +17794,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4587"
+          "Value": "4589"
         },
         {
           "Name": "Content-Type",
@@ -17810,11 +17802,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NiAfAgdppArGe8E3Ba+21ZhhMRuKm2FyMKpmviGzOms=\""
+          "Value": "\"b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 20:58:11 GMT"
+          "Value": "Mon, 16 Jun 2025 11:02:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE="
+        }
+      ]
+    },
+    {
+      "Route": "css/parent-dashboard.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-fgmfsj1872.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1171"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nol9wjkyJZeez/5cogbV+RyNE6Tn675eFCBr3viTiaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 11:02:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nol9wjkyJZeez/5cogbV+RyNE6Tn675eFCBr3viTiaQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/parent-dashboard.fgmfsj1872.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-fgmfsj1872.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000853242321"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1171"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nol9wjkyJZeez/5cogbV+RyNE6Tn675eFCBr3viTiaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 11:02:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fgmfsj1872"
+        },
+        {
+          "Name": "label",
+          "Value": "css/parent-dashboard.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE="
+        }
+      ]
+    },
+    {
+      "Route": "css/parent-dashboard.fgmfsj1872.css",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\parent-dashboard.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4589"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 11:02:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17824,7 +17961,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "as9th68wwu"
+          "Value": "fgmfsj1872"
         },
         {
           "Name": "label",
@@ -17832,13 +17969,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-NiAfAgdppArGe8E3Ba+21ZhhMRuKm2FyMKpmviGzOms="
+          "Value": "sha256-b/eS9LSmNiox3L0yV47czRqv8Lr/EjWpgbr4kHURNwE="
         }
       ]
     },
     {
-      "Route": "css/parent-dashboard.as9th68wwu.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-as9th68wwu.gz",
+      "Route": "css/parent-dashboard.fgmfsj1872.css.gz",
+      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-fgmfsj1872.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -17847,7 +17984,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1180"
+          "Value": "1171"
         },
         {
           "Name": "Content-Type",
@@ -17855,11 +17992,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FNcd65OLpnn62GGKj8SYHFh8hk/l6phsLXFVyYSWfFk=\""
+          "Value": "\"nol9wjkyJZeez/5cogbV+RyNE6Tn675eFCBr3viTiaQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 20:58:11 GMT"
+          "Value": "Mon, 16 Jun 2025 11:02:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17877,7 +18014,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "as9th68wwu"
+          "Value": "fgmfsj1872"
         },
         {
           "Name": "label",
@@ -17885,144 +18022,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-FNcd65OLpnn62GGKj8SYHFh8hk/l6phsLXFVyYSWfFk="
-        }
-      ]
-    },
-    {
-      "Route": "css/parent-dashboard.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-as9th68wwu.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000846740051"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1180"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"FNcd65OLpnn62GGKj8SYHFh8hk/l6phsLXFVyYSWfFk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 20:58:11 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"NiAfAgdppArGe8E3Ba+21ZhhMRuKm2FyMKpmviGzOms=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-NiAfAgdppArGe8E3Ba+21ZhhMRuKm2FyMKpmviGzOms="
-        }
-      ]
-    },
-    {
-      "Route": "css/parent-dashboard.css",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\wwwroot\\css\\parent-dashboard.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4587"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NiAfAgdppArGe8E3Ba+21ZhhMRuKm2FyMKpmviGzOms=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 20:58:11 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-NiAfAgdppArGe8E3Ba+21ZhhMRuKm2FyMKpmviGzOms="
-        }
-      ]
-    },
-    {
-      "Route": "css/parent-dashboard.css.gz",
-      "AssetFile": "C:\\Users\\betulozturk\\OneDrive\\Desktop\\newotizm-repo\\obj\\Debug\\net9.0\\compressed\\qpcqwvpx33-as9th68wwu.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1180"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"FNcd65OLpnn62GGKj8SYHFh8hk/l6phsLXFVyYSWfFk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 20:58:11 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-FNcd65OLpnn62GGKj8SYHFh8hk/l6phsLXFVyYSWfFk="
+          "Value": "sha256-nol9wjkyJZeez/5cogbV+RyNE6Tn675eFCBr3viTiaQ="
         }
       ]
     },

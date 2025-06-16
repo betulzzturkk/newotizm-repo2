@@ -34,19 +34,19 @@
             @for (int i = 0; i < tales.Count; i++)
             {
                 var tale = tales[i];
-                var youtubeId = GetYoutubeId(tale.Url);
+                var youtubeId = GetYoutubeId(tale.VideoUrl);
                 var thumbnail = $"https://img.youtube.com/vi/{youtubeId}/hqdefault.jpg";
                 <div class="col-md-6 col-lg-4" data-aos="zoom-in">
                     <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #FFB347 0%, #6B48FF 100%); color: #fff; border-radius: 25px; min-height: 420px;">
-                        <a href="@tale.Url" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+                        <a href="@tale.VideoUrl" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
                             <img src="@thumbnail" alt="@tale.Title" class="img-fluid rounded mb-3" style="height:200px; object-fit:cover; background: #fff;">
                             <h4>@tale.Title</h4>
                         </a>
-                        <a href="@tale.Url" target="_blank" rel="noopener" class="btn btn-outline-light mt-3" onclick="markTaleCompleted('@tale.Title', this, @i);">
+                        <a href="@tale.VideoUrl" target="_blank" rel="noopener" class="btn btn-outline-light mt-3" onclick="markTaleCompleted('@tale.Title', this, @i);">
                             <i class="fab fa-youtube me-2"></i> Videoyu İzle
                         </a>
                         <div class="progress my-3" style="height: 20px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-tale-@i" role="progressbar" style="width: @tale.Progress%" aria-valuenow="@tale.Progress" aria-valuemin="0" aria-valuemax="100">@tale.Progress%</div>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-tale-@i" role="progressbar" style="width: @tale.ProgressPercentage%" aria-valuenow="@tale.ProgressPercentage" aria-valuemin="0" aria-valuemax="100">@tale.ProgressPercentage%</div>
                         </div>
                     </div>
                 </div>

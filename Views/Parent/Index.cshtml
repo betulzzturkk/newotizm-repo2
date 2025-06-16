@@ -1,7 +1,7 @@
 @model AutismEducationPlatform.Web.Models.ViewModels.ParentProfileViewModel
 
 @{
-    ViewData["Title"] = "Veli Paneli";
+    ViewData["Title"] = "Ana Sayfa";
     Layout = "~/Views/Shared/_ParentLayout.cshtml";
 }
 
@@ -192,11 +192,157 @@
     </div>
 </div>
 
-@section Scripts {
-    <script>
-        document.querySelector('a[href="@Url.Action("Logout", "Account")"]').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.location.href = '@Url.Action("Logout", "Account")';
+<!-- Chatbot Kutusu -->
+<div id="chatbot" style="position: fixed; bottom: 20px; right: 20px; width: 320px; max-height: 500px; background-color: #fff; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: none; flex-direction: column; z-index: 9999;">
+    <div class="chat-header">
+        <div class="d-flex align-items-center">
+            <div class="chatbot-avatar me-2">
+                <i class="fas fa-robot fa-lg"></i>
+            </div>
+            <div>
+                <h5 class="mb-0">Yardımcı Asistan</h5>
+                <small class="text-muted">Size nasıl yardımcı olabilirim?</small>
+            </div>
+        </div>
+        <button class="btn-close btn-close-white" onclick="toggleChat()"></button>
+    </div>
+    <div id="chatMessages" style="padding: 10px; overflow-y: auto; flex-grow: 1; max-height: 350px;"></div>
+    <div style="display: flex; padding: 8px; border-top: 1px solid #ddd;">
+        <input type="text" id="chatInput" placeholder="Sorunuzu yazın..." style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+        <button onclick="sendMessage()" style="margin-left: 8px; background: linear-gradient(135deg, #6B48FF 0%, #FF6B6B 100%); color: white; border: none; padding: 8px 12px; border-radius: 4px;">Gönder</button>
+    </div>
+</div>
+
+<!-- Açma Butonu -->
+<button onclick="toggleChatbot()" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; background: linear-gradient(135deg, #6B48FF 0%, #FF6B6B 100%); color: white; border: none; width: 60px; height: 60px; border-radius: 50%; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+    <i class="fas fa-robot"></i>
+</button>
+
+<style>
+    #chatbot {
+        transition: all 0.3s ease;
+    }
+    
+    #chatbot:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    
+    #chatInput:focus {
+        outline: none;
+        border-color: #6B48FF;
+        box-shadow: 0 0 0 2px rgba(107, 72, 255, 0.2);
+    }
+    
+    button:hover {
+        transform: scale(1.05);
+    }
+    
+    #chatMessages::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    #chatMessages::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+    
+    #chatMessages::-webkit-scrollbar-thumb {
+        background: #6B48FF;
+        border-radius: 3px;
+    }
+    
+    #chatMessages::-webkit-scrollbar-thumb:hover {
+        background: #FF6B6B;
+    }
+
+    .chatbot-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #6f42c1, #fd7e14);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .chatbot-avatar i {
+        font-size: 1.5rem;
+    }
+</style>
+
+<script>
+    function toggleChatbot() {
+        const bot = document.getElementById("chatbot");
+        const button = document.querySelector('button[onclick="toggleChatbot()"]');
+        if (bot.style.display === "none") {
+            bot.style.display = "flex";
+            button.style.transform = "scale(1.1)";
+            setTimeout(() => button.style.transform = "scale(1)", 300);
+        } else {
+            bot.style.display = "none";
+            button.style.transform = "scale(0.9)";
+            setTimeout(() => button.style.transform = "scale(1)", 300);
+        }
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById("chatInput");
+        const message = input.value.trim();
+        if (!message) return;
+
+        appendMessage("Siz", message);
+        input.value = "";
+
+        const response = await fetch('/api/chat/ask', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message })
         });
-    </script>
-}
+
+        if (response.ok) {
+            const data = await response.json();
+            appendMessage("Yardımcı Asistan", data.reply);
+        } else {
+            appendMessage("Yardımcı Asistan", "Bir hata oluştu. Lütfen tekrar deneyin.");
+        }
+    }
+
+    function appendMessage(sender, message) {
+        const chat = document.getElementById("chatMessages");
+        const div = document.createElement("div");
+        div.style.marginBottom = "12px";
+        div.style.padding = "8px 12px";
+        div.style.borderRadius = "8px";
+        div.style.maxWidth = "80%";
+        
+        if (sender === "Siz") {
+            div.style.backgroundColor = "#6B48FF";
+            div.style.color = "white";
+            div.style.marginLeft = "auto";
+        } else {
+            div.style.backgroundColor = "#f0f0f0";
+            div.style.color = "#333";
+            div.style.marginRight = "auto";
+        }
+        
+        div.innerHTML = `<strong>${sender}:</strong><br>${message}`;
+        chat.appendChild(div);
+        chat.scrollTop = chat.scrollHeight;
+    }
+
+    // Enter tuşu ile mesaj gönderme
+    document.getElementById("chatInput").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            sendMessage();
+        }
+    });
+
+    document.querySelector('a[href="@Url.Action("Logout", "Account")"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '@Url.Action("Logout", "Account")';
+    });
+</script>

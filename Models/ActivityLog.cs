@@ -13,7 +13,7 @@ namespace AutismEducationPlatform.Web.Models
         public int ActivityId { get; set; }
 
         [Required]
-        public int ChildId { get; set; }
+        public string UserId { get; set; }
 
         [Range(0, 100)]
         public int Score { get; set; }
@@ -29,10 +29,10 @@ namespace AutismEducationPlatform.Web.Models
         [ForeignKey("ActivityId")]
         public Activity? Activity { get; set; }
 
-        [ForeignKey("ChildId")]
-        public Child? Child { get; set; }
+        [ForeignKey("UserId")]
+        public ApplicationUser? User { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? CompletedAt { get; set; }
     }
 } 

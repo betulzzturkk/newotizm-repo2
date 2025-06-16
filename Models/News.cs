@@ -35,5 +35,10 @@ namespace AutismEducationPlatform.Web.Models
 
         [StringLength(200)]
         public string? ImageUrl { get; set; }
+
+        public bool IsAnnouncement { get; set; } = false;
+
+        [StringLength(500)]
+        public string? Link { get; set; }
     }
 } 

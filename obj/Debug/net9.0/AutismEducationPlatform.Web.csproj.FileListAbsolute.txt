@@ -1186,7 +1186,6 @@ C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\8abl54jhwg-1f8wn91cx3.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\24hvjv8wy9-qxuquhzfjm.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\e6s87avq9q-wxs8b765ux.gz
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\qpcqwvpx33-as9th68wwu.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\hzxvxpm1cp-ldpms9x1r2.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\upu291oz52-d7fd4p0914.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\br843116sa-61n19gt1b8.gz
@@ -1383,8 +1382,6 @@ C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\vetstw0qd2-87fc7y1x7t.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\713k6c04v3-mlv21k5csn.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\y03mn63iar-6jok5d25c6.gz
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\xdwcozvjxf-5mwp3d5cvr.gz
-C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\b0cb4zvhqt-5mwp3d5cvr.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -1402,3 +1399,6 @@ C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\AutismEduca
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\ref\AutismEducationPlatform.Web.dll
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\cuy0vev2c8-gtyyg951no.gz
 C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\g68u72k2f3-ntjmnjvl0g.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\qpcqwvpx33-fgmfsj1872.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\xdwcozvjxf-oltteb8shd.gz
+C:\Users\betulozturk\OneDrive\Desktop\newotizm-repo\obj\Debug\net9.0\compressed\b0cb4zvhqt-oltteb8shd.gz

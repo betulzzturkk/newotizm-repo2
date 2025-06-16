@@ -9,5 +9,7 @@ namespace AutismEducationPlatform.Web.Models.ViewModels
         public string Color { get; set; } = string.Empty; // Bootstrap renk sınıfı
         public string Example { get; set; } = string.Empty; // Örnek durum
         public string CorrectBehavior { get; set; } = string.Empty; // Doğru davranış
+        public int Progress { get; set; } = 0;
+        public string SoundPath { get; set; } = string.Empty;
     }
 } 

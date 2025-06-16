@@ -1,145 +1,425 @@
+@model AutismEducationPlatform.Web.Models.ViewModels.ProgressViewModel
+
 @{
     ViewData["Title"] = "İlerleme Raporu";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container mt-4">
-    <div class="row mb-4">
-        <div class="col">
-            <h2 class="mb-3">
-                <i class="fas fa-chart-line text-success me-2"></i>
-                İlerleme Raporu
-            </h2>
-            <p class="text-muted">Çocuğunuzun gelişim sürecini ve başarılarını takip edin.</p>
-        </div>
-    </div>
-
-    <div class="row mb-4">
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Genel İlerleme</h5>
-                    <div class="d-flex justify-content-between align-items-center mt-4">
-                        <div>
-                            <h6 class="mb-2">Sosyal Beceriler</h6>
-                            <div class="progress" style="height: 8px; width: 200px;">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <span class="h4 mb-0 text-success">75%</span>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-4">
-                        <div>
-                            <h6 class="mb-2">Dil Gelişimi</h6>
-                            <div class="progress" style="height: 8px; width: 200px;">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 45%"></div>
-                            </div>
-                        </div>
-                        <span class="h4 mb-0 text-warning">45%</span>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-4">
-                        <div>
-                            <h6 class="mb-2">Motor Beceriler</h6>
-                            <div class="progress" style="height: 8px; width: 200px;">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 60%"></div>
-                            </div>
-                        </div>
-                        <span class="h4 mb-0 text-info">60%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Son Başarılar</h5>
-                    <div class="list-group list-group-flush mt-3">
-                        <div class="list-group-item border-0">
-                            <div class="d-flex align-items-center">
-                                <span class="badge bg-success rounded-circle p-2 me-3">
-                                    <i class="fas fa-check"></i>
-                                </span>
-                                <div>
-                                    <h6 class="mb-1">Grup Aktivitesini Tamamladı</h6>
-                                    <small class="text-muted">2 gün önce</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-group-item border-0">
-                            <div class="d-flex align-items-center">
-                                <span class="badge bg-primary rounded-circle p-2 me-3">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <div>
-                                    <h6 class="mb-1">Yeni Kelime Öğrendi</h6>
-                                    <small class="text-muted">4 gün önce</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-group-item border-0">
-                            <div class="d-flex align-items-center">
-                                <span class="badge bg-info rounded-circle p-2 me-3">
-                                    <i class="fas fa-trophy"></i>
-                                </span>
-                                <div>
-                                    <h6 class="mb-1">Motor Beceri Seviyesi Atladı</h6>
-                                    <small class="text-muted">1 hafta önce</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<div class="container py-5">
     <div class="row">
         <div class="col-12">
-            <div class="card shadow-sm">
-                <div class="card-header bg-white">
-                    <h5 class="card-title mb-0">Detaylı Rapor</h5>
+            <h2 class="mb-4">İlerleme Raporu</h2>
+            
+            <!-- Eğitim Kategorileri -->
+            <div class="row g-4 mb-4">
+                <!-- Hayvanlar -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-paw text-primary me-2"></i>
+                                Hayvanlar
+                            </h5>
+                            <div class="progress mb-3">
+                                @{
+                                    var animalProgress = Model.AnimalProgress.FirstOrDefault()?.ProgressPercentage ?? 0;
+                                }
+                                <div class="progress-bar bg-success" role="progressbar" style="width: @animalProgress%" aria-valuenow="@animalProgress" aria-valuemin="0" aria-valuemax="100">@animalProgress%</div>
+                            </div>
+                            <ul class="list-unstyled">
+                                @foreach (var progress in Model.AnimalProgress)
+                                {
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        @progress.AnimalName
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Renkler -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-palette text-primary me-2"></i>
+                                Renkler
+                            </h5>
+                            <div class="progress mb-3">
+                                @{
+                                    var colorProgress = Model.ColorProgress.FirstOrDefault()?.ProgressPercentage ?? 0;
+                                }
+                                <div class="progress-bar bg-success" role="progressbar" style="width: @colorProgress%" aria-valuenow="@colorProgress" aria-valuemin="0" aria-valuemax="100">@colorProgress%</div>
+                            </div>
+                            <ul class="list-unstyled">
+                                @foreach (var progress in Model.ColorProgress)
+                                {
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        @progress.ColorName
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sayılar -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-calculator text-primary me-2"></i>
+                                Sayılar
+                            </h5>
+                            <div class="progress mb-3">
+                                @{
+                                    var numberProgress = Model.NumberProgress.FirstOrDefault()?.ProgressPercentage ?? 0;
+                                }
+                                <div class="progress-bar bg-success" role="progressbar" style="width: @numberProgress%" aria-valuenow="@numberProgress" aria-valuemin="0" aria-valuemax="100">@numberProgress%</div>
+                            </div>
+                            <ul class="list-unstyled">
+                                @foreach (var progress in Model.NumberProgress)
+                                {
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Sayı @progress.NumberValue
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Şekiller -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-shapes text-primary me-2"></i>
+                                Şekiller
+                            </h5>
+                            <div class="progress mb-3">
+                                @{
+                                    var shapeProgress = Model.ShapeProgress.FirstOrDefault()?.ProgressPercentage ?? 0;
+                                }
+                                <div class="progress-bar bg-success" role="progressbar" style="width: @shapeProgress%" aria-valuenow="@shapeProgress" aria-valuemin="0" aria-valuemax="100">@shapeProgress%</div>
+                            </div>
+                            <ul class="list-unstyled">
+                                @foreach (var progress in Model.ShapeProgress)
+                                {
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        @progress.ShapeName
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trafik İşaretleri -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-traffic-light text-primary me-2"></i>
+                                Trafik İşaretleri
+                            </h5>
+                            <div class="progress mb-3">
+                                @{
+                                    var trafficSignProgress = Model.TrafficSignProgress.FirstOrDefault()?.ProgressPercentage ?? 0;
+                                }
+                                <div class="progress-bar bg-success" role="progressbar" style="width: @trafficSignProgress%" aria-valuenow="@trafficSignProgress" aria-valuemin="0" aria-valuemax="100">@trafficSignProgress%</div>
+                            </div>
+                            <ul class="list-unstyled">
+                                @foreach (var progress in Model.TrafficSignProgress)
+                                {
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        @progress.SignName
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Görgü Kuralları -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-handshake text-primary me-2"></i>
+                                Görgü Kuralları
+                            </h5>
+                            <div class="progress mb-3">
+                                @{
+                                    var mannerProgress = Model.MannerProgress.FirstOrDefault()?.ProgressPercentage ?? 0;
+                                }
+                                <div class="progress-bar bg-success" role="progressbar" style="width: @mannerProgress%" aria-valuenow="@mannerProgress" aria-valuemin="0" aria-valuemax="100">@mannerProgress%</div>
+                            </div>
+                            <ul class="list-unstyled">
+                                @foreach (var progress in Model.MannerProgress)
+                                {
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        @progress.MannerName
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Masallar -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-book text-primary me-2"></i>
+                                Masallar
+                            </h5>
+                            <div class="progress mb-3">
+                                @{
+                                    var taleProgress = Model.TaleProgress.FirstOrDefault()?.ProgressPercentage ?? 0;
+                                }
+                                <div class="progress-bar bg-success" role="progressbar" style="width: @taleProgress%" aria-valuenow="@taleProgress" aria-valuemin="0" aria-valuemax="100">@taleProgress%</div>
+                            </div>
+                            <ul class="list-unstyled">
+                                @foreach (var progress in Model.TaleProgress)
+                                {
+                                    <li class="mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        @progress.TaleTitle
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Genel İlerleme -->
+            <div class="card shadow-sm mb-4">
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Tarih</th>
-                                    <th>Aktivite</th>
-                                    <th>Kategori</th>
-                                    <th>Başarı</th>
-                                    <th>Notlar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>15.04.2024</td>
-                                    <td>Grup İçi İletişim</td>
-                                    <td>Sosyal Beceriler</td>
-                                    <td>
-                                        <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 80%"></div>
-                                        </div>
-                                    </td>
-                                    <td>Grup aktivitelerine aktif katılım gösterdi</td>
-                                </tr>
-                                <tr>
-                                    <td>14.04.2024</td>
-                                    <td>Kelime Oyunları</td>
-                                    <td>Dil Gelişimi</td>
-                                    <td>
-                                        <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 65%"></div>
-                                        </div>
-                                    </td>
-                                    <td>Yeni kelimeleri öğrenmede istekli</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <h5 class="card-title mb-4">
+                        <i class="fas fa-chart-line text-primary me-2"></i>
+                        Genel İlerleme
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <canvas id="progressChart"></canvas>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Kategori</th>
+                                            <th>İlerleme</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Hayvanlar</td>
+                                            <td>@animalProgress%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Renkler</td>
+                                            <td>@colorProgress%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sayılar</td>
+                                            <td>@numberProgress%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Şekiller</td>
+                                            <td>@shapeProgress%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Trafik İşaretleri</td>
+                                            <td>@trafficSignProgress%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Görgü Kuralları</td>
+                                            <td>@mannerProgress%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Masallar</td>
+                                            <td>@taleProgress%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> 
+
+    <!-- Sınav Sonuçları ve Başarı Oranı -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Sınav Sonuçları ve Başarı Oranı</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.Exams.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Sınav Adı</th>
+                                        <th>Tarih</th>
+                                        <th>Doğru</th>
+                                        <th>Yanlış</th>
+                                        <th>Başarı Oranı</th>
+                                        <th>Durum</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var exam in Model.Exams.OrderByDescending(e => e.ExamDate))
+                                    {
+                                        var successRate = (exam.CorrectCount * 100.0) / exam.TotalQuestions;
+                                        var statusClass = successRate >= 70 ? "text-success" : successRate >= 50 ? "text-warning" : "text-danger";
+                                        var statusText = successRate >= 70 ? "Başarılı" : successRate >= 50 ? "Orta" : "Geliştirilmeli";
+                                        
+                                        <tr>
+                                            <td>@exam.ExamName</td>
+                                            <td>@exam.ExamDate.ToString("dd.MM.yyyy HH:mm")</td>
+                                            <td>@exam.CorrectCount</td>
+                                            <td>@exam.WrongCount</td>
+                                            <td class="@statusClass">%@successRate.ToString("N1")</td>
+                                            <td class="@statusClass">@statusText</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-4">
+                            <h6 class="text-primary">Genel Değerlendirme</h6>
+                            @{
+                                var averageSuccess = Model.Exams.Average(e => (e.CorrectCount * 100.0) / e.TotalQuestions);
+                                var lastExam = Model.Exams.OrderByDescending(e => e.ExamDate).First();
+                                var lastExamSuccess = (lastExam.CorrectCount * 100.0) / lastExam.TotalQuestions;
+                            }
+                            <div class="alert @(averageSuccess >= 70 ? "alert-success" : averageSuccess >= 50 ? "alert-warning" : "alert-danger")">
+                                <p class="mb-2"><strong>Ortalama Başarı Oranı:</strong> %@averageSuccess.ToString("N1")</p>
+                                <p class="mb-2"><strong>Son Sınav Başarı Oranı:</strong> %@lastExamSuccess.ToString("N1")</p>
+                                
+                                @if (averageSuccess >= 70)
+                                {
+                                    <p class="mb-0">Tebrikler! Çocuğunuz sınavlarda çok başarılı bir performans gösteriyor. Bu başarıyı sürdürmek için düzenli tekrar ve pratik yapmaya devam etmesini öneririz.</p>
+                                }
+                                else if (averageSuccess >= 50)
+                                {
+                                    <p class="mb-0">Çocuğunuz orta düzeyde bir başarı gösteriyor. Başarıyı artırmak için zorlandığı konulara daha fazla odaklanması ve düzenli tekrar yapması faydalı olacaktır.</p>
+                                }
+                                else
+                                {
+                                    <p class="mb-0">Çocuğunuzun bazı konularda zorlandığını görüyoruz. Bu konuları daha detaylı çalışması ve daha fazla pratik yapması önerilir. Gerekirse öğretmeninizle görüşerek ek destek alabilirsiniz.</p>
+                                }
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            <p class="mb-0">Henüz tamamlanmış sınav bulunmamaktadır.</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Genel İlerleme Grafiği
+        var ctx = document.getElementById('progressChart').getContext('2d');
+        var progressChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Hayvanlar', 'Renkler', 'Sayılar', 'Şekiller', 'Trafik İşaretleri', 'Görgü Kuralları', 'Masallar'],
+                datasets: [{
+                    label: 'İlerleme Yüzdesi',
+                    data: [
+                        @animalProgress,
+                        @colorProgress,
+                        @numberProgress,
+                        @shapeProgress,
+                        @trafficSignProgress,
+                        @mannerProgress,
+                        @taleProgress
+                    ],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(199, 199, 199, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(199, 199, 199, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+}
+
+<style>
+    .card {
+        transition: transform 0.2s;
+        border: none;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .progress {
+        background-color: #e9ecef;
+        border-radius: 4px;
+    }
+    .badge {
+        font-size: 0.8rem;
+        padding: 0.5em 0.8em;
+    }
+    .table {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .table thead th {
+        border-bottom: 2px solid #dee2e6;
+        font-weight: 600;
+    }
+    .table tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+</style>

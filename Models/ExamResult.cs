@@ -10,10 +10,13 @@ namespace AutismEducationPlatform.Web.Models
         public int Id { get; set; }
 
         [Required]
-        public int ExamLevel { get; set; }
+        public string UserId { get; set; }
 
         [Required]
-        public string UserId { get; set; }
+        public string ExamLevel { get; set; }
+
+        [Required]
+        public string ExamName { get; set; }
 
         [Required]
         public int CorrectCount { get; set; }
@@ -25,9 +28,13 @@ namespace AutismEducationPlatform.Web.Models
         public int TotalQuestions { get; set; }
 
         [Required]
-        public double Score { get; set; } // Başarı yüzdesi
+        public double Score { get; set; }
 
-        public DateTime CompletedAt { get; set; } = DateTime.UtcNow;
+        [Required]
+        public DateTime CompletedAt { get; set; }
+
+        [Required]
+        public DateTime ExamDate { get; set; }
 
         [ForeignKey("UserId")]
         public ApplicationUser User { get; set; }

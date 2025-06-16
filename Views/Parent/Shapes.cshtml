@@ -84,10 +84,10 @@
             progressBar.setAttribute('aria-valuenow', newProgress);
             progressBar.setAttribute('data-progress', newProgress);
             // AJAX ile ilerlemeyi kaydet
-            fetch('/Course/SaveShapeProgress', {
+            fetch('/Parent/SaveShapeProgress', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ shapeName: normName, progress: newProgress })
+                body: JSON.stringify({ shapeName: shapeName, progress: newProgress })
             })
             .then(response => response.json())
             .then(data => console.log('Progress saved:', data))

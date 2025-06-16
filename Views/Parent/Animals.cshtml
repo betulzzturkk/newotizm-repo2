@@ -39,7 +39,7 @@
                         <img src="@animal.ImageUrl" alt="@animal.Name" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
                         <h4>@animal.Name</h4>
                         <p>@animal.Description</p>
-                        <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/@(System.IO.Path.GetFileName(animal.SoundUrl))', '@animal.Name')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                        <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('/sounds/animals/@(System.IO.Path.GetFileName(animal.SoundUrl))', '@animal.Name', @animal.Id)"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
                         <div class="progress my-3" style="height: 20px;">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-@ToAsciiId(animal.Name)" role="progressbar" style="width: @animal.Progress%" data-progress="@animal.Progress">@animal.Progress%</div>
                         </div>
@@ -58,7 +58,7 @@
                 .replace(/ı/g, 'i').replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ö/g, 'o').replace(/ç/g, 'c')
                 .replace(/İ/g, 'i').replace(/Ğ/g, 'g').replace(/Ü/g, 'u').replace(/Ş/g, 's').replace(/Ö/g, 'o').replace(/Ç/g, 'c');
         }
-        function playSoundAndProgress(soundPath, animalName) {
+        function playSoundAndProgress(soundPath, animalName, animalId) {
             var audio = new Audio(soundPath);
             audio.play();
             var normName = toAsciiId(animalName);
@@ -74,7 +74,7 @@
             fetch('/Parent/SaveAnimalProgress', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ AnimalName: normName, Progress: newProgress })
+                body: JSON.stringify({ AnimalName: animalName, AnimalId: animalId, Progress: newProgress })
             })
             .then(response => response.json())
             .then(data => console.log('Progress saved:', data))

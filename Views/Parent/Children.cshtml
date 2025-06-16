@@ -1,0 +1,120 @@
+@model List<AutismEducationPlatform.Web.Models.ViewModels.ChildViewModel>
+@{
+    ViewData["Title"] = "Çocuklarım";
+    Layout = "~/Views/Shared/_ParentLayout.cshtml";
+}
+
+<div class="container py-4">
+    @if (TempData["ChildSuccess"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["ChildSuccess"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+        </div>
+    }
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0" style="font-weight:700; color:#2193b0; letter-spacing:1px;">Çocuklarım</h2>
+        <a href="@Url.Action("AddChild", "Parent")" class="btn btn-primary">
+            <i class="fas fa-plus-circle me-2"></i>Yeni Çocuk Ekle
+        </a>
+    </div>
+
+    <div class="row g-4">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var child in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title mb-0">@child.Name</h5>
+                                <span class="badge bg-primary">@child.Age yaşında</span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <small class="text-muted d-block mb-1">Tanı:</small>
+                                <p class="mb-0">@(string.IsNullOrWhiteSpace(child.Diagnosis) ? "Belirtilmemiş" : child.Diagnosis)</p>
+                            </div>
+
+                            <div class="mb-3">
+                                <small class="text-muted d-block mb-1">İlgi Alanları:</small>
+                                @if (!string.IsNullOrWhiteSpace(child.Interests))
+                                {
+                                    var tags = child.Interests.Split(',');
+                                    foreach (var tag in tags)
+                                    {
+                                        <span class="badge bg-info text-dark me-1 mb-1">@tag.Trim()</span>
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Belirtilmemiş</span>
+                                }
+                            </div>
+
+                            <div class="mb-3">
+                                <small class="text-muted d-block mb-1">Eklenme Tarihi:</small>
+                                <p class="mb-0">@child.CreatedAt.ToShortDateString()</p>
+                            </div>
+
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="@Url.Action("EditChild", "Parent", new { id = child.Id })" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-edit me-1"></i>Düzenle
+                                </a>
+                                <button type="button" class="btn btn-outline-danger btn-sm" 
+                                        onclick="confirmDelete(@child.Id, '@child.Name')">
+                                    <i class="fas fa-trash-alt me-1"></i>Sil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Henüz çocuk eklenmemiş. Yeni çocuk eklemek için "Yeni Çocuk Ekle" butonunu kullanabilirsiniz.
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Çocuk Silme Onayı</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p><span id="childName"></span> isimli çocuğu silmek istediğinizden emin misiniz?</p>
+                <p class="text-danger"><i class="fas fa-exclamation-triangle me-2"></i>Bu işlem geri alınamaz!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <form id="deleteForm" asp-action="DeleteChild" method="post" style="display: inline;">
+                    <input type="hidden" id="childId" name="id" />
+                    <button type="submit" class="btn btn-danger">Sil</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id, name) {
+            document.getElementById('childId').value = id;
+            document.getElementById('childName').textContent = name;
+            var modal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            modal.show();
+        }
+    </script>
+} 

@@ -10,23 +10,19 @@ namespace AutismEducationPlatform.Web.Models
         public int Id { get; set; }
 
         [Required]
-        public string TaleTitle { get; set; }
+        public int TaleId { get; set; }
 
         [Required]
         public string UserId { get; set; }
 
-        [Required]
-        public int TaleId { get; set; }
+        public int ProgressPercentage { get; set; }
 
-        [Required]
-        public int Progress { get; set; } = 0;
-
-        public DateTime LastInteraction { get; set; } = DateTime.UtcNow;
-
-        [ForeignKey("UserId")]
-        public ApplicationUser User { get; set; }
+        public DateTime LastInteraction { get; set; }
 
         [ForeignKey("TaleId")]
-        public Tale Tale { get; set; }
+        public virtual Tale Tale { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual ApplicationUser User { get; set; }
     }
 } 

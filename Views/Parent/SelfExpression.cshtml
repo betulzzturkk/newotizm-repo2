@@ -1,0 +1,78 @@
+@model List<AutismEducationPlatform.Web.Models.ViewModels.MannersViewModel>
+
+@{
+    ViewData["Title"] = "Kendini İfade Etme";
+    Layout = "_ParentLayout";
+}
+
+<link rel="stylesheet" href="/css/animals-bg.css" />
+<div class="body-animals-bg" style="background-image: url('/images/animals/animal-bg-pattern.png'), linear-gradient(135deg, #FFB347 0%, #6B48FF 50%, #FF6B6B 100%); background-size: 300px, cover; background-repeat: repeat;">
+    <div class="cloud"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h1 class="display-4 fw-bold text-primary mb-3">Kendini İfade Etme</h1>
+            <p class="lead text-muted">Duygularını, düşüncelerini ve isteklerini ifade etmeyi öğren!</p>
+        </div>
+        <div class="row g-4">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                var exp = Model[i];
+                var key = exp.Title.ToLower().Replace(" ", "").Replace("ı", "i").Replace("ğ", "g").Replace("ü", "u").Replace("ş", "s").Replace("ö", "o").Replace("ç", "c");
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="@(i * 100 + 100)">
+                    <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #FFB347 0%, #6B48FF 100%); color: #fff; border-radius: 25px; min-height: 520px; height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+                        <img src="@exp.ImagePath" alt="@exp.Title" class="img-fluid rounded mb-3" style="height:320px !important; object-fit:contain !important; background: #fff;">
+                        <h4>@exp.Title</h4>
+                        <p>@exp.Description</p>
+                        <div class="mb-2"><small><strong>Örnek:</strong> @exp.Example</small></div>
+                        <div class="mb-2"><small><strong>Doğru Davranış:</strong> @exp.CorrectBehavior</small></div>
+                        <button class="btn btn-outline-light mb-3" onclick="playSoundAndProgress('@exp.SoundPath', '@key')"><i class="fas fa-volume-up me-2"></i>Sesi Dinle</button>
+                        <div class="progress my-3" style="height: 20px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-@key" role="progressbar" style="width: @exp.Progress%" data-progress="@exp.Progress">@exp.Progress%</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        function playSoundAndProgress(soundPath, key) {
+            var audio = new Audio(soundPath);
+            audio.play();
+            var progressBar = document.getElementById('progress-' + key);
+            var currentProgress = parseInt(progressBar.getAttribute('data-progress')) || 0;
+            var newProgress = currentProgress + 20;
+            if (newProgress > 100) newProgress = 100;
+            progressBar.style.width = newProgress + '%';
+            progressBar.textContent = newProgress + '%';
+            progressBar.setAttribute('aria-valuenow', newProgress);
+            progressBar.setAttribute('data-progress', newProgress);
+            // AJAX ile ilerlemeyi kaydet
+            fetch('/Parent/SaveSelfExpressionProgress', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ manner: key, progress: newProgress })
+            })
+            .then(response => response.json())
+            .then(data => console.log('Progress saved:', data))
+            .catch((error) => console.error('Error:', error));
+        }
+    </script>
+}
+<style>
+.card.h-100 {
+    min-height: 520px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.img-fluid.rounded.mb-3 {
+    height: 320px !important;
+    object-fit: contain !important;
+    background: #fff;
+}
+</style> 

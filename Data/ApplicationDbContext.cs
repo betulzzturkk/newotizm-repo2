@@ -34,6 +34,7 @@ namespace AutismEducationPlatform.Web.Data
         public DbSet<MannerProgress> MannerProgress { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<TrafficSign> TrafficSigns { get; set; }
+        public DbSet<CourseProgress> CourseProgress { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -102,9 +103,9 @@ namespace AutismEducationPlatform.Web.Data
                     .HasForeignKey(e => e.ActivityId)
                     .OnDelete(DeleteBehavior.NoAction);
 
-                entity.HasOne(e => e.Child)
+                entity.HasOne(e => e.User)
                     .WithMany()
-                    .HasForeignKey(e => e.ChildId)
+                    .HasForeignKey(e => e.UserId)
                     .OnDelete(DeleteBehavior.NoAction);
             });
 
@@ -127,6 +128,26 @@ namespace AutismEducationPlatform.Web.Data
                 .OnDelete(DeleteBehavior.SetNull);
 
             // TrafficSign modeline SoundPath alanı eklendi (migration için not)
+
+            // Child modeli için konfigürasyon
+            builder.Entity<Child>()
+                .HasOne(c => c.Parent)
+                .WithMany()
+                .HasForeignKey(c => c.ParentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // CourseProgress modeli için konfigürasyon
+            builder.Entity<CourseProgress>()
+                .HasOne(cp => cp.User)
+                .WithMany()
+                .HasForeignKey(cp => cp.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<CourseProgress>()
+                .HasOne(cp => cp.Course)
+                .WithMany()
+                .HasForeignKey(cp => cp.CourseId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 } 

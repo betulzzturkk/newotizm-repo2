@@ -1,0 +1,194 @@
+@model AutismEducationPlatform.Web.Models.ViewModels.GuidanceViewModel
+
+@{
+    ViewData["Title"] = "Rehberlik ve Destek";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-4">
+    <h2 class="mb-4">Rehberlik ve Destek</h2>
+
+    <!-- Kişisel Bakım Bölümü -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-shower fa-2x text-primary me-3"></i>
+                <h3 class="card-title mb-0">Kişisel Bakım</h3>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>Günlük Rutinler</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✓ Sabah rutini oluşturma</li>
+                            <li class="mb-2">✓ Diş fırçalama alışkanlığı</li>
+                            <li class="mb-2">✓ Tuvalet eğitimi</li>
+                            <li class="mb-2">✓ El yıkama alışkanlığı</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>Öneriler</h5>
+                        <p class="mb-0">Görsel zaman çizelgeleri kullanarak günlük rutinleri destekleyebilirsiniz. Her başarılı adımda ödül sistemi uygulayabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Eğitim Bölümü -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-book fa-2x text-success me-3"></i>
+                <h3 class="card-title mb-0">Eğitim</h3>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>Öğrenme Stratejileri</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✓ Görsel öğrenme materyalleri</li>
+                            <li class="mb-2">✓ Tekrarlı öğrenme</li>
+                            <li class="mb-2">✓ Küçük adımlarla ilerleme</li>
+                            <li class="mb-2">✓ Somut örnekler kullanma</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>Öneriler</h5>
+                        <p class="mb-0">Çocuğunuzun ilgi alanlarını keşfedin ve öğrenmeyi eğlenceli hale getirin. Başarıları kutlayın ve motivasyonu artırın.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aile Yaşantısı Bölümü -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-home fa-2x text-warning me-3"></i>
+                <h3 class="card-title mb-0">Aile Yaşantısı</h3>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>İletişim ve Etkileşim</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✓ Göz teması kurma</li>
+                            <li class="mb-2">✓ Ortak dikkat geliştirme</li>
+                            <li class="mb-2">✓ Duygu ifadelerini anlama</li>
+                            <li class="mb-2">✓ Sosyal oyunlar oynama</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>Öneriler</h5>
+                        <p class="mb-0">Aile içi rutinler oluşturun. Birlikte yemek yeme, oyun oynama gibi aktiviteleri düzenli hale getirin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Okul Yaşantısı Bölümü -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-school fa-2x text-info me-3"></i>
+                <h3 class="card-title mb-0">Okul Yaşantısı</h3>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>Okul Adaptasyonu</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✓ Okul rutinlerini öğrenme</li>
+                            <li class="mb-2">✓ Arkadaşlık ilişkileri</li>
+                            <li class="mb-2">✓ Sınıf kurallarına uyum</li>
+                            <li class="mb-2">✓ Ödev sorumluluğu</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>Öneriler</h5>
+                        <p class="mb-0">Öğretmenlerle düzenli iletişim kurun. Okul etkinliklerine katılımı destekleyin. Başarıları evde de kutlayın.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Uzman Desteği Bölümü -->
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-user-md fa-2x text-danger me-3"></i>
+                <h3 class="card-title mb-0">Uzman Desteği</h3>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>Profesyonel Destek</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✓ Özel eğitim uzmanı</li>
+                            <li class="mb-2">✓ Konuşma terapisti</li>
+                            <li class="mb-2">✓ Davranış terapisti</li>
+                            <li class="mb-2">✓ Psikolog</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded">
+                        <h5>Öneriler</h5>
+                        <p class="mb-0">Düzenli terapi seanslarına katılım sağlayın. Uzmanlarla işbirliği içinde olun ve önerileri uygulayın.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: transform 0.2s;
+        border: none;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .bg-light {
+        background-color: #f8f9fa !important;
+    }
+    .list-unstyled li {
+        position: relative;
+        padding-left: 1.5rem;
+    }
+    .list-unstyled li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #28a745;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        // Sayfa yüklendiğinde animasyonları başlat
+        $(document).ready(function() {
+            $('.progress-bar').each(function() {
+                var $this = $(this);
+                var width = $this.attr('aria-valuenow');
+                $this.css('width', '0%');
+                setTimeout(function() {
+                    $this.css('width', width + '%');
+                }, 200);
+            });
+        });
+    </script>
+} 

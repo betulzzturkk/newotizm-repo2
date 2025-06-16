@@ -1,112 +1,114 @@
 @model IEnumerable<AutismEducationPlatform.Web.Models.Course>
 
 @{
-    Layout = "_InstructorLayout";
-    ViewData["Title"] = "Eğitim Programları";
+    ViewData["Title"] = "Eğitimler";
 }
 
-@section Styles {
-    <style>
-        .course-card {
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            height: 100%;
-        }
+<link rel="stylesheet" href="/css/animals-bg.css" />
 
-        .course-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .course-icon {
-            position: relative;
-            background: linear-gradient(135deg, #2193b0, #6dd5ed);
-            border-radius: 15px 15px 0 0;
-            color: white;
-        }
-
-        .course-overlay {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        .course-content {
-            background: white;
-            border-radius: 0 0 15px 15px;
-        }
-
-        .course-meta {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .course-learn {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .course-learn ul li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #2193b0, #6dd5ed);
-            border: none;
-            padding: 10px 20px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #1c7a94, #5bc0d9);
-            transform: translateY(-2px);
-        }
-    </style>
-}
-
-<div class="container py-5">
-    <div class="text-center mb-5" data-aos="fade-up">
-        <h1 class="display-4 fw-bold text-primary mb-3">Eğitim Programları</h1>
-        <p class="lead text-muted">Otizmli çocuklar için özel tasarlanmış eğitim programlarımız</p>
-    </div>
-
-    <div class="row">
-        @foreach (var course in Model)
-        {
-            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="course-card bg-light">
-                    <div class="course-icon text-center p-4">
-                        <i class="@course.IconClass fa-4x text-primary mb-3"></i>
-                        <div class="course-overlay">
-                            <span class="badge bg-@(course.DifficultyLevel <= 2 ? "warning" : course.DifficultyLevel <= 4 ? "info" : "danger")">
-                                @(course.DifficultyLevel <= 2 ? "Başlangıç" : course.DifficultyLevel <= 4 ? "Orta" : "İleri")
-                            </span>
-                        </div>
-                    </div>
-                    <div class="course-content p-4">
-                        <h4 class="mb-3">@course.Name</h4>
-                        <p class="text-muted mb-4">@course.Description</p>
-                        <div class="course-meta d-flex justify-content-between align-items-center mb-3">
-                            <span><i class="fas fa-clock me-2"></i>@course.DurationMinutes dk</span>
-                            <span><i class="fas fa-users me-2"></i>@course.StudentCount Öğrenci</span>
-                        </div>
-                        <div class="course-learn">
-                            <h6 class="mb-3">Bu Eğitimde Öğrenecekleriniz:</h6>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check text-success me-2"></i>Temel kavramlar</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Pratik uygulamalar</li>
-                                <li><i class="fas fa-check text-success me-2"></i>İnteraktif aktiviteler</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Değerlendirme testleri</li>
-                            </ul>
-                        </div>
-                        <a href="@Url.Action("Index", "Course", new { id = course.Id })" class="btn btn-primary w-100 mt-4" style="color: white;">EĞİTİME GİT</a>
-                    </div>
+<div class="body-animals-bg" style="background-image: url('/images/animals/animal-bg-pattern.png'), linear-gradient(135deg, #FFB347 0%, #6B48FF 50%, #FF6B6B 100%); background-size: 300px, cover; background-repeat: repeat;">
+    <div class="cloud"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3" style="font-size:2.5rem; font-weight:800; color:#6B48FF;" data-aos="fade-up">
+                    <i class="fas fa-graduation-cap me-2"></i> Eğitimler
+                </h2>
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                    Eğlenceli ve öğretici içeriklerle öğrenmeye başlayalım!
+                </p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #FF6B6B 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/animals/animal-bg-pattern.png" alt="Hayvanlar" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Hayvanlar</h4>
+                    <p>Hayvanları tanıyalım ve seslerini öğrenelim!</p>
+                    <a href="/Course/Animals" class="btn btn-outline-light">Başla</a>
                 </div>
             </div>
-        }
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #4CAF50 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/colors/color-bg-pattern.png" alt="Renkler" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Renkler</h4>
+                    <p>Renkleri öğrenelim ve eşleştirelim!</p>
+                    <a href="/Course/Colors" class="btn btn-outline-light">Başla</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #2196F3 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/shapes/shape-bg-pattern.png" alt="Şekiller" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Şekiller</h4>
+                    <p>Şekilleri tanıyalım ve çizelim!</p>
+                    <a href="/Course/Shapes" class="btn btn-outline-light">Başla</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #FFC107 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/numbers/number-bg-pattern.png" alt="Sayılar" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Sayılar</h4>
+                    <p>Sayıları öğrenelim ve sayalım!</p>
+                    <a href="/Course/Numbers" class="btn btn-outline-light">Başla</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
+                <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #9C27B0 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/tales/tale-bg-pattern.png" alt="Masallar" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Masallar</h4>
+                    <p>Masalları dinleyelim ve öğrenelim!</p>
+                    <a href="/Course/Tales" class="btn btn-outline-light">Başla</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="700">
+                <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #FF5722 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/traffic/traffic-bg-pattern.png" alt="Trafik İşaretleri" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Trafik İşaretleri</h4>
+                    <p>Trafik işaretlerini öğrenelim!</p>
+                    <a href="/Course/TrafficSigns" class="btn btn-outline-light">Başla</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #E91E63 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/manner-bg-pattern.png" alt="Görgü Kuralları" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Görgü Kuralları</h4>
+                    <p>Görgü kurallarını öğrenelim!</p>
+                    <a href="/Course/Manners" class="btn btn-outline-light">Başla</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="900">
+                <div class="card h-100 shadow-lg border-0 text-center p-4" style="background: linear-gradient(135deg, #00BCD4 0%, #6B48FF 100%); color: #fff; border-radius: 25px;">
+                    <img src="/images/manners/manner-bg-pattern.png" alt="Kendini İfade Etme" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+                    <h4>Kendini İfade Etme</h4>
+                    <p>Duygularımızı ve düşüncelerimizi ifade etmeyi öğrenelim!</p>
+                    <a href="/Course/SelfExpression" class="btn btn-outline-light">Başla</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div> 
+</div>
+
+<style>
+    .card {
+        transition: transform 0.2s;
+        border: none;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .card-text {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+    .badge {
+        font-size: 0.8rem;
+        padding: 0.5em 0.8em;
+    }
+</style> 

@@ -52,8 +52,7 @@ namespace AutismEducationPlatform.Web.Controllers
         public async Task<IActionResult> Education()
         {
             var courses = await _context.Courses
-                .Include(c => c.Instructor)
-                .OrderByDescending(c => c.CreatedAt)
+                .OrderBy(c => c.Category)
                 .ToListAsync();
 
             return View(courses);
@@ -286,6 +285,11 @@ namespace AutismEducationPlatform.Web.Controllers
             return Json(courses);
         }
 
+        public IActionResult Guidance()
+        {
+            return View();
+        }
+
         [HttpGet]
         public async Task<IActionResult> FixCourseFields()
         {
@@ -316,6 +320,11 @@ namespace AutismEducationPlatform.Web.Controllers
             _context.Courses.UpdateRange(courses);
             await _context.SaveChangesAsync();
             return Content("Kurs alanları güncellendi.");
+        }
+
+        public IActionResult Resources()
+        {
+            return View();
         }
 
         public override ViewResult View() => SetInstructorLayout(base.View());

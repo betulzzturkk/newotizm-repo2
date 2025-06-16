@@ -23,10 +23,13 @@
     <div class="container py-5">
         <div class="row justify-content-center mb-3">
             <div class="col-lg-10">
-                <div class="alert alert-info text-center mb-4" style="font-size:1.2rem;">
-                    <i class="fas fa-info-circle me-2"></i>
-    
-                İlerlemenizin kaydedilmesi için <a href="/Account/Login" class="alert-link">giriş yapın</a> veya <a href="/Account/Register" class="alert-link">kaydolun</a>.
+                @if (!User.Identity.IsAuthenticated || !ViewBag.IsInstructor)
+                {
+                    <div class="alert alert-info text-center mb-4" style="font-size:1.2rem;">
+                        <i class="fas fa-info-circle me-2"></i>
+                        İlerlemenizin kaydedilmesi için <a href="/Account/Login" class="alert-link">giriş yapın</a> veya <a href="/Account/Register" class="alert-link">kaydolun</a>.
+                    </div>
+                }
             </div>
         </div>
         <div class="row justify-content-center mb-5">

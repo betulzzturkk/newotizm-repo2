@@ -8,6 +8,7 @@ using System;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
 namespace AutismEducationPlatform.Web.Controllers
 {
@@ -22,21 +23,19 @@ namespace AutismEducationPlatform.Web.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+        private async Task<bool> IsInstructor()
         {
-            var courses = new List<Course>
-            {
-                new Course { Id = 1, Name = "HAYVANLAR", Description = "Hayvanları tanıyalım", ImageUrl = "/images/courses/animals.jpg", Category = "Temel Eğitim" },
-                new Course { Id = 2, Name = "RENKLER", Description = "Renkleri öğrenelim", ImageUrl = "/images/courses/colors.jpg", Category = "Temel Eğitim" },
-                new Course { Id = 3, Name = "ŞEKİLLER", Description = "Şekilleri keşfedelim", ImageUrl = "/images/courses/shapes.jpg", Category = "Temel Eğitim" },
-                new Course { Id = 4, Name = "SAYILAR", Description = "Sayıları öğrenelim", ImageUrl = "/images/courses/numbers.jpg", Category = "Matematik" },
-                new Course { Id = 5, Name = "HİKAYELER", Description = "Hikayeler dinleyelim", ImageUrl = "/images/courses/tales.jpg", Category = "Dil Gelişimi" },
-                new Course { Id = 6, Name = "TRAFİK İŞARETLERİ", Description = "Trafik işaretlerini öğrenelim", ImageUrl = "/images/courses/traffic.jpg", Category = "Güvenlik" },
-                new Course { Id = 7, Name = "GÖRGÜ KURALLARI", Description = "Görgü kurallarını öğrenelim", ImageUrl = "/images/courses/manners.jpg", Category = "Sosyal Beceriler" },
-                new Course { Id = 8, Name = "EĞİTİM VİDEOLARI", Description = "Eğitici videolar izleyelim", ImageUrl = "/images/courses/videos.jpg", Category = "Multimedya" }
-            };
+            if (!User.Identity.IsAuthenticated)
+                return false;
 
-            return View(courses);
+            var user = await _userManager.GetUserAsync(User);
+            return await _userManager.IsInRoleAsync(user, "Instructor");
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            ViewBag.IsInstructor = await IsInstructor();
+            return View();
         }
 
         public IActionResult Animals()
@@ -62,14 +61,6 @@ namespace AutismEducationPlatform.Web.Controllers
                 new AnimalViewModel
                 {
                     Id = 3,
-                    Name = "İnek",
-                    Description = "Möö!",
-                    ImagePath = "/images/animals/cow.jpg",
-                    SoundPath = "/sounds/animals/inek.mp3"
-                },
-                new AnimalViewModel
-                {
-                    Id = 4,
                     Name = "Kuş",
                     Description = "Cik cik!",
                     ImagePath = "/images/animals/bird.jpg",
@@ -77,19 +68,27 @@ namespace AutismEducationPlatform.Web.Controllers
                 },
                 new AnimalViewModel
                 {
+                    Id = 4,
+                    Name = "Balık",
+                    Description = "Glug glug!",
+                    ImagePath = "/images/animals/fish.jpg",
+                    SoundPath = "/sounds/animals/balik.mp3"
+                },
+                new AnimalViewModel
+                {
                     Id = 5,
-                    Name = "At",
-                    Description = "Nayy!",
-                    ImagePath = "/images/animals/horse.jpg",
-                    SoundPath = "/sounds/animals/at.mp3"
+                    Name = "Tavşan",
+                    Description = "Hıh hıh!",
+                    ImagePath = "/images/animals/rabbit.jpg",
+                    SoundPath = "/sounds/animals/tavsan.mp3"
                 },
                 new AnimalViewModel
                 {
                     Id = 6,
-                    Name = "Fil",
-                    Description = "Puuuuh!",
-                    ImagePath = "/images/animals/elephant.jpg",
-                    SoundPath = "/sounds/animals/fil.mp3"
+                    Name = "Kurbağa",
+                    Description = "Vrak vrak!",
+                    ImagePath = "/images/animals/frog.jpg",
+                    SoundPath = "/sounds/animals/kurbaga.mp3"
                 },
                 new AnimalViewModel
                 {
@@ -109,7 +108,6 @@ namespace AutismEducationPlatform.Web.Controllers
                 }
             };
 
-            // Kullanıcı giriş yapmışsa, ilerleme bilgilerini getir
             if (User.Identity.IsAuthenticated)
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -117,7 +115,6 @@ namespace AutismEducationPlatform.Web.Controllers
                     .Where(p => p.UserId == userId)
                     .ToDictionary(p => p.AnimalId, p => p.Progress);
 
-                // Her hayvan için ilerleme bilgisini ekle
                 foreach (var animal in animals)
                 {
                     if (progresses.ContainsKey(animal.Id))
@@ -146,14 +143,20 @@ namespace AutismEducationPlatform.Web.Controllers
                 new ColorViewModel { Name = "Beyaz", Description = "Saflığı ve temizliği simgeler.", ImagePath = "/images/colors/beyaz.jpg", HexCode = "#FFFFFF", Example = "Beyaz bulut", SoundPath = "/sounds/colors/beyaz.mp3" }
             };
 
-            // Kullanıcı giriş yapmışsa, ilerleme bilgilerini getir
             if (User.Identity.IsAuthenticated)
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var progresses = _context.AnimalProgress
+                var progresses = _context.ColorProgress
                     .Where(p => p.UserId == userId)
-                    .ToDictionary(p => p.AnimalId, p => p.Progress); // NOT: Renkler için ayrı bir tablo/model önerilir!
-                // Şimdilik örnek olarak bırakıldı.
+                    .ToDictionary(p => p.ColorName, p => p.Progress);
+
+                foreach (var color in colors)
+                {
+                    if (progresses.ContainsKey(color.Name))
+                    {
+                        color.Progress = progresses[color.Name];
+                    }
+                }
             }
 
             return View(colors);
@@ -163,15 +166,30 @@ namespace AutismEducationPlatform.Web.Controllers
         {
             var shapes = new List<ShapeViewModel>
             {
-                new ShapeViewModel { Name = "Kare", ImagePath = "/images/shapes/kare.jpg", SoundPath = "/sounds/shapes/kare.mp3", Description = "Dört kenarı eşit olan şekil." },
-                new ShapeViewModel { Name = "Dikdörtgen", ImagePath = "/images/shapes/dikdortgen.jpg", SoundPath = "/sounds/shapes/dikdortgen.mp3", Description = "Karşılıklı kenarları eşit olan dörtgen." },
-                new ShapeViewModel { Name = "Daire", ImagePath = "/images/shapes/daire.jpg", SoundPath = "/sounds/shapes/daire.mp3", Description = "Yuvarlak şekil." },
-                new ShapeViewModel { Name = "Üçgen", ImagePath = "/images/shapes/ucgen.jpg", SoundPath = "/sounds/shapes/ucgen.mp3", Description = "Üç kenarı olan şekil." },
-                new ShapeViewModel { Name = "Yıldız", ImagePath = "/images/shapes/yildiz.jpg", SoundPath = "/sounds/shapes/yildiz.mp3", Description = "Parlak ve köşeli şekil." },
-                new ShapeViewModel { Name = "Altıgen", ImagePath = "/images/shapes/altigen.jpg", SoundPath = "/sounds/shapes/altigen.mp3", Description = "Altı kenarı olan şekil." },
-                new ShapeViewModel { Name = "Beşgen", ImagePath = "/images/shapes/besgen.jpg", SoundPath = "/sounds/shapes/besgen.mp3", Description = "Beş kenarı olan şekil." },
-                new ShapeViewModel { Name = "Oval", ImagePath = "/images/shapes/oval.jpg", SoundPath = "/sounds/shapes/oval.mp3", Description = "Yumurta gibi yuvarlak şekil." }
+                new ShapeViewModel { Name = "Daire", Description = "Yuvarlak şekil", ImagePath = "/images/shapes/circle.jpg", SoundPath = "/sounds/shapes/daire.mp3" },
+                new ShapeViewModel { Name = "Kare", Description = "Dört kenarlı eşit şekil", ImagePath = "/images/shapes/square.jpg", SoundPath = "/sounds/shapes/kare.mp3" },
+                new ShapeViewModel { Name = "Üçgen", Description = "Üç kenarlı şekil", ImagePath = "/images/shapes/triangle.jpg", SoundPath = "/sounds/shapes/ucgen.mp3" },
+                new ShapeViewModel { Name = "Dikdörtgen", Description = "Dört kenarlı şekil", ImagePath = "/images/shapes/rectangle.jpg", SoundPath = "/sounds/shapes/dikdortgen.mp3" },
+                new ShapeViewModel { Name = "Yıldız", Description = "Beş köşeli şekil", ImagePath = "/images/shapes/star.jpg", SoundPath = "/sounds/shapes/yildiz.mp3" },
+                new ShapeViewModel { Name = "Kalp", Description = "Sevgi şekli", ImagePath = "/images/shapes/heart.jpg", SoundPath = "/sounds/shapes/kalp.mp3" }
             };
+
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var progresses = _context.ShapeProgress
+                    .Where(p => p.UserId == userId)
+                    .ToDictionary(p => p.ShapeName, p => p.Progress);
+
+                foreach (var shape in shapes)
+                {
+                    if (progresses.ContainsKey(shape.Name))
+                    {
+                        shape.Progress = progresses[shape.Name];
+                    }
+                }
+            }
+
             return View(shapes);
         }
 
@@ -179,19 +197,18 @@ namespace AutismEducationPlatform.Web.Controllers
         {
             var numbers = new List<NumberViewModel>
             {
-                new NumberViewModel { Value = 0, Name = "Sıfır", Description = "Hiç yok", ImagePath = "/images/numbers/0.jpg", SoundPath = "/sounds/numbers/0.mp3" },
-                new NumberViewModel { Value = 1, Name = "Bir", Description = "Tek", ImagePath = "/images/numbers/1.jpg", SoundPath = "/sounds/numbers/1.mp3" },
-                new NumberViewModel { Value = 2, Name = "İki", Description = "Çift", ImagePath = "/images/numbers/2.jpg", SoundPath = "/sounds/numbers/2.mp3" },
-                new NumberViewModel { Value = 3, Name = "Üç", Description = "Üçgen", ImagePath = "/images/numbers/3.jpg", SoundPath = "/sounds/numbers/3.mp3" },
-                new NumberViewModel { Value = 4, Name = "Dört", Description = "Kare", ImagePath = "/images/numbers/4.jpg", SoundPath = "/sounds/numbers/4.mp3" },
-                new NumberViewModel { Value = 5, Name = "Beş", Description = "Beşgen", ImagePath = "/images/numbers/5.jpg", SoundPath = "/sounds/numbers/5.mp3" },
-                new NumberViewModel { Value = 6, Name = "Altı", Description = "Altıgen", ImagePath = "/images/numbers/6.jpg", SoundPath = "/sounds/numbers/6.mp3" },
-                new NumberViewModel { Value = 7, Name = "Yedi", Description = "Yıldız", ImagePath = "/images/numbers/7.jpg", SoundPath = "/sounds/numbers/7.mp3" },
-                new NumberViewModel { Value = 8, Name = "Sekiz", Description = "Sekizgen", ImagePath = "/images/numbers/8.jpg", SoundPath = "/sounds/numbers/8.mp3" },
-                new NumberViewModel { Value = 9, Name = "Dokuz", Description = "Dokuzgen", ImagePath = "/images/numbers/9.jpg", SoundPath = "/sounds/numbers/9.mp3" }
+                new NumberViewModel { Value = 1, Description = "Bir", ImagePath = "/images/numbers/1.jpg", SoundPath = "/sounds/numbers/1.mp3" },
+                new NumberViewModel { Value = 2, Description = "İki", ImagePath = "/images/numbers/2.jpg", SoundPath = "/sounds/numbers/2.mp3" },
+                new NumberViewModel { Value = 3, Description = "Üç", ImagePath = "/images/numbers/3.jpg", SoundPath = "/sounds/numbers/3.mp3" },
+                new NumberViewModel { Value = 4, Description = "Dört", ImagePath = "/images/numbers/4.jpg", SoundPath = "/sounds/numbers/4.mp3" },
+                new NumberViewModel { Value = 5, Description = "Beş", ImagePath = "/images/numbers/5.jpg", SoundPath = "/sounds/numbers/5.mp3" },
+                new NumberViewModel { Value = 6, Description = "Altı", ImagePath = "/images/numbers/6.jpg", SoundPath = "/sounds/numbers/6.mp3" },
+                new NumberViewModel { Value = 7, Description = "Yedi", ImagePath = "/images/numbers/7.jpg", SoundPath = "/sounds/numbers/7.mp3" },
+                new NumberViewModel { Value = 8, Description = "Sekiz", ImagePath = "/images/numbers/8.jpg", SoundPath = "/sounds/numbers/8.mp3" },
+                new NumberViewModel { Value = 9, Description = "Dokuz", ImagePath = "/images/numbers/9.jpg", SoundPath = "/sounds/numbers/9.mp3" },
+                new NumberViewModel { Value = 10, Description = "On", ImagePath = "/images/numbers/10.jpg", SoundPath = "/sounds/numbers/10.mp3" }
             };
 
-            // Kullanıcı giriş yapmışsa, ilerleme bilgilerini getir
             if (User.Identity.IsAuthenticated)
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -199,7 +216,6 @@ namespace AutismEducationPlatform.Web.Controllers
                     .Where(p => p.UserId == userId)
                     .ToDictionary(p => p.NumberValue, p => p.Progress);
 
-                // Her sayı için ilerleme bilgisini ekle
                 foreach (var number in numbers)
                 {
                     if (progresses.ContainsKey(number.Value))
@@ -216,78 +232,57 @@ namespace AutismEducationPlatform.Web.Controllers
         {
             var tales = new List<TaleViewModel>
             {
-                new TaleViewModel { Title = "Tavşan ve Kaplumbağa Masalı", Url = "https://www.youtube.com/watch?v=OtAhcLHMvw0" },
-                new TaleViewModel { Title = "TOM VE JERRY", Url = "https://www.youtube.com/watch?v=GMniyQIc1eU" },
-                new TaleViewModel { Title = "Kurt ve 7 Küçük Oğlak", Url = "https://www.youtube.com/watch?v=xqSQxPnL3SI&list=PL--gRX5NQW_fZRKOOfti4Nc7SOAl6VPcZ&index=2" },
-                new TaleViewModel { Title = "Çirkin Ördek Yavrusu Masalı", Url = "https://www.youtube.com/watch?v=44MsdO8RQ4g" },
-                new TaleViewModel { Title = "ÇALIŞKAN PASTACI", Url = "https://www.youtube.com/watch?v=Z7KCoIGVyqQ" },
-                new TaleViewModel { Title = "Yıldızlarla süslenmiş terlikler", Url = "https://www.youtube.com/watch?v=tUNwPvxqYyg" },
-                new TaleViewModel { Title = "Hansel ve Gretel", Url = "https://www.youtube.com/watch?v=jpRq4PSIg_U" },
-                new TaleViewModel { Title = "Kırmızı Başlıklı Kız", Url = "https://www.youtube.com/watch?v=iM_Nd_Tf9XM" }
+                new TaleViewModel { 
+                    Id = 1,
+                    Title = "Kırmızı Başlıklı Kız", 
+                    Description = "Orman macerası", 
+                    ImagePath = "/images/tales/kirmizi-baslikli-kiz.jpg", 
+                    SoundPath = "/sounds/tales/kirmizi-baslikli-kiz.mp3" 
+                },
+                new TaleViewModel { 
+                    Id = 2,
+                    Title = "Uyuyan Güzel", 
+                    Description = "Prenses masalı", 
+                    ImagePath = "/images/tales/uyuyan-guzel.jpg", 
+                    SoundPath = "/sounds/tales/uyuyan-guzel.mp3" 
+                },
+                new TaleViewModel { 
+                    Id = 3,
+                    Title = "Küçük Prens", 
+                    Description = "Gezegenler arası yolculuk", 
+                    ImagePath = "/images/tales/kucuk-prens.jpg", 
+                    SoundPath = "/sounds/tales/kucuk-prens.mp3" 
+                }
             };
+
             if (User.Identity.IsAuthenticated)
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var progresses = _context.TaleProgress
                     .Where(p => p.UserId == userId)
-                    .ToDictionary(p => p.TaleTitle, p => p.Progress);
+                    .ToDictionary(p => p.TaleId, p => p.ProgressPercentage);
+
                 foreach (var tale in tales)
                 {
-                    if (progresses.ContainsKey(tale.Title))
+                    if (progresses.ContainsKey(tale.Id))
                     {
-                        tale.Progress = progresses[tale.Title];
+                        tale.Progress = (int)progresses[tale.Id];
+                        tale.ProgressPercentage = progresses[tale.Id];
                     }
                 }
             }
+
             return View(tales);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> SaveTaleProgress([FromBody] TaleProgressInputModel model)
-        {
-            if (!User.Identity.IsAuthenticated)
-            {
-                return Json(new { success = false, message = "Lütfen giriş yapın.", requireLogin = true });
-            }
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var progress = await _context.TaleProgress.FirstOrDefaultAsync(p => p.TaleTitle == model.TaleTitle && p.UserId == userId);
-            if (progress == null)
-            {
-                progress = new TaleProgress
-                {
-                    TaleTitle = model.TaleTitle,
-                    UserId = userId,
-                    Progress = model.Progress,
-                    LastInteraction = DateTime.UtcNow
-                };
-                _context.TaleProgress.Add(progress);
-            }
-            else
-            {
-                progress.Progress = model.Progress;
-                progress.LastInteraction = DateTime.UtcNow;
-            }
-            await _context.SaveChangesAsync();
-            return Json(new { success = true, progress = progress.Progress });
-        }
-
-        public class TaleProgressInputModel
-        {
-            public string TaleTitle { get; set; }
-            public int Progress { get; set; }
         }
 
         public IActionResult TrafficSigns()
         {
             var signs = new List<TrafficSignViewModel>
             {
-                new TrafficSignViewModel { Name = "Dur", ImagePath = "/images/traffic/dur.jpg", SoundPath = "/sounds/traffic/dur.mp3", Description = "Dur işareti: Trafikte durmanız gerektiğini belirtir." },
-                new TrafficSignViewModel { Name = "Bisiklet", ImagePath = "/images/traffic/bisiklet.jpg", SoundPath = "/sounds/traffic/bisiklet.mp3", Description = "Bisiklet yolu işareti: Bisikletliler için ayrılmış yol." },
-                new TrafficSignViewModel { Name = "Hastane", ImagePath = "/images/traffic/hastane.jpg", SoundPath = "/sounds/traffic/hastane.mp3", Description = "Hastane işareti: Yakında hastane olduğunu belirtir." },
-                new TrafficSignViewModel { Name = "Işık", ImagePath = "/images/traffic/isik.jpg", SoundPath = "/sounds/traffic/isik.mp3", Description = "Trafik ışığı: Kırmızı, sarı, yeşil ışıklar ile trafiği düzenler." },
-                new TrafficSignViewModel { Name = "Okul", ImagePath = "/images/traffic/okul.jpg", SoundPath = "/sounds/traffic/okul.mp3", Description = "Okul geçidi: Yakında okul olduğunu ve dikkatli olunması gerektiğini belirtir." },
-                new TrafficSignViewModel { Name = "Park", ImagePath = "/images/traffic/park.jpg", SoundPath = "/sounds/traffic/park.mp3", Description = "Park yeri işareti: Araçların park edebileceği alanı gösterir." },
-                new TrafficSignViewModel { Name = "Yaya", ImagePath = "/images/traffic/yaya.jpg", SoundPath = "/sounds/traffic/yaya.mp3", Description = "Yaya geçidi: Yayaların güvenle geçebileceği alanı belirtir." },
+                new TrafficSignViewModel { Name = "Dur", ImagePath = "/images/traffic/dur.jpg", SoundPath = "/sounds/traffic/dur.mp3", Description = "Dur işareti: Yolun kesiştiği noktada durulması gerektiğini belirtir." },
+                new TrafficSignViewModel { Name = "Yaya Geçidi", ImagePath = "/images/traffic/yaya.jpg", SoundPath = "/sounds/traffic/yaya.mp3", Description = "Yaya geçidi işareti: Yayaların karşıdan karşıya geçebileceği yeri gösterir." },
+                new TrafficSignViewModel { Name = "Okul Geçidi", ImagePath = "/images/traffic/okul.jpg", SoundPath = "/sounds/traffic/okul.mp3", Description = "Okul geçidi işareti: Okul yakınında olduğunu ve dikkatli olunması gerektiğini belirtir." },
+                new TrafficSignViewModel { Name = "Işıklı İşaret", ImagePath = "/images/traffic/isikli.jpg", SoundPath = "/sounds/traffic/isikli.mp3", Description = "Işıklı işaret: Trafik ışıklarının olduğu yeri gösterir." },
                 new TrafficSignViewModel { Name = "Yön", ImagePath = "/images/traffic/yon.jpg", SoundPath = "/sounds/traffic/yon.mp3", Description = "Yön işareti: Gidilebilecek yönü gösterir." }
             };
 
@@ -297,6 +292,7 @@ namespace AutismEducationPlatform.Web.Controllers
                 var progresses = _context.TrafficSignProgress
                     .Where(p => p.UserId == userId)
                     .ToDictionary(p => p.SignName, p => p.Progress);
+
                 foreach (var sign in signs)
                 {
                     if (progresses.ContainsKey(sign.Name))
@@ -305,6 +301,7 @@ namespace AutismEducationPlatform.Web.Controllers
                     }
                 }
             }
+
             return View(signs);
         }
 
@@ -321,11 +318,119 @@ namespace AutismEducationPlatform.Web.Controllers
                     Color = "bg-success",
                     Example = "Birisi size bir şey verdiğinde",
                     CorrectBehavior = "Teşekkür ederim demek"
-                },
-                // Diğer görgü kuralları...
+                }
             };
 
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var progresses = _context.MannerProgress
+                    .Where(p => p.UserId == userId)
+                    .ToDictionary(p => p.MannerName, p => p.Progress);
+
+                foreach (var manner in manners)
+                {
+                    if (progresses.ContainsKey(manner.Title))
+                    {
+                        manner.Progress = progresses[manner.Title];
+                    }
+                }
+            }
+
             return View(manners);
+        }
+
+        public IActionResult SelfExpression()
+        {
+            var expressions = new List<MannersViewModel>
+            {
+                new MannersViewModel
+                {
+                    Title = "Teşekkür Etmek",
+                    Description = "Birine yardım ettiğinde veya bir şey verdiğinde teşekkür etmeyi öğrenelim.",
+                    ImagePath = "/images/manners/tesekkur.jpg",
+                    Category = "Görgü Kuralları",
+                    Color = "bg-success",
+                    Example = "Teşekkür ederim.",
+                    CorrectBehavior = "Teşekkür ederken göz teması kur ve gülümse.",
+                    SoundPath = "/sounds/manners/tesekkuretmek.mp3"
+                },
+                new MannersViewModel
+                {
+                    Title = "Özür Dilemek",
+                    Description = "Bir hata yaptığında özür dilemeyi öğrenelim.",
+                    ImagePath = "/images/manners/ozur.jpg",
+                    Category = "Görgü Kuralları",
+                    Color = "bg-info",
+                    Example = "Özür dilerim.",
+                    CorrectBehavior = "Özür dilerken göz teması kur ve ciddi ol.",
+                    SoundPath = "/sounds/manners/ozurdilemek.mp3"
+                },
+                new MannersViewModel
+                {
+                    Title = "Selamlaşmak",
+                    Description = "İnsanlarla selamlaşmayı öğrenelim.",
+                    ImagePath = "/images/manners/selam.jpg",
+                    Category = "Görgü Kuralları",
+                    Color = "bg-warning",
+                    Example = "Merhaba, nasılsın?",
+                    CorrectBehavior = "Selamlaşırken göz teması kur ve gülümse.",
+                    SoundPath = "/sounds/manners/selamlasmak.mp3"
+                },
+                new MannersViewModel
+                {
+                    Title = "Dinlemek",
+                    Description = "Başkalarını dinlemeyi öğrenelim.",
+                    ImagePath = "/images/manners/dinle.jpg",
+                    Category = "Görgü Kuralları",
+                    Color = "bg-primary",
+                    Example = "Seni dinliyorum.",
+                    CorrectBehavior = "Dinlerken göz teması kur ve sözünü kesme.",
+                    SoundPath = "/sounds/manners/dinlemek.mp3"
+                },
+                new MannersViewModel
+                {
+                    Title = "Kapı Çalmak",
+                    Description = "Bir odaya girmeden önce kapıyı çalmayı öğrenelim.",
+                    ImagePath = "/images/manners/kapi.jpg",
+                    Category = "Görgü Kuralları",
+                    Color = "bg-danger",
+                    Example = "Girebilir miyim?",
+                    CorrectBehavior = "Kapıyı çal ve cevap bekle.",
+                    SoundPath = "/sounds/manners/kapiyicalmak.mp3"
+                },
+                new MannersViewModel
+                {
+                    Title = "Paylaşmak",
+                    Description = "Eşyalarını başkalarıyla paylaşmayı öğrenelim.",
+                    ImagePath = "/images/manners/paylasma.jpg",
+                    Category = "Görgü Kuralları",
+                    Color = "bg-secondary",
+                    Example = "Bunu seninle paylaşmak istiyorum.",
+                    CorrectBehavior = "Paylaşırken nazik ol ve karşılıklı saygı göster.",
+                    SoundPath = "/sounds/manners/paylasmak.mp3"
+                }
+            };
+
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var progresses = _context.MannerProgress
+                    .Where(p => p.UserId == userId)
+                    .ToDictionary(p => p.MannerName, p => p.Progress);
+
+                foreach (var expression in expressions)
+                {
+                    var key = expression.Title.ToLower().Replace(" ", "").Replace("ı", "i").Replace("ğ", "g").Replace("ü", "u").Replace("ş", "s").Replace("ö", "o").Replace("ç", "c");
+                    if (progresses.ContainsKey(key))
+                    {
+                        expression.Progress = progresses[key];
+                    }
+                }
+            }
+
+            ViewBag.IsInstructor = IsInstructor();
+            return View(expressions);
         }
 
         public IActionResult EducationalVideos() => View();
@@ -350,6 +455,8 @@ namespace AutismEducationPlatform.Web.Controllers
                     return RedirectToAction("Manners");
                 case 8:
                     return RedirectToAction("EducationalVideos");
+                case 9:
+                    return RedirectToAction("SelfExpression");
                 default:
                     return RedirectToAction("Index");
             }
@@ -426,40 +533,33 @@ namespace AutismEducationPlatform.Web.Controllers
                 progress.Progress = model.Progress;
                 progress.InteractionCount++;
                 progress.LastInteraction = DateTime.UtcNow;
+                _context.ColorProgress.Update(progress);
             }
 
-            await _context.SaveChangesAsync();
-            return Json(new { success = true, progress = progress.Progress });
-        }
+            // CourseProgress tablosunu güncelle
+            var courseProgress = await _context.CourseProgress
+                .FirstOrDefaultAsync(cp => cp.UserId == userId && cp.CourseName == "Renkler");
 
-        [HttpPost]
-        public async Task<IActionResult> SaveShapeProgress([FromBody] ShapeProgressInputModel model)
-        {
-            if (!User.Identity.IsAuthenticated)
+            if (courseProgress == null)
             {
-                return Json(new { success = false, message = "Lütfen giriş yapın.", requireLogin = true });
-            }
-
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var progress = await _context.ShapeProgress.FirstOrDefaultAsync(p => p.ShapeName == model.ShapeName && p.UserId == userId);
-
-            if (progress == null)
-            {
-                progress = new ShapeProgress
+                courseProgress = new CourseProgress
                 {
-                    ShapeName = model.ShapeName,
                     UserId = userId,
-                    Progress = model.Progress,
-                    InteractionCount = 1,
-                    LastInteraction = DateTime.UtcNow
+                    CourseId = 2, // Renkler kursunun ID'si
+                    CourseName = "Renkler",
+                    ProgressPercentage = model.Progress,
+                    LastInteraction = DateTime.UtcNow,
+                    CompletedActivities = model.Progress >= 100 ? 1 : 0,
+                    TotalActivities = 1
                 };
-                _context.ShapeProgress.Add(progress);
+                _context.CourseProgress.Add(courseProgress);
             }
             else
             {
-                progress.Progress = model.Progress;
-                progress.InteractionCount++;
-                progress.LastInteraction = DateTime.UtcNow;
+                courseProgress.ProgressPercentage = model.Progress;
+                courseProgress.LastInteraction = DateTime.UtcNow;
+                courseProgress.CompletedActivities = model.Progress >= 100 ? 1 : 0;
+                _context.CourseProgress.Update(courseProgress);
             }
 
             await _context.SaveChangesAsync();
@@ -494,6 +594,33 @@ namespace AutismEducationPlatform.Web.Controllers
                 progress.Progress = model.Progress;
                 progress.InteractionCount++;
                 progress.LastInteraction = DateTime.UtcNow;
+                _context.NumberProgress.Update(progress);
+            }
+
+            // CourseProgress tablosunu güncelle
+            var courseProgress = await _context.CourseProgress
+                .FirstOrDefaultAsync(cp => cp.UserId == userId && cp.CourseName == "Sayılar");
+
+            if (courseProgress == null)
+            {
+                courseProgress = new CourseProgress
+                {
+                    UserId = userId,
+                    CourseId = 3, // Sayılar kursunun ID'si
+                    CourseName = "Sayılar",
+                    ProgressPercentage = model.Progress,
+                    LastInteraction = DateTime.UtcNow,
+                    CompletedActivities = model.Progress >= 100 ? 1 : 0,
+                    TotalActivities = 1
+                };
+                _context.CourseProgress.Add(courseProgress);
+            }
+            else
+            {
+                courseProgress.ProgressPercentage = model.Progress;
+                courseProgress.LastInteraction = DateTime.UtcNow;
+                courseProgress.CompletedActivities = model.Progress >= 100 ? 1 : 0;
+                _context.CourseProgress.Update(courseProgress);
             }
 
             await _context.SaveChangesAsync();
@@ -579,12 +706,6 @@ namespace AutismEducationPlatform.Web.Controllers
             public int Progress { get; set; }
         }
 
-        public class ShapeProgressInputModel
-        {
-            public string ShapeName { get; set; }
-            public int Progress { get; set; }
-        }
-
         public class NumberProgressInputModel
         {
             public int NumberValue { get; set; }
@@ -605,99 +726,85 @@ namespace AutismEducationPlatform.Web.Controllers
 
         public IActionResult Exams()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var examResults = _context.ExamResults
+                .Where(r => r.UserId == userId)
+                .OrderByDescending(r => r.CompletedAt)
+                .ToList();
+
+            ViewBag.ExamResults = examResults;
             return View();
         }
 
-        public IActionResult Exam(int id)
-        {
-            // Seviye 2 için farklı sorular
-            if (id == 2)
-            {
-                var level2Questions = new List<ExamQuestionViewModel>
-                {
-                    new ExamQuestionViewModel { Question = "En hızlı koşan hayvan hangisidir?", Options = new List<string>{"Kaplan", "Çita", "Aslan", "Kanguru"}, CorrectIndex = 1 },
-                    new ExamQuestionViewModel { Question = "Elma hangi renkte olabilir?", Options = new List<string>{"Sarı", "Kırmızı", "Yeşil", "Hepsi"}, CorrectIndex = 3 },
-                    new ExamQuestionViewModel { Question = "5 + 3 kaç eder?", Options = new List<string>{"7", "8", "9", "6"}, CorrectIndex = 1 },
-                    new ExamQuestionViewModel { Question = "Dikdörtgenin kaç kenarı vardır?", Options = new List<string>{"3", "4", "5", "6"}, CorrectIndex = 1 },
-                    new ExamQuestionViewModel { Question = "Kuşlar ne yapabilir?", Options = new List<string>{"Uçar", "Yüzer", "Koşar", "Zıplar"}, CorrectIndex = 0 },
-                    new ExamQuestionViewModel { Question = "Portakal hangi renktir?", Options = new List<string>{"Kırmızı", "Turuncu", "Mavi", "Siyah"}, CorrectIndex = 1 },
-                    new ExamQuestionViewModel { Question = "6 - 2 kaç eder?", Options = new List<string>{"2", "3", "4", "5"}, CorrectIndex = 2 },
-                    new ExamQuestionViewModel { Question = "Üçgenin kaç köşesi vardır?", Options = new List<string>{"2", "3", "4", "5"}, CorrectIndex = 1 },
-                    new ExamQuestionViewModel { Question = "Karpuzun dışı genellikle hangi renktir?", Options = new List<string>{"Yeşil", "Kırmızı", "Sarı", "Mavi"}, CorrectIndex = 0 },
-                    new ExamQuestionViewModel { Question = "Köpekler ne yapar?", Options = new List<string>{"Miyavlar", "Havlar", "Cik cik", "Möö"}, CorrectIndex = 1 }
-                };
-                ViewBag.Level = id;
-                return View(level2Questions);
-            }
-            // Seviye 3 için farklı sorular
-            if (id == 3)
-            {
-                var level3Questions = new List<ExamQuestionViewModel>
-                {
-                    new ExamQuestionViewModel { Question = "En büyük kara hayvanı hangisidir?", Options = new List<string>{"Fil", "Aslan", "Kanguru", "Köpek"}, CorrectIndex = 0 },
-                    new ExamQuestionViewModel { Question = "Güneş hangi renkte görünür?", Options = new List<string>{"Mavi", "Sarı", "Kırmızı", "Yeşil"}, CorrectIndex = 1 },
-                    new ExamQuestionViewModel { Question = "10 - 4 kaç eder?", Options = new List<string>{"5", "6", "7", "8"}, CorrectIndex = 1 },
-                    new ExamQuestionViewModel { Question = "Beşgenin kaç kenarı vardır?", Options = new List<string>{"4", "5", "6", "7"}, CorrectIndex = 1 },
-                    new ExamQuestionViewModel { Question = "Balıklar nerede yaşar?", Options = new List<string>{"Ağaçta", "Suda", "Toprakta", "Havada"}, CorrectIndex = 1 },
-                    new ExamQuestionViewModel { Question = "Domates hangi renktir?", Options = new List<string>{"Kırmızı", "Mavi", "Sarı", "Yeşil"}, CorrectIndex = 0 },
-                    new ExamQuestionViewModel { Question = "4 + 4 kaç eder?", Options = new List<string>{"6", "7", "8", "9"}, CorrectIndex = 2 },
-                    new ExamQuestionViewModel { Question = "Dikdörtgenin karşılıklı kenarları nasıldır?", Options = new List<string>{"Eşit", "Farklı", "Kısa", "Daire"}, CorrectIndex = 0 },
-                    new ExamQuestionViewModel { Question = "Kuşlar nasıl hareket eder?", Options = new List<string>{"Uçarak", "Yüzerek", "Sürünerek", "Zıplayarak"}, CorrectIndex = 0 },
-                    new ExamQuestionViewModel { Question = "En küçük çift basamaklı sayı hangisidir?", Options = new List<string>{"9", "10", "11", "12"}, CorrectIndex = 1 }
-                };
-                ViewBag.Level = id;
-                return View(level3Questions);
-            }
-            // Diğer seviyeler için eski sorular
-            var allQuestions = new List<ExamQuestionViewModel>
-            {
-                new ExamQuestionViewModel { Question = "Kedi hangi hayvandır?", Options = new List<string>{"Miyavlayan", "Havlayan", "Uçan", "Yüzen"}, CorrectIndex = 0 },
-                new ExamQuestionViewModel { Question = "Gökyüzü genellikle hangi renktir?", Options = new List<string>{"Kırmızı", "Mavi", "Sarı", "Yeşil"}, CorrectIndex = 1 },
-                new ExamQuestionViewModel { Question = "2 + 2 kaç eder?", Options = new List<string>{"3", "4", "5", "2"}, CorrectIndex = 1 },
-                new ExamQuestionViewModel { Question = "Daire kaç köşelidir?", Options = new List<string>{"0", "3", "4", "5"}, CorrectIndex = 0 },
-                new ExamQuestionViewModel { Question = "Köpek hangi sesi çıkarır?", Options = new List<string>{"Miyav", "Hav hav", "Möö", "Cik cik"}, CorrectIndex = 1 },
-                new ExamQuestionViewModel { Question = "Limon hangi renktir?", Options = new List<string>{"Sarı", "Mavi", "Kırmızı", "Yeşil"}, CorrectIndex = 0 },
-                new ExamQuestionViewModel { Question = "3 üçgenin kaç kenarı vardır?", Options = new List<string>{"2", "3", "4", "5"}, CorrectIndex = 1 },
-                new ExamQuestionViewModel { Question = "En büyük tek basamaklı sayı hangisidir?", Options = new List<string>{"7", "8", "9", "6"}, CorrectIndex = 2 },
-                new ExamQuestionViewModel { Question = "Kırmızı ışıkta ne yapılır?", Options = new List<string>{"Geçilir", "Durulur", "Zıplanır", "Yüzülür"}, CorrectIndex = 1 },
-                new ExamQuestionViewModel { Question = "Kare kaç kenarlıdır?", Options = new List<string>{"3", "4", "5", "6"}, CorrectIndex = 1 }
-            };
-            var rnd = new Random(id); // seviye bazlı karışıklık
-            var questions = allQuestions.OrderBy(x => rnd.Next()).Take(10).ToList();
-            ViewBag.Level = id;
-            return View(questions);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> SaveExamResult([FromBody] ExamResultInputModel model)
+        public IActionResult Exam(int level)
         {
             if (!User.Identity.IsAuthenticated)
             {
-                return Json(new { success = false, message = "Lütfen giriş yapın.", requireLogin = true });
+                return RedirectToAction("Login", "Account");
             }
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var examResult = _context.ExamResults
+                .FirstOrDefault(r => r.UserId == userId && r.ExamLevel == level.ToString());
+
+            if (examResult != null)
+            {
+                return RedirectToAction("Exams");
+            }
+
+            var questions = GetRandomQuestions();
+
+            ViewBag.Questions = questions;
+            ViewBag.TotalQuestions = questions.Count;
+            ViewBag.Level = level.ToString();
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SaveExamResult([FromBody] AutismEducationPlatform.Web.Models.ViewModels.ExamResultViewModel model)
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var examResult = _context.ExamResults
+                .FirstOrDefault(r => r.UserId == userId && r.ExamLevel == model.ExamLevel);
+
+            if (examResult != null)
+            {
+                return RedirectToAction("Exams");
+            }
+
             var result = new ExamResult
             {
-                ExamLevel = model.ExamLevel,
                 UserId = userId,
+                ExamLevel = model.ExamLevel,
+                ExamName = $"Sınav {model.ExamLevel}",
                 CorrectCount = model.CorrectCount,
                 WrongCount = model.WrongCount,
                 TotalQuestions = model.TotalQuestions,
                 Score = model.Score,
-                CompletedAt = DateTime.UtcNow
+                ExamDate = DateTime.UtcNow
             };
+
             _context.ExamResults.Add(result);
             await _context.SaveChangesAsync();
-            // Cevapları kaydet
+
             if (model.Answers != null)
             {
-                for (int i = 0; i < model.Answers.Count; i++)
+                foreach (var ans in model.Answers)
                 {
-                    var ans = model.Answers[i];
                     var answer = new ExamAnswer
                     {
                         ExamResultId = result.Id,
-                        QuestionIndex = i,
                         QuestionText = ans.QuestionText,
                         SelectedOption = ans.SelectedOption,
                         CorrectOption = ans.CorrectOption,
@@ -707,25 +814,94 @@ namespace AutismEducationPlatform.Web.Controllers
                 }
                 await _context.SaveChangesAsync();
             }
+
             return Json(new { success = true });
         }
 
         public class ExamResultInputModel
         {
+            [Required]
             public int ExamLevel { get; set; }
+            [Required]
             public int CorrectCount { get; set; }
+            [Required]
             public int WrongCount { get; set; }
+            [Required]
             public int TotalQuestions { get; set; }
+            [Required]
             public double Score { get; set; }
             public List<ExamAnswerInputModel> Answers { get; set; }
         }
 
-        public class ExamAnswerInputModel
+        private List<object> GetRandomQuestions()
         {
-            public string QuestionText { get; set; }
-            public string SelectedOption { get; set; }
-            public string CorrectOption { get; set; }
-            public bool IsCorrect { get; set; }
+            var allQuestions = new List<object>
+            {
+                // Hayvanlar
+                new { content = "Aşağıdakilerden hangisi bir hayvan değildir?", options = new[] { "Kedi", "Araba", "Köpek", "Kuş" }, correctAnswer = 1 },
+                new { content = "Hangi hayvan uçabilir?", options = new[] { "Kedi", "Köpek", "Kuş", "Balık" }, correctAnswer = 2 },
+                new { content = "Hangi hayvan suda yaşar?", options = new[] { "Kedi", "Köpek", "Kuş", "Balık" }, correctAnswer = 3 },
+                
+                // Renkler
+                new { content = "Hangi renk gökyüzünün rengidir?", options = new[] { "Kırmızı", "Mavi", "Yeşil", "Sarı" }, correctAnswer = 1 },
+                new { content = "Hangi renk güneşin rengidir?", options = new[] { "Kırmızı", "Mavi", "Yeşil", "Sarı" }, correctAnswer = 3 },
+                new { content = "Hangi renk çimenin rengidir?", options = new[] { "Kırmızı", "Mavi", "Yeşil", "Sarı" }, correctAnswer = 2 },
+                
+                // Sayılar
+                new { content = "2 + 3 = ?", options = new[] { "4", "5", "6", "7" }, correctAnswer = 1 },
+                new { content = "5 - 2 = ?", options = new[] { "2", "3", "4", "5" }, correctAnswer = 1 },
+                new { content = "4 x 2 = ?", options = new[] { "6", "7", "8", "9" }, correctAnswer = 2 },
+                
+                // Şekiller
+                new { content = "Aşağıdakilerden hangisi bir geometrik şekil değildir?", options = new[] { "Kare", "Üçgen", "Kalem", "Daire" }, correctAnswer = 2 },
+                new { content = "Hangi şeklin 4 kenarı vardır?", options = new[] { "Üçgen", "Kare", "Daire", "Yıldız" }, correctAnswer = 1 },
+                new { content = "Hangi şeklin 3 kenarı vardır?", options = new[] { "Kare", "Üçgen", "Daire", "Yıldız" }, correctAnswer = 1 },
+                
+                // Trafik İşaretleri
+                new { content = "Aşağıdakilerden hangisi bir trafik işareti değildir?", options = new[] { "Dur", "Yol Ver", "Okul", "Ağaç" }, correctAnswer = 3 },
+                new { content = "Hangi işaret yaya geçidini gösterir?", options = new[] { "Dur", "Yol Ver", "Yaya Geçidi", "Okul" }, correctAnswer = 2 },
+                new { content = "Hangi işaret okul bölgesini gösterir?", options = new[] { "Dur", "Yol Ver", "Yaya Geçidi", "Okul" }, correctAnswer = 3 },
+                
+                // Görgü Kuralları
+                new { content = "Birisi konuşurken ne yapmalıyız?", options = new[] { "Sözünü kesmek", "Dinlemek", "Başka şeylerle ilgilenmek", "Konuşmak" }, correctAnswer = 1 },
+                new { content = "Yemek yerken ne yapmalıyız?", options = new[] { "Konuşmak", "Ağzımız açık çiğnemek", "Ağzımız kapalı çiğnemek", "Hızlı yemek" }, correctAnswer = 2 },
+                new { content = "Birisi bize yardım ettiğinde ne demeliyiz?", options = new[] { "Hiçbir şey", "Teşekkür ederim", "Hoşça kal", "Merhaba" }, correctAnswer = 1 }
+            };
+
+            var random = new Random();
+            return allQuestions.OrderBy(x => random.Next()).Take(5).ToList();
+        }
+
+        [HttpPost]
+        public IActionResult SubmitExam([FromBody] ExamResultViewModel model)
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Json(new { success = false, message = "Kullanıcı girişi yapılmamış." });
+            }
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Json(new { success = false, message = "Kullanıcı bulunamadı." });
+            }
+
+            var examResult = new ExamResult
+            {
+                UserId = userId,
+                ExamLevel = model.ExamLevel,
+                ExamName = $"Sınav {model.ExamLevel}",
+                CorrectCount = model.CorrectCount,
+                WrongCount = model.WrongCount,
+                TotalQuestions = model.TotalQuestions,
+                Score = model.Score,
+                ExamDate = DateTime.UtcNow
+            };
+
+            _context.ExamResults.Add(examResult);
+            _context.SaveChanges();
+
+            return Json(new { success = true });
         }
     }
 }
